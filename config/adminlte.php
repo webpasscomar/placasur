@@ -64,11 +64,11 @@ return [
     */
 
     'logo' => '<b>Placa</b> SUR',
-    'logo_img' => 'img/logo.png',
+    'logo_img' => 'img/isologo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
+    'logo_img_alt' => 'PS',
 
     /*
     |--------------------------------------------------------------------------
@@ -107,7 +107,7 @@ return [
     */
 
     'preloader' => [
-        'enabled' => true,
+        'enabled' => false,
         'img' => [
             'path' => 'img/logo.png',
             'alt' => 'Placa SUR',

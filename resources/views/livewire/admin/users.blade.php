@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <table class="table table-hover table-bordered mt-3">
+    <table class="table table-hover table-bordered mt-3 datatable" id="usersTable">
       <thead>
         <tr>
           <th class="text-center">Id</th>

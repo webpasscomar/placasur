@@ -1,7 +1,7 @@
 <div>
 
   <div class="container mt-4">
-    <div class="row">
+    <div class="row mb-3">
       <div class="col-md-8">
         <h3>Roles</h3>
       </div>
@@ -14,7 +14,7 @@
 
     <!-- Roles Table -->
     {{-- <h1>Cantidad {{ $cantidad }}</h1> --}}
-    <table class="table table-hover table-bordered mt-3" id="rolesTable">
+    <table class="table table-hover table-bordered mt-3 datatable" id="rolesTable">
       <thead>
         <tr>
           <th class="text-center">Id</th>
@@ -103,11 +103,7 @@
   @endif
 
 
-  {{-- <script>
-    $(document).ready(function() {
-      $('#rolesTable').DataTable();
-    });
-  </script> --}}
+
 
 
 </div>
