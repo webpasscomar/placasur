@@ -2,8 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Models\Cargo;
-use App\Models\Facultad;
+
 use Livewire\Component;
 use App\Models\User;
 use App\Models\Role;
@@ -14,8 +13,8 @@ use Illuminate\Support\Facades\Session;
 class Users extends Component
 {
     public $user;
-    public $facultades;
-    public $cargos;
+    // public $facultades;
+    // public $cargos;
     public $user_id, $user_nombre_rol, $user_rol_id;
     public $name;
     public $email;
@@ -32,8 +31,8 @@ class Users extends Component
     {
         $this->users = User::all();
         $this->roles = Role::all();
-        $this->facultades = Facultad::all();
-        $this->cargos = Cargo::all();
+        // $this->facultades = Facultad::all();
+        // $this->cargos = Cargo::all();
         if ($this->user_id) {
             $this->users_roles = User_rol::select([
                 'users_roles.id',
@@ -48,8 +47,8 @@ class Users extends Component
             'users' => $this->users,
             'roles' => $this->roles,
             'users_roles' => $this->users_roles,
-            'facultades' => $this->facultades,
-            'cargos' => $this->cargos,
+            // 'facultades' => $this->facultades,
+            // 'cargos' => $this->cargos,
         ])->layout('layouts.adminlte');
     }
 
