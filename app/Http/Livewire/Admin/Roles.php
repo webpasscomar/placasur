@@ -22,6 +22,7 @@ class Roles extends Component
     public function render()
     {
         $roles = Role::all();
+        
         return view('livewire.admin.roles', compact('roles'))->layout('layouts.adminlte');
     }
 
