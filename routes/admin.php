@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Livewire\Admin\Roles;
 use App\Http\Livewire\Admin\Users;
-use App\Http\Livewire\Admin\Servicios;
+use App\Http\Livewire\Admin\Categorias;
+use App\Http\Livewire\Admin\Productos;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,5 @@ use App\Http\Livewire\Admin\Servicios;
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/roles', Roles::class)->name('roles');
 Route::get('/users', Users::class)->name('users');
-Route::get('/servicios', Servicios::class)->name('backServicios');
+Route::get('/categorias', Categorias::class)->name('categorias');
+Route::get('/productos', Productos::class)->name('admin.productos');

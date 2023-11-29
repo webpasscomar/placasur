@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Roles')
+{{-- @section('title', $title) --}}
 
 @section('content_header')
 
@@ -14,18 +14,15 @@
 
 
 @section('css')
-    {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    @livewireStyles
+  @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+  @livewireStyles
 @stop
 
 @section('js')
-    @stack('modals')
-    @livewireScripts
-    {{-- <script>
-        console.log('Hi!');
-    </script> --}}
-    <script src="sweetalert2.all.min.js"></script>
+  @stack('modals')
+  @livewireScripts
+
+  <script src="sweetalert2.all.min.js"></script>
 
     <script>
         Livewire.on('alertDelete', id => {
@@ -72,39 +69,55 @@
             })
         });
 
-        // $('#rolesTable').DataTable();
-        // $(document).ready(function() {
-        $('#rolesTable, #usersTable, #servicesTable').DataTable({
-            "language": {
-                "sProcessing": "Procesando...",
-                "sLengthMenu": "Mostrar _MENU_ registros",
-                "sZeroRecords": "No se encontraron resultados",
-                "sEmptyTable": "Ningún dato disponible en esta tabla",
-                "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ registros",
-                "sInfoEmpty": "Mostrando 0 al 0 de 0 registros",
-                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                "sInfoPostFix": "",
-                "sSearch": "Buscar:",
-                "sUrl": "",
-                "sInfoThousands": ",",
-                "sLoadingRecords": "Cargando...",
-                "oPaginate": {
-                    "sFirst": "Primero",
-                    "sLast": "Último",
-                    "sNext": "Siguiente",
-                    "sPrevious": "Anterior"
-                },
-                "oAria": {
-                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                }
-            },
+    // Funcion que refresca los datatables c/ vez que se vuelve a renderizar un componente
+    // document.addEventListener('livewire:load', function() {
 
-        });
-        // });
+    //   console.log(mensaje); // Mostrar mensaje en la consola
+    //   console.log('Livewire Load Event'); // Mensaje en consola
 
-        // $('#usersTable').DataTable();
-    </script>
+    //   Livewire.on('actualizarDataTable', function() {
+
+    //     console.log('Evento actualizarDataTable recibido'); // Mensaje en consola
+    //     // Reinicializar DataTable
+    //     $('#miTabla').DataTable().destroy(); // Reemplaza 'miTabla' con tu ID de tabla
+    //     $('#miTabla').DataTable(); // Vuelve a inicializar DataTable
+    //   });
+    // });
+
+    // $('#rolesTable').DataTable();
+    // $(document).ready(function() {
+    // $('#rolesTable').DataTable({
+    //   "language": {
+    //     "sProcessing": "Procesando...",
+    //     "sLengthMenu": "Mostrar _MENU_ registros",
+    //     "sZeroRecords": "No se encontraron resultados",
+    //     "sEmptyTable": "Ningún dato disponible en esta tabla",
+    //     "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ registros",
+    //     "sInfoEmpty": "Mostrando 0 al 0 de 0 registros",
+    //     "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+    //     "sInfoPostFix": "",
+    //     "sSearch": "Buscar:",
+    //     "sUrl": "",
+    //     "sInfoThousands": ",",
+    //     "sLoadingRecords": "Cargando...",
+    //     "oPaginate": {
+    //       "sFirst": "Primero",
+    //       "sLast": "Último",
+    //       "sNext": "Siguiente",
+    //       "sPrevious": "Anterior"
+    //     },
+    //     "oAria": {
+    //       "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+    //       "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+    //     }
+    //   }
+    // });
+    // // });
+
+    // $('#usersTable').DataTable();
+
+    // $('#miTabla').DataTable();
+  </script>
 
 @stop
 

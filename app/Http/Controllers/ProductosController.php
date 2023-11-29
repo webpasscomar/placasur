@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
 class ProductosController extends Controller
@@ -19,6 +21,7 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $categorias = Categoria::get();
+        return view('productos-categorias', compact('categorias'));
     }
 }

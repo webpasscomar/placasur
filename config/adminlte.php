@@ -324,23 +324,24 @@ return [
         [
             'text' => 'Servicios',
             'url' => 'admin/servicios',
-            'icon' => 'fas fa-fw fa-wrench',
+            'icon' => 'fa fa-book',
         ],
-        // [
-        //     'text' => 'Tipos de Blog',
-        //     'url' => 'admin/tiposblog',
-        //     'icon' => 'fa fa-book',
-        // ],
-        // [
-        //     'text' => 'Blogs',
-        //     'url' => 'admin/blogs',
-        //     'icon' => 'fa fa-comment',
-        // ],
-        // [
-        //     'text' => 'Eventos',
-        //     'url' => 'admin/eventos',
-        //     'icon' => 'fa fa-address-book',
-        // ],
+        [
+            'text' => 'Categorías',
+            'url' => 'admin/categorias',
+            'icon' => 'fa fa-book',
+        ],
+        [
+            'text' => 'Productos',
+            'url' => 'admin/productos',
+            // 'url' => {{route('admin.productos')}},
+            'icon' => 'fa fa-comment',
+        ],
+        [
+            'text' => 'Novedades',
+            'url' => 'admin/novedades',
+            'icon' => 'fa fa-address-book',
+        ],
         // [
         //     'text' => 'Contactos',
         //     'url' => 'admin/contactos',
