@@ -8,7 +8,7 @@ services:
       - 443:443
       - 5173:5173
     working_dir: /
-    image: consejo_app
+    image: placasur_app
     volumes:
       - ./:/var/www/html
     #      - ./docker-files/backend/php.ini:/usr/local/etc/php/conf.d/local.ini
@@ -22,10 +22,10 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: consejo
-      MYSQL_ROOT_PASSWORD: consejo
-      MYSQL_PASSWORD: consejo
-      MYSQL_USER: consejo
+      MYSQL_DATABASE: placasur
+      MYSQL_ROOT_PASSWORD: placasur
+      MYSQL_PASSWORD: placasur
+      MYSQL_USER: placasur
     volumes:
       # - ./backend/docker-files/db/my.cnf:/etc/mysql/my.cnf
       - ./database_local:/var/lib/mysql
@@ -36,8 +36,8 @@ services:
     image: phpmyadmin:5.1.1
     environment:
       PMA_HOST: db
-      PMA_USER: consejo
-      PMA_PASSWORD: consejo
+      PMA_USER: placasur
+      PMA_PASSWORD: placasur
     ports:
       - 8080:80
     networks:

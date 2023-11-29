@@ -6,7 +6,7 @@
   <div class="container mt-4">
     <div class="row mb-3">
       <div class="col-md-8">
-        <h3>{{$title}}</h3>
+        <h3>{{ $title }}</h3>
       </div>
       <div class="col-md-4 text-right">
         <button wire:click="create" class="btn btn-success" data-toggle="modal" data-target="#roleModal"><i
@@ -21,20 +21,20 @@
         <tr>
           <th>COD</th>
           <th>Nombre</th>
-          <th>Descripción</th>
+          <th>Categoria</th>
           <th style="width: 10%">Acciones</th>
         </tr>
       </thead>
       <tbody>
-        @foreach ($filas as $fila)
+        @foreach ($rows as $row)
           <tr>
-            <td>{{ $fila->id }}</td>
-            <td>{{ $fila->categoria }}</td>
-            <td>{{ $fila->descripcion }}</td>
+            <td>{{ $row->id }}</td>
+            <td>{{ $row->title }}</td>
+            <td>{{ $row->descripcion }}</td>
             <td class="p-1 text-center">
-              <button wire:click="edit({{ $fila->id }})" class="btn btn-sm btn-primary" data-toggle="modal"
+              <button wire:click="edit({{ $row->id }})" class="btn btn-sm btn-primary" data-toggle="modal"
                 data-target="#roleModal" title="Editar"><i class="fa fa-edit"></i></button>
-              <button wire:click="$emit('alertDelete',{{ $fila->id }})" class="btn btn-sm btn-danger"
+              <button wire:click="$emit('alertDelete',{{ $row->id }})" class="btn btn-sm btn-danger"
                 title="Eliminar"><i class="fas fa-trash-alt" style="color: white "></i></button>
             </td>
           </tr>
@@ -46,7 +46,7 @@
 
   @if ($modal == 'block')
     <!-- Role Form Modal -->
-    @include('livewire.admin.productos-form')
+    @include('livewire.admin.products-form')
   @endif
 
 </div>
