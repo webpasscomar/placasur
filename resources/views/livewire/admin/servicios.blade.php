@@ -74,6 +74,23 @@
                         </button>
                     </div>
                     <div class="modal-body">
+
+                        <div class="form-group">
+                            @if ($cambioImg)
+                              @if (gettype($image) === 'object')
+                                @if ($image->extension() == 'png' || $image->extension() == 'jpg' || $image->extension() == 'jpeg')
+                                  <img class="img-fluid img-thumbnail" src="{{ $image->temporaryUrl() }}">
+                                @endif
+                              @endif
+                            @else
+                              @if ($accion === 'editar')
+                                <img class="img-fluid img-thumbnail" src="{{ asset('storage/servicios/' . $image) }}"
+                                  alt="">
+                              @endif
+                            @endif
+                          </div>
+              
+
                         <div class="form-group">
                             <label for="name">Título</label>
                             <input type="text" class="form-control" wire:model="title">
@@ -103,8 +120,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="statusS">Imágen</label>
-                            <input type="file" class="form-control" wire:model="image" />
+                            <label for="image">Imágen</label>
+                            <input type="file" id="image"  class="form-control" wire:model="image" wire:change="cambioImagen" />
                         </div>
 
                     </div>

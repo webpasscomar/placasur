@@ -34,8 +34,6 @@ class Productos extends Component
         return view('livewire.admin.productos', ['filas' => $this->productos])->layout('layouts.adminlte');
     }
 
-
-
     public function abrirModal()
     {
         $this->modal = 'block';

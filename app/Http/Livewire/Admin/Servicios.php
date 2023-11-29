@@ -21,6 +21,7 @@ class Servicios extends Component
     public $order;
     public $image;
     public $image_name;
+    public $cambioImg = false;
 
     use WithFileUploads;
 
@@ -35,7 +36,6 @@ class Servicios extends Component
         if ($this->accion == 'crear') {
             return [
                 'title' => 'required',
-                // 'description' => 'required',
                 'order' => 'required',
             ];
         } else {
@@ -44,6 +44,18 @@ class Servicios extends Component
                 'order' => 'required',
             ];
         }
+
+        if (($this->cambioImg === true && $this->accion === 'editar') ||
+        $this->accion === 'crear') {
+        return [
+            'categoria' => 'required|max:20',
+            'imagen' => 'required|mimes:jpg,png|max:1024',
+        ];
+    } else {
+        return [
+            'categoria' => 'required|max:20',
+        ];
+    }
     }
 
     protected function messages()
@@ -77,6 +89,7 @@ class Servicios extends Component
         $this->description = $servicio->description;
         $this->order = $servicio->order;
         $this->status = $servicio->status;
+        $this->image = $servicio->image;
 
         $this->openModal();
     }
@@ -84,10 +97,19 @@ class Servicios extends Component
     public function store()
     {
         $this->validate();
+        
+        if ($this->cambioImg) {
+            ////
+            //// borrar imagen anterior storage
+            ////
+            $image_name = $this->image->getClientOriginalName();
+            $upload_imagen = $this->image->storeAs('servicios', $image_name);
+            //dd($upload_imagen);
 
-        $image_name = $this->image->getClientOriginalName();
-        $this->image->store('storage',$image_name);
-
+            $this->cambioImg = false;
+        } else {
+            $image_name = $this->image;
+        }
         if ($this->status == null) {
             $this->status = 1;
         }
@@ -124,11 +146,17 @@ class Servicios extends Component
         $this->mostrarModal = 'none';
     }
 
+    public function cambioImagen()
+    {
+        $this->cambioImg = true;
+    }
+
     private function resetInputField()
     {
         $this->title = '';
         $this->description = '';
         $this->order = '';
         $this->status = '';
+        $this->image = '';
     }
 }

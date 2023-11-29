@@ -26,7 +26,7 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/empresa', [EmpresaController::class, 'index'])->name('empresa');
 
-Route::get('/servicios', [ServiciosController::class, 'index'])->name('servicios');
+Route::get('/servicios', [ServiciosController::class, 'index'])->name('servicios-front');
 Route::get('/productos', [ProductosController::class, 'index'])->name('productos');
 Route::get('/presupuestos', [PresupuestosController::class, 'index'])->name('presupuestos');
 Route::get('/descargas', [DescargasController::class, 'index'])->name('descargas');
