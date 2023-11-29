@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <title>@yield('title', 'Título por defecto')</title>
+    <title>Placa SUR - @yield('title', 'Título por defecto')</title>
 
     <!-- Font Imports -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

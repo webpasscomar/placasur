@@ -321,6 +321,11 @@ return [
             'url' => 'admin/users',
             'icon' => 'fas fa-fw fa-users',
         ],
+        [
+            'text' => 'Servicios',
+            'url' => 'admin/servicios',
+            'icon' => 'fas fa-fw fa-wrench',
+        ],
         // [
         //     'text' => 'Tipos de Blog',
         //     'url' => 'admin/tiposblog',

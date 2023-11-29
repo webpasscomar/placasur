@@ -25,7 +25,6 @@ class Roles extends Component
         return view('livewire.admin.roles', compact('roles'))->layout('layouts.adminlte');
     }
 
-
     protected function rules()
     {
         if ($this->accion == 'crear') {
