@@ -1,71 +1,61 @@
-<!-- Footer
-  ============================================= -->
-<footer id="footer" class="dark">
-
-
-  <!-- Copyrights
-   ============================================= -->
-  <div id="copyrights">
-    <div class="container">
-
-      <div class="row col-mb-30">
-
-        <div class="col-md-8 text-center text-md-start">
-          <p>Av. H. Yrigoyen 15750 (1852) Burzaco - Buenos Aires, Argentina
-            <br><i class="fa-solid fa-phone"></i> (5411) 4002-4400 / 4238-4000
-          </p>
+    <!-- footer -->
+    <div class="bg-dark bg-gradient">
+        <div class="container py-4 small">
+            <div class="row d-md-flex flex-md-row d-sm-flex flex-sm-column-reverse">
+                <div class="col mt-md-0 mt-4">
+                    <img src="imagenes/datafiscal-qr.png">
+                </div>
+                <div class="col-md-3 align-content-end">
+                    <p class="h4 text-white">Contactanos</p>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="pb-2"><i class="far fa-building"></i> Av. H. Yrigoyen 15750 <br>
+                        (1852) Burzaco, Buenos Aires, Argentina</li>
+                        <li class="pb-2"><i class="fas fa-phone-alt"></i> (5411) 4002-4400 / 4238-4000</li>
+                        <li class="text-white-50"><i class="far fa-envelope"></i> <a href="mailto:info@placasur.com.ar" class="text-decoration-none text-white-50"> info@placasur.com.ar </a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-        {{-- <div class="col-md-4 text-center text-md-end">
-                    <div class="d-flex justify-content-center justify-content-md-end mb-2">
-                        <a href="#" class="social-icon border-transparent si-small h-bg-facebook">
-                            <i class="fa-brands fa-facebook-f"></i>
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-
-                        <a href="#" class="social-icon border-transparent si-small h-bg-twitter">
-                            <i class="fa-brands fa-twitter"></i>
-                            <i class="fa-brands fa-twitter"></i>
-                        </a>
-
-                        <a href="#" class="social-icon border-transparent si-small h-bg-google">
-                            <i class="fa-brands fa-google"></i>
-                            <i class="fa-brands fa-google"></i>
-                        </a>
-
-                        <a href="#" class="social-icon border-transparent si-small h-bg-pinterest">
-                            <i class="fa-brands fa-pinterest-p"></i>
-                            <i class="fa-brands fa-pinterest-p"></i>
-                        </a>
-
-                        <a href="#" class="social-icon border-transparent si-small h-bg-vimeo">
-                            <i class="fa-brands fa-vimeo-v"></i>
-                            <i class="fa-brands fa-vimeo-v"></i>
-                        </a>
-
-                        <a href="#" class="social-icon border-transparent si-small h-bg-github">
-                            <i class="fa-brands fa-github"></i>
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-
-                        <a href="#" class="social-icon border-transparent si-small h-bg-yahoo">
-                            <i class="fa-brands fa-yahoo"></i>
-                            <i class="fa-brands fa-yahoo"></i>
-                        </a>
-
-                        <a href="#" class="social-icon border-transparent si-small me-0 h-bg-linkedin">
-                            <i class="fa-brands fa-linkedin"></i>
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                    </div>
-
-                    <i class="bi-envelope"></i> info@canvas.com <span class="middot">&middot;</span> <i
-                        class="fa-solid fa-phone"></i> +1-11-6541-6369 <span class="middot">&middot;</span> <i
-                        class="bi-skype"></i> CanvasOnSkype
-                </div> --}}
-
-      </div>
-
     </div>
-  </div><!-- #copyrights end -->
-</footer><!-- #footer end -->
+    <!-- FIN footer -->
+
+
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src="libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+
+        // tooltip
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+            
+        // menú dropdown hover
+        const $dropdown = $(".dropdown");
+        const $dropdownToggle = $(".dropdown-toggle");
+        const $dropdownMenu = $(".dropdown-menu");
+        const showClass = "show";
+
+        $(window).on("load resize", function() {
+        if (this.matchMedia("(min-width: 768px)").matches) {
+            $dropdown.hover(
+            function() {
+                const $this = $(this);
+                $this.addClass(showClass);
+                $this.find($dropdownToggle).attr("aria-expanded", "true");
+                $this.find($dropdownMenu).addClass(showClass);
+            },
+            function() {
+                const $this = $(this);
+                $this.removeClass(showClass);
+                $this.find($dropdownToggle).attr("aria-expanded", "false");
+                $this.find($dropdownMenu).removeClass(showClass);
+            }
+            );
+        } else {
+            $dropdown.off("mouseenter mouseleave");
+        }
+        });
+    </script>

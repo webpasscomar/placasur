@@ -1,8 +1,328 @@
-/* ----------------------------------------------------------------
-	Custom CSS
+@charset "UTF-8";
 
-	Add all your Custom Styled CSS here for New Styles or
-	Overwriting Default Theme Styles for Better Handling Updates
------------------------------------------------------------------*/
+/* 
+01. Tipografias 
+02. NAV - MENU
+03. colores azul-celeste-naranja texto / bg / botones / table naranja 
+04. Jumbotrom - Display-5
+05. Hovers para card y paneles links
+06. footer*/
 
+
+/* 01. Tipografias */
+.regular {
+  font-family:'robotoReg'
+  }
+.thin {
+  font-family:'robotothin'
+  }
+.light {
+  font-family:'robotolight'
+  }
+.medium {
+  font-family:'robotomedium'
+  }
+.bold {
+  font-family:'robotobold';  
+  }
+.black {
+  font-family:'robotoblack'
+  }
+
+body { 
+  font-family: "robotoReg", sans-serif !important;
+}
+
+@font-face {
+  font-family:'robotoReg';
+  src:url("fonts/roboto-regular-webfont.eot");
+  src:url("fonts/roboto-regular-webfont.eot?#iefix") format("embedded-opentype"),
+  url("fonts/roboto-regular-webfont.woff") format("woff"),
+  url("fonts/roboto-regular-webfont.ttf") format("truetype"),
+  url("fonts/roboto-regular-webfont.svg#Kroboto-regular-webfont") format("svg")
+  }
+
+@font-face {
+  font-family:'robotothin';
+  src:url("fonts/roboto-thin-webfont.eot");
+  src:url("fonts/roboto-thin-webfont.eot?#iefix") format("embedded-opentype"),
+  url("fonts/roboto-thin-webfont.woff2") format("woff2"),
+  url("fonts/roboto-thin-webfont.woff") format("woff"),
+  url("fonts/roboto-thin-webfont.ttf") format("truetype"),
+  url("fonts/roboto-thin-webfont.svg#robotothin") format("svg");
+  font-weight:normal;
+  font-style:normal
+  }
+
+@font-face {
+  font-family:'robotolight';
+  src:url("fonts/roboto-light-webfont.eot");
+  src:url("fonts/roboto-light-webfont.eot?#iefix") format("embedded-opentype"),
+  url("fonts/roboto-light-webfont.woff2") format("woff2"),
+  url("fonts/roboto-light-webfont.woff") format("woff"),
+  url("fonts/roboto-light-webfont.ttf") format("truetype"),
+  url("fonts/roboto-light-webfont.svg#robotolight") format("svg");
+  font-weight:normal;
+  font-style:normal
+  }
+
+@font-face {
+  font-family:'robotomedium';
+  src:url("fonts/roboto-medium-webfont.eot");
+  src:url("fonts/roboto-medium-webfont.eot?#iefix") format("embedded-opentype"),
+  url("fonts/roboto-medium-webfont.woff2") format("woff2"),
+  url("fonts/roboto-medium-webfont.woff") format("woff"),
+  url("fonts/roboto-medium-webfont.ttf") format("truetype"),
+  url("fonts/roboto-medium-webfont.svg#robotomedium") format("svg");
+  font-weight:normal;
+  font-style:normal
+  }
+
+@font-face {
+  font-family:'robotobold';
+  src:url("fonts/roboto-bold-webfont.eot");
+  src:url("fonts/roboto-bold-webfont.eot?#iefix") format("embedded-opentype"),
+  url("fonts/roboto-bold-webfont.woff2") format("woff2"),
+  url("fonts/roboto-bold-webfont.woff") format("woff"),
+  url("fonts/roboto-bold-webfont.ttf") format("truetype"),
+  url("fonts/roboto-bold-webfont.svg#robotobold") format("svg");
+  font-weight:normal;
+  font-style:normal
+  }
+
+@font-face {
+  font-family:'robotoblack';
+  src:url("fonts/roboto-black-webfont.eot");
+  src:url("fonts/roboto-black-webfont.eot?#iefix") format("embedded-opentype"),
+  url("fonts/roboto-black-webfont.woff2") format("woff2"),
+  url("fonts/roboto-black-webfont.woff") format("woff"),
+  url("fonts/roboto-black-webfont.ttf") format("truetype"),
+  url("fonts/roboto-black-webfont.svg#robotoblack") format("svg")
+  }
+  
+/* 02. NAV - MENU */
+.menutop li:hover {
+  /* background-color: #0078b44c; */
+  /* background-color:transparent; */
+  border-bottom: solid 5px #217bc0;
+  opacity: 0.95;
+  color: #217bc0 !important;
+  z-index: 1; 
+}
+
+.menutop a.nav-link {    
+  color: #444444;
+  padding: 8px 8px 0 8px; /* para equiparar el hover con el selector */
+  z-index: 1; 
+}
+/* .menutop a.nav-link:hover {    
+  opacity: 0.5;
+  z-index: 1;
+} */
+
+.menutop a.nav-link.dropdown-toggle {    
+  /* color: #FFF; */
+  padding: 8px 8px 0 8px;
+  z-index: 1; 
+}
+
+.menutop a.dropdown-item.active, .dropdown-item:active {
+  color: #444444;
+  text-decoration: none;
+  /* background-color: #217bc0;  */
+  background-color: transparent;
+
+}  
+
+.menutop a.nav-link {    
+  /* background-color: #217bc0 !important; */
+  /* opacity: var(--yellow); */
+  /* color: #FFF !important; */
+  z-index: 1;
+}
+
+.menutop a.nav-link:hover {    
+  /* background-color: #217bc0 !important; */
+  opacity: var(--yellow);
+  opacity: 0.5;
+  /* color: #FFF !important; */
+  z-index: 1;
+}
+
+.menutop li.active {
+  /* background-color: #0078b4; */  
+  background-color: transparent;
+  border-bottom: solid 5px #217bc0;
+  padding: 0 5px;
+  color: #FFF !important;
+  z-index: 1 ; 
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES para NAV - MENU
+----------------------------------------------------- */
+@media (max-width: 768px) {
+    
+.menutop a.nav-link {    
+  color: black; 
+}
+.menutop li:hover {
+    background-color: transparent;
+    /* border-left: solid 5px #0067a2; */
+    padding: 0;
+    line-height: inherit;
+    border-bottom: none;
+    opacity: 0.8; }
+
+.menutop li.active {
+    background-color: transparent;
+    border-left: solid 5px #217bc0;
+    padding: 0 0 0 5px;
+    line-height: inherit;
+    border-bottom: none;
+      max-width: fit-content;
+    opacity: 0.8; } 
+
+
+    div.dropdown-menu.dropdown-menu-left {    
+      max-width: fit-content;
+      background-color: transparent !important;
+      /* opacity: var(--yellow); */
+      border: transparent;
+      color: #FFF !important;
+      padding: 0 0 10px 0;
+    }
+
+
+    div.dropdown-menu.dropdown-menu-left a.dropdown-item:hover {    
+      max-width: fit-content;
+      background-color: transparent !important;
+    /* border-left: solid 5px #217bc0; */
+      /* color: #004b8d !important; */
+      padding:5px 5px;
+      margin-left: 15px;
+    }
+
+  
+  .menutop a.nav-link {    
+      max-width: fit-content;
+      /* background-color: #217bc0 !important; */
+      /* opacity: var(--yellow); */
+      /* color: #FFF !important; */
+      padding: 10px;
+  
+    }
+  .menutop a.nav-link:hover {    
+      /* background-color: #217bc0 !important; */
+      opacity: var(--yellow);
+      /* opacity: 0.5; */
+      /* color: #FFF !important; */
+    }
+
+  }
+
+
+  
+/* ************************************* */
+/* principales servicios */
+
+    /* botón con imagen de gris a color en el hover 
+    https://stackoverflow.com/questions/47091017/grayscale-only-button-background-but-not-text 
+    <button onclick="buttonFunction()" button class="button box">
+    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(78).jpg"><span class="text">Gray button text:(</span></button>
+    */
+    .box {
+    /* card BS */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box img {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* para que haga efecto transición */
+    -webkit-box-flex: 0;
+    -ms-flex: 0 50%;
+    flex: 0 50%;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+    }
+
+    .box:hover img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transform: scale(1.07);
+    transform: scale(1.07);
+    }
+
+
+    /* slide logos */
+    /* https://codepen.io/studiojvla/details/qVbQqW */
+
+    @-webkit-keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          /* transform: translateX(100%); */
+          transform: translateX(calc(-250px * 7));
+        }
+      }
+      
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          /* transform: translateX(-100%); */
+          transform: translateX(calc(-250px * 7));
+        }
+      }
+      .slider {
+        /* background: white; */
+        /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
+        height: 100px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        /* width: 960px; */
+      }
+      .slider::before, .slider::after {
+        background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+        content: "";
+        height: 100px;
+        position: absolute;
+        width: 200px;
+        z-index: 2;
+      }
+      .slider::after {
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+      }
+      .slider::before {
+        left: 0;
+        top: 0;
+      }
+      .slider .slide-track {
+        -webkit-animation: scroll 40s linear infinite;
+                animation: scroll 40s linear infinite;
+        display: flex;
+        width: calc(250 * 14);
+      }
+      /* .slider .slide {
+        height: auto;
+        width: 100%;
+      }
+   */
+   
+    
 

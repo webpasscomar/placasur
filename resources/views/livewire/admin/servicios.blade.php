@@ -77,19 +77,19 @@
 
                         <div class="form-group">
                             @if ($cambioImg)
-                              @if (gettype($image) === 'object')
-                                @if ($image->extension() == 'png' || $image->extension() == 'jpg' || $image->extension() == 'jpeg')
-                                  <img class="img-fluid img-thumbnail" src="{{ $image->temporaryUrl() }}">
+                                @if (gettype($image) === 'object')
+                                    @if ($image->extension() == 'png' || $image->extension() == 'jpg' || $image->extension() == 'jpeg')
+                                        <img class="img-fluid img-thumbnail" src="{{ $image->temporaryUrl() }}" width="200">
+                                    @endif
                                 @endif
-                              @endif
                             @else
-                              @if ($accion === 'editar')
-                                <img class="img-fluid img-thumbnail" src="{{ asset('storage/servicios/' . $image) }}"
-                                  alt="">
-                              @endif
+                                @if ($accion === 'editar')
+                                    <img class="img-fluid img-thumbnail"
+                                        src="{{ asset('storage/servicios/' . $image) }}" alt="">
+                                @endif
                             @endif
-                          </div>
-              
+                        </div>
+
 
                         <div class="form-group">
                             <label for="name">Título</label>
@@ -121,7 +121,8 @@
                         </div>
                         <div class="form-group">
                             <label for="image">Imágen</label>
-                            <input type="file" id="image"  class="form-control" wire:model="image" wire:change="cambioImagen" />
+                            <input type="file" id="image" class="form-control" wire:model="image"
+                                wire:change="cambioImagen" />
                         </div>
 
                     </div>

@@ -1,8 +1,8 @@
-@extends('layouts.canvas')
+@extends('layouts.app')
 
 @section('content')
   <!-- Content
-                                                        ============================================= -->
+                                                            ============================================= -->
   <section id="content">
     <div class="content-wrap">
       <div class="container">
@@ -10,11 +10,11 @@
         <div class="single-post mb-0">
 
           <!-- Single Post
-                                                            ============================================= -->
+                                                                ============================================= -->
           <div class="entry">
 
             <!-- Entry Title
-                                                             ============================================= -->
+                                                                 ============================================= -->
             <div class="entry-title">
               <h2>{{ Route::current()->getName() }}</h2>
             </div><!-- .entry-title end -->
@@ -22,7 +22,7 @@
 
 
             <!-- Entry Content
-                                                             ============================================= -->
+                                                                 ============================================= -->
             <div class="entry-content mt-0">
 
               @foreach ($categorias as $categoria)
