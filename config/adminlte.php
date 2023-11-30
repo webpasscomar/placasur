@@ -342,6 +342,11 @@ return [
             'url' => 'admin/novedades',
             'icon' => 'fa fa-address-book',
         ],
+        [
+            'text' => 'Galería',
+            'url' => 'admin/galerias',
+            'icon' => 'fa fa-film',
+        ],
         // [
         //     'text' => 'Contactos',
         //     'url' => 'admin/contactos',
