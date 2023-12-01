@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('title');
             $table->string('description');
-            $table->integer('order');
+            $table->integer('orden');
             $table->integer('status')->default(1);
             $table->timestamps();
         });

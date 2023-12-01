@@ -18,7 +18,7 @@ class Servicios extends Component
     public $title;
     public $description;
     public $status;
-    public $order;
+    public $orden;
     public $image;
     public $image_name;
     public $cambioImg = false;
@@ -36,12 +36,12 @@ class Servicios extends Component
         if ($this->accion == 'crear') {
             return [
                 'title' => 'required',
-                'order' => 'required',
+                'orden' => 'required',
             ];
         } else {
             return [
                 'title' => 'required',
-                'order' => 'required',
+                'orden' => 'required',
             ];
         }
 
@@ -63,12 +63,12 @@ class Servicios extends Component
         if ($this->accion == 'crear') {
             return [
                 'title.required' => 'El título del servicio es necesario',
-                'order.required' => 'El orden del servicio es requerido'
+                'orden.required' => 'El orden del servicio es requerido'
             ];
         } else {
             return [
                 'title.required' => 'El título del servicio es necesario',
-                'order.required' => 'El orden del servicio es requerido'
+                'orden.required' => 'El orden del servicio es requerido'
             ];
         }
     }
@@ -87,7 +87,7 @@ class Servicios extends Component
         $this->accion = 'editar';
         $this->title = $servicio->title;
         $this->description = $servicio->description;
-        $this->order = $servicio->order;
+        $this->orden = $servicio->orden;
         $this->status = $servicio->status;
         $this->image = $servicio->image;
 
@@ -110,6 +110,7 @@ class Servicios extends Component
         } else {
             $image_name = $this->image;
         }
+
         if ($this->status == null) {
             $this->status = 1;
         }
@@ -118,10 +119,10 @@ class Servicios extends Component
             ['id' => $this->service_id],
             [
                 'title' => $this->title,
-                'description' => $this->description,
-                'order' => $this->order,
-                'status' => $this->status,
                 'image'=> $this->image_name,
+                'description' => $this->description,
+                'orden' => $this->orden,
+                'status' => $this->status,
             ]
         );
 
@@ -144,6 +145,7 @@ class Servicios extends Component
     public function closeModal()
     {
         $this->mostrarModal = 'none';
+        $this->cambioImg = false;    
     }
 
     public function cambioImagen()
@@ -155,7 +157,7 @@ class Servicios extends Component
     {
         $this->title = '';
         $this->description = '';
-        $this->order = '';
+        $this->orden = '';
         $this->status = '';
         $this->image = '';
     }

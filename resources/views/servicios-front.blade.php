@@ -11,7 +11,6 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $servicio->title }}</h5>
                             <p class="card-text">{{ $servicio->description }}</p>
-                            <a href="#" class="btn btn-primary">Más información...</a>
                         </div>
                     </div>
                 </div>

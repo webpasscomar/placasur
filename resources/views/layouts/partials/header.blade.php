@@ -17,7 +17,7 @@
                     class="visually-hidden">(Home)</span></a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('servicios') }}" title="Nuestras actividades" class="nav-link">Servicios</a>
+                <a href="{{ route('servicios-front') }}" title="Nuestras actividades" class="nav-link">Servicios</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"

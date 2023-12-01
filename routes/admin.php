@@ -8,7 +8,7 @@ use App\Http\Livewire\Admin\Categorias;
 
 use App\Http\Livewire\Admin\Products;
 use App\Http\Livewire\Admin\Galerias;
-
+use App\Http\Livewire\Admin\Servicios;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +24,7 @@ use App\Http\Livewire\Admin\Galerias;
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/roles', Roles::class)->name('roles');
 Route::get('/users', Users::class)->name('users');
+Route::get('/servicios', Servicios::class)->name('servicios');
 Route::get('/categorias', Categorias::class)->name('categorias');
 Route::get('/productos', Products::class)->name('admin.productos');
 Route::get('/galerias', Galerias::class)->name('admin.galerias');
