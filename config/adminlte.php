@@ -334,7 +334,6 @@ return [
         [
             'text' => 'Productos',
             'url' => 'admin/productos',
-            // 'url' => {{route('admin.productos')}},
             'icon' => 'fa fa-comment',
         ],
         [

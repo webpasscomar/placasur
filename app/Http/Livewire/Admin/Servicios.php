@@ -46,16 +46,17 @@ class Servicios extends Component
         }
 
         if (($this->cambioImg === true && $this->accion === 'editar') ||
-        $this->accion === 'crear') {
-        return [
-            'categoria' => 'required|max:20',
-            'imagen' => 'required|mimes:jpg,png|max:1024',
-        ];
-    } else {
-        return [
-            'categoria' => 'required|max:20',
-        ];
-    }
+            $this->accion === 'crear'
+        ) {
+            return [
+                'categoria' => 'required|max:20',
+                'imagen' => 'required|mimes:jpg,png|max:1024',
+            ];
+        } else {
+            return [
+                'categoria' => 'required|max:20',
+            ];
+        }
     }
 
     protected function messages()
@@ -82,9 +83,10 @@ class Servicios extends Component
 
     public function edit($id)
     {
+        $this->accion = 'editar';
+
         $servicio = Servicio::findOrFail($id);
         $this->service_id = $servicio->id;
-        $this->accion = 'editar';
         $this->title = $servicio->title;
         $this->description = $servicio->description;
         $this->orden = $servicio->orden;
@@ -97,7 +99,7 @@ class Servicios extends Component
     public function store()
     {
         $this->validate();
-        
+
         if ($this->cambioImg) {
             ////
             //// borrar imagen anterior storage
@@ -111,18 +113,14 @@ class Servicios extends Component
             $image_name = $this->image;
         }
 
-        if ($this->status == null) {
-            $this->status = 1;
-        }
-
         Servicio::updateOrCreate(
             ['id' => $this->service_id],
             [
                 'title' => $this->title,
-                'image'=> $this->image_name,
+                'image' => $image_name,
                 'description' => $this->description,
                 'orden' => $this->orden,
-                'status' => $this->status,
+                'status' => 1
             ]
         );
 
@@ -145,7 +143,7 @@ class Servicios extends Component
     public function closeModal()
     {
         $this->mostrarModal = 'none';
-        $this->cambioImg = false;    
+        $this->cambioImg = false;
     }
 
     public function cambioImagen()
@@ -160,5 +158,6 @@ class Servicios extends Component
         $this->orden = '';
         $this->status = '';
         $this->image = '';
+        $this->service_id = 0;
     }
 }

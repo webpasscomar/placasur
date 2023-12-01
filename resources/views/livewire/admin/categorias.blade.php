@@ -46,7 +46,5 @@
     @include('livewire.admin.categorias-form')
   @endif
 
-  <script>
-    $('#miTabla').DataTable();
-  </script>
+
 </div>

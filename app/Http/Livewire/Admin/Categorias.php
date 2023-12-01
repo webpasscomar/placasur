@@ -66,21 +66,18 @@ class Categorias extends Component
         $this->accion = 'crear';
         $this->limpiarCampos();
         $this->abrirModal();
-        $this->dispatchBrowserEvent('actualizarDataTable');
     }
 
     public function abrirModal()
     {
         $this->modal = 'block';
         $this->emit('mensaje', 'Ejecutando Método 1');
-        $this->dispatchBrowserEvent('actualizarDataTable');
     }
 
     public function cerrarModal()
     {
         $this->modal = 'none';
         $this->cambioImg = false;
-        $this->dispatchBrowserEvent('actualizarDataTable');
     }
 
     public function limpiarCampos()
@@ -160,8 +157,6 @@ class Categorias extends Component
 
         $this->cerrarModal();
         $this->limpiarCampos();
-
-        $this->dispatchBrowserEvent('actualizarDataTable');
     }
 
     public function order($sort)

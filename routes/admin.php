@@ -21,10 +21,10 @@ use App\Http\Livewire\Admin\Servicios;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/roles', Roles::class)->name('roles');
-Route::get('/users', Users::class)->name('users');
-Route::get('/servicios', Servicios::class)->name('servicios');
-Route::get('/categorias', Categorias::class)->name('categorias');
+Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
+Route::get('/roles', Roles::class)->name('admin.roles');
+Route::get('/users', Users::class)->name('admin.users');
+Route::get('/servicios', Servicios::class)->name('admin.servicios');
+Route::get('/categorias', Categorias::class)->name('admin.categorias');
 Route::get('/productos', Products::class)->name('admin.productos');
 Route::get('/galerias', Galerias::class)->name('admin.galerias');
