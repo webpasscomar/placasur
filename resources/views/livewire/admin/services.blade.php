@@ -43,7 +43,6 @@
                                         src="{{ asset('storage/servicios/' . $service->image) }}"
                                         alt="{{ $service->title }}" width="30" height="40" />
                                 </td>
-                                <td>{{ $key }}</td>
                                 <td>{{ $service->title }}</td>
                                 <td>{{ $service->description }}</td>
                                 <td>{{ $service->order }}</td>
