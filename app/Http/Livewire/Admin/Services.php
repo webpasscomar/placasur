@@ -2,51 +2,44 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Models\Servicio;
+use App\Models\Service;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class Servicios extends Component
+class Services extends Component
 {
     protected $services;
     protected $listeners = ['delete'];
 
-    public $mostrarModal = 'none';
-    public $service_id;
-    public $servicio;
-    public $accion;
-    public $title;
-    public $description;
-    public $status;
-    public $orden;
-    public $image;
-    public $image_name;
-    public $cambioImg = false;
+    public $showModal = 'none';
+    public $showModalImage = false;
+    public $service_id, $service, $currentImage, $action, $title, $description, $status, $order, $image, $image_name;
+    public $changeImg = false;
 
     use WithFileUploads;
 
     public function render()
     {
-        $services = Servicio::all();
-        return view('livewire.admin.servicios', compact('services'))->layout('layouts.adminlte');
+        $services = Service::all();
+        return view('livewire.admin.services', compact('services'))->layout('layouts.adminlte');
     }
 
     protected function rules()
     {
-        if ($this->accion == 'crear') {
+        if ($this->action == 'create') {
             return [
                 'title' => 'required',
-                'orden' => 'required',
+                'order' => 'required',
             ];
         } else {
             return [
                 'title' => 'required',
-                'orden' => 'required',
+                'order' => 'required',
             ];
         }
 
-        if (($this->cambioImg === true && $this->accion === 'editar') ||
-            $this->accion === 'crear'
+        if (($this->changeImg === true && $this->action === 'edit') ||
+            $this->action === 'create'
         ) {
             return [
                 'categoria' => 'required|max:20',
@@ -61,37 +54,36 @@ class Servicios extends Component
 
     protected function messages()
     {
-        if ($this->accion == 'crear') {
+        if ($this->action == 'create') {
             return [
                 'title.required' => 'El título del servicio es necesario',
-                'orden.required' => 'El orden del servicio es requerido'
+                'order.required' => 'El order del servicio es requerido'
             ];
         } else {
             return [
                 'title.required' => 'El título del servicio es necesario',
-                'orden.required' => 'El orden del servicio es requerido'
+                'order.required' => 'El order del servicio es requerido'
             ];
         }
     }
 
     public function create()
     {
-        $this->accion = 'crear';
+        $this->action = 'create';
         $this->resetInputField();
         $this->openModal();
     }
 
     public function edit($id)
     {
-        $this->accion = 'editar';
+        $this->action = 'edit';
 
-        $servicio = Servicio::findOrFail($id);
-        $this->service_id = $servicio->id;
-        $this->title = $servicio->title;
-        $this->description = $servicio->description;
-        $this->orden = $servicio->orden;
-        $this->status = $servicio->status;
-        $this->image = $servicio->image;
+        $service = Service::findOrFail($id);
+        $this->service_id = $service->id;
+        $this->title = $service->title;
+        $this->description = $service->description;
+        $this->order = $service->order;
+        $this->image = $service->image;
 
         $this->openModal();
     }
@@ -100,7 +92,7 @@ class Servicios extends Component
     {
         $this->validate();
 
-        if ($this->cambioImg) {
+        if ($this->changeImg) {
             ////
             //// borrar imagen anterior storage
             ////
@@ -108,18 +100,18 @@ class Servicios extends Component
             $upload_imagen = $this->image->storeAs('servicios', $image_name);
             //dd($upload_imagen);
 
-            $this->cambioImg = false;
+            $this->changeImg = false;
         } else {
             $image_name = $this->image;
         }
 
-        Servicio::updateOrCreate(
+        Service::updateOrCreate(
             ['id' => $this->service_id],
             [
                 'title' => $this->title,
                 'image' => $image_name,
                 'description' => $this->description,
-                'orden' => $this->orden,
+                'order' => $this->order,
                 'status' => 1
             ]
         );
@@ -132,32 +124,44 @@ class Servicios extends Component
 
     public function delete($id)
     {
-        Servicio::find($id)->delete();
+        Service::find($id)->delete();
     }
 
     public function openModal()
     {
-        $this->mostrarModal = 'block';
+        $this->showModal = 'block';
     }
 
     public function closeModal()
     {
-        $this->mostrarModal = 'none';
-        $this->cambioImg = false;
+        $this->showModal = 'none';
+        $this->changeImg = false;
     }
 
     public function cambioImagen()
     {
-        $this->cambioImg = true;
+        $this->changeImg = true;
     }
 
     private function resetInputField()
     {
         $this->title = '';
         $this->description = '';
-        $this->orden = '';
+        $this->order = '';
         $this->status = '';
         $this->image = '';
         $this->service_id = 0;
+    }
+
+    public function openModalImage($id)
+    {
+        $this->currentImage = Service::find($id)->image;
+
+        $this->showModalImage = true;
+    }
+
+    public function closeModalImage()
+    {
+        $this->showModalImage = false;
     }
 }

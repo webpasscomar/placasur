@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PresupuestosController;
 use App\Http\Controllers\ProductosController;
-use App\Http\Controllers\ServiciosController;
+use App\Http\Controllers\ServicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/empresa', [EmpresaController::class, 'index'])->name('empresa');
 
-Route::get('/servicios', [ServiciosController::class, 'index'])->name('servicios-front');
+Route::get('/servicios', [ServicesController::class, 'index'])->name('services-front');
 Route::get('/productos', [ProductosController::class, 'index'])->name('productos');
 Route::get('/presupuestos', [PresupuestosController::class, 'index'])->name('presupuestos');
 Route::get('/descargas', [DescargasController::class, 'index'])->name('descargas');

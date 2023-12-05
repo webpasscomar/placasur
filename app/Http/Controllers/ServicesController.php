@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Servicio;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
-class ServiciosController extends Controller
+class ServicesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,8 +25,8 @@ class ServiciosController extends Controller
 
     public function index()
     {
-        $servicios = Servicio::all();
+        $services = Service::all();
 
-        return view('servicios-front', compact('servicios'));
+        return view('services-front', compact('services'));
     }
 }
