@@ -8,6 +8,7 @@ use App\Http\Livewire\Admin\Categorias;
 
 use App\Http\Livewire\Admin\Products;
 use App\Http\Livewire\Admin\Galerias;
+use App\Http\Livewire\Admin\Novelties;
 use App\Http\Livewire\Admin\Services;
 
 /*
@@ -27,4 +28,5 @@ Route::get('/users', Users::class)->name('admin.users');
 Route::get('/servicios', Services::class)->name('admin.services');
 Route::get('/categorias', Categorias::class)->name('admin.categorias');
 Route::get('/productos', Products::class)->name('admin.productos');
+Route::get('/novedades', Novelties::class)->name('admin.novelties');
 Route::get('/galerias', Galerias::class)->name('admin.galerias');

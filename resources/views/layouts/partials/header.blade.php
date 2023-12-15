@@ -35,7 +35,8 @@
                                 class="nav-link">Presupuestos</a>
                         </li>
                         <li class="nav-item">
-                            <a href="faq.html" title="Nuestras actividades" class="nav-link">Novedades</a>
+                            <a href="{{ route('novelties') }}" title="Nuestras actividades"
+                                class="nav-link">Novedades</a>
                         </li>
                         <!-- contacto -->
                         <li class="nav-item">

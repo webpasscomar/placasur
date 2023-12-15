@@ -2,26 +2,27 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Models\Service;
+use App\Models\Novelty;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class Services extends Component
+class Novelties extends Component
 {
-    protected $services;
+
+    protected $novelties;
     protected $listeners = ['delete'];
 
     public $showModal = 'none';
     public $showModalImage = false;
-    public $service_id, $service, $currentImage, $action, $title, $description, $status, $order, $image, $image_name;
+    public $novelty_id, $novelty, $currentImage, $action, $title, $description, $status, $order, $image, $image_name;
     public $changeImg = false;
 
     use WithFileUploads;
 
     public function render()
     {
-        $services = Service::all();
-        return view('livewire.admin.services', compact('services'))->layout('layouts.adminlte');
+        $novelties = Novelty::all();
+        return view('livewire.admin.novelties', compact('novelties'))->layout('layouts.adminlte');
     }
 
     protected function rules()
@@ -51,13 +52,13 @@ class Services extends Component
     {
         if ($this->action == 'create') {
             return [
-                'title.required' => 'El título del servicio es necesario',
-                'order.required' => 'El orden del servicio es requerido'
+                'title.required' => 'El título de la novedad es necesario',
+                'order.required' => 'El orden de la novedad es requerido'
             ];
         } else {
             return [
-                'title.required' => 'El título del servicio es necesario',
-                'order.required' => 'El orden del servicio es requerido'
+                'title.required' => 'El título de la novedad es necesario',
+                'order.required' => 'El orden de la novedad es requerido'
             ];
         }
     }
@@ -73,12 +74,12 @@ class Services extends Component
     {
         $this->action = 'edit';
 
-        $service = Service::findOrFail($id);
-        $this->service_id = $service->id;
-        $this->title = $service->title;
-        $this->description = $service->description;
-        $this->order = $service->order;
-        $this->image = $service->image;
+        $novelty = Novelty::findOrFail($id);
+        $this->novelty_id = $novelty->id;
+        $this->title = $novelty->title;
+        $this->description = $novelty->description;
+        $this->order = $novelty->order;
+        $this->image = $novelty->image;
 
         $this->openModal();
     }
@@ -92,7 +93,7 @@ class Services extends Component
             //// borrar imagen anterior storage
             ////
             $image_name = $this->image->getClientOriginalName();
-            $upload_imagen = $this->image->storeAs('servicios', $image_name);
+            $upload_imagen = $this->image->storeAs('novedades', $image_name);
             //dd($upload_imagen);
 
             $this->changeImg = false;
@@ -100,8 +101,8 @@ class Services extends Component
             $image_name = $this->image;
         }
 
-        Service::updateOrCreate(
-            ['id' => $this->service_id],
+        Novelty::updateOrCreate(
+            ['id' => $this->novelty_id],
             [
                 'title' => $this->title,
                 'image' => $image_name,
@@ -119,7 +120,7 @@ class Services extends Component
 
     public function delete($id)
     {
-        Service::find($id)->delete();
+        Novelty::find($id)->delete();
     }
 
     public function openModal()
@@ -145,12 +146,12 @@ class Services extends Component
         $this->order = '';
         $this->status = '';
         $this->image = '';
-        $this->service_id = 0;
+        $this->novelty_id = 0;
     }
 
     public function openModalImage($id)
     {
-        $this->currentImage = Service::find($id)->image;
+        $this->currentImage = Novelty::find($id)->image;
 
         $this->showModalImage = true;
     }
