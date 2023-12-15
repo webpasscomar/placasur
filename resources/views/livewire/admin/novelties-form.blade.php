@@ -36,9 +36,9 @@
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="form-group">
+                <div class="form-group" wire:ignore>
                     <label for="description">Descripción</label>
-                    <textarea class="form-control" wire:model="description"></textarea>
+                    <textarea class="form-control" wire:model="description" id="edit"></textarea>
                     @error('description')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -69,5 +69,27 @@
             </div>
         </div>
     </div>
-
+    {{-- Para utilizar CK Editor en descripción  --}}
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#edit'), {
+                toolbar: {
+                    items: [
+                        'undo', 'redo',
+                        '|', 'heading',
+                        '|', 'bold', 'italic',
+                        '|', 'bulletedList', 'numberedList', 'outdent', 'indent'
+                    ],
+                    shouldNotGroupWhenFull: false
+                }
+            })
+            .then((editor) => {
+                editor.model.document.on('change:data', () => {
+                    @this.set('description', editor.getData())
+                })
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 </div>

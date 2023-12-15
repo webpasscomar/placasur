@@ -44,7 +44,7 @@
                                         alt="{{ $novelty->title }}" width="30" height="40" />
                                 </td>
                                 <td>{{ $novelty->title }}</td>
-                                <td>{{ $novelty->description }}</td>
+                                <td>@php echo $novelty->description @endphp </td>
                                 <td>{{ $novelty->order }}</td>
                                 <td class="align-middle text-center"><livewire:toggle-button :model="$novelty"
                                         field="status" key="{{ $novelty->id }}">
