@@ -120,6 +120,7 @@ class Services extends Component
     public function delete($id)
     {
         Service::find($id)->delete();
+        $this->emit('mensajePositivo', ['mensaje' => 'Servicio eliminado correctamente']);
     }
 
     public function openModal()
