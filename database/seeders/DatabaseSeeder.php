@@ -19,7 +19,9 @@ class DatabaseSeeder extends Seeder
             RolesTableSeeder::class,
             // CargosTableSeeder::class,
             // FacultadesTableSeeder::class,
-            UsuariosTableSeeder::class
+            UsuariosTableSeeder::class,
+            RolesTableSeeder::class
+            
         ]);
     }
 }
