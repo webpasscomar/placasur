@@ -121,6 +121,7 @@ class Novelties extends Component
     public function delete($id)
     {
         Novelty::find($id)->delete();
+        $this->emit('mensajePositivo', ['mensaje' => 'Novedad eliminada correctamente']);
     }
 
     public function openModal()

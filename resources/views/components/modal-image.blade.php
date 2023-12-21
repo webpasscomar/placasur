@@ -2,7 +2,7 @@
     aria-hidden="true" style="display: block">
 
     <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content">
+        <div class="modal-content border-0" style="box-shadow: 0px 0px 5px 1px #adadad;">
             <div class="modal-header">
                 {{-- <h5 class="modal-title" id="roleModalLabel">
                     Title
