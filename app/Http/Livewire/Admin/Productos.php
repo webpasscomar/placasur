@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Categoria;
 use App\Models\Producto;
 
 use Livewire\Component;
@@ -12,6 +13,8 @@ use Illuminate\Support\Str;
 class Productos extends Component
 {
     public $categoriaPadre_id, $categoria, $descripcion, $slug, $imagen, $menu, $orden, $estado, $id_categoria, $categoriasAnt;
+
+    public $categorias;
 
     public $modal = 'none';
     public $search;
@@ -31,6 +34,7 @@ class Productos extends Component
     public function render()
     {
         $this->productos = Producto::get();
+        $this->categorias = Categoria::get();
         return view('livewire.admin.productos', ['filas' => $this->productos])->layout('layouts.adminlte');
     }
 
