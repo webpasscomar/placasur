@@ -14,9 +14,9 @@ class Novelties extends Component
 
     public $showModal = 'none';
     public $showModalImage = false;
-    public $novelty_id, $novelty, $currentImage, $action, $title, $description, $status, $order, $image, $image_name;
+    public $novelty_id, $novelty, $currentImage, $action, $title, $description, $status, $image, $image_name;
     public $changeImg = false;
-
+    public $order = 0;
     use WithFileUploads;
 
     public function render()
@@ -144,7 +144,7 @@ class Novelties extends Component
     {
         $this->title = '';
         $this->description = '';
-        $this->order = '';
+        $this->order = 0;
         $this->status = '';
         $this->image = '';
         $this->novelty_id = 0;

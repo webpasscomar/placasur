@@ -27,7 +27,7 @@
                 <div class="col-sm-12 col-md-3 mb-3">
                     <div class="slide-up">
                         <div class="boxhover shadow">
-                            <img src="{{ asset('img/services/' . $service->image) }}" class="card-img-top"
+                            <img src="{{ asset('storage/servicios/' . $service->image) }}" class="card-img-top"
                                 alt="{{ $service->title }}">
                             <div class="overlay bg-gradient">
                                 {{ $service->description }}

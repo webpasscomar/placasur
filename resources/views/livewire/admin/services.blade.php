@@ -16,7 +16,7 @@
             <thead>
                 <tr class="text-center">
                     <th>
-                        Id
+                        COD
                     </th>
                     <th>
                         Imagen

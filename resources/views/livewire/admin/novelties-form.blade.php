@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group">
                     <label for="order">Orden</label>
-                    <input type="number" class="form-control" wire:model="order" />
+                    <input type="number" class="form-control" wire:model="order" value="{{ old('order') }}" />
                     @error('order')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror

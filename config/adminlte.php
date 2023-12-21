@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Placa</b> SUR',
-    'logo_img' => 'img/isologo.png',
+    'logo' => '<b class="fs-4 navbar-brand">Placa SUR</b>',
+    'logo_img' => 'img/placasur.ico',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',

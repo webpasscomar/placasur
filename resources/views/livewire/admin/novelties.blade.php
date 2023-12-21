@@ -16,7 +16,7 @@
             <thead>
                 <tr class="text-center">
                     <th>
-                        Id
+                        COD
                     </th>
                     <th>
                         Imagen
@@ -43,7 +43,7 @@
                         <td class="align-middle text-center" scope="row">{{ $novelty->id }}</td>
                         <td class="align-middle text-center" style="cursor: pointer"
                             wire:click="openModalImage({{ $novelty->id }})"><img
-                                src="{{ asset('storage/servicios/' . $novelty->image) }}" alt="{{ $novelty->title }}"
+                                src="{{ asset('storage/novedades/' . $novelty->image) }}" alt="{{ $novelty->title }}"
                                 width="30" height="40" />
                         </td>
                         <td class="align-middle">{{ $novelty->title }}</td>
@@ -67,7 +67,7 @@
                     </tr>
                     @if ($showModalImage)
                         {{-- Mostrar modal de imagén amliada --}}
-                        <x-modal-image image="{{ asset('storage/servicios/' . $currentImage) }}"
+                        <x-modal-image image="{{ asset('storage/novedades/' . $currentImage) }}"
                             title="{{ $novelty->title }}" imageId="{{ $key }}" />
                     @endif
                 @endforeach

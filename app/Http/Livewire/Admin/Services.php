@@ -13,7 +13,8 @@ class Services extends Component
 
     public $showModal = 'none';
     public $showModalImage = false;
-    public $service_id, $service, $currentImage, $action, $title, $description, $status, $order, $image, $image_name;
+    public $service_id, $service, $currentImage, $action, $title, $description, $status, $image, $image_name;
+    public $order = 0;
     public $changeImg = false;
 
     use WithFileUploads;
@@ -143,7 +144,7 @@ class Services extends Component
     {
         $this->title = '';
         $this->description = '';
-        $this->order = '';
+        $this->order = 0;
         $this->status = '';
         $this->image = '';
         $this->service_id = 0;
