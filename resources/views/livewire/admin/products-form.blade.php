@@ -28,23 +28,23 @@
                 @endif
               @else
                 @if ($accion === 'editar')
-                  <img class="img-fluid img-thumbnail" src="{{ asset('storage/categorias/' . $image) }}" alt="">
+                  <img class="img-fluid img-thumbnail" src="{{ asset('storage/productos/' . $image) }}" alt="">
                 @endif
               @endif
             </div>
 
+            <div class="row">
+              <div class="form-group">
+                <label for="category_id">Categoría: *</label>
+                <select class="form-control" wire:model="category_id">
 
-            {{-- <div class="form-group">
-              <label for="categoriaPadre_id">Categoría
-                padre:</label>
-              <select class="form-control" wire:model="categoriaPadre_id">
-
-                <option value="0">Sin categoría padre</option>
-                @foreach ($categoriasAnt as $item)
-                  <option value="{{ $item->id }}">{{ $item->categoria }}</option>
-                @endforeach
-              </select>
-            </div> --}}
+                  <option value="0">Seleccione la categoría</option>
+                  @foreach ($categorias as $item)
+                    <option value="{{ $item->id }}">{{ $item->categoria }}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
 
             <div class="row">
               <div class="form-group col">
@@ -56,10 +56,6 @@
                 @enderror
               </div>
 
-              <div class="form-group col">
-                <label for="slug">Slug:</label>
-                <input type="text" class="form-control" id="slug" wire:model="slug">
-              </div>
             </div>
 
             <div class="form-group">
