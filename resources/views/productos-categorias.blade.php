@@ -28,7 +28,7 @@
       <div class="col-sm-12 col-md-3 mb-5">
         <div class="card shadow info-box__shadow h-100 pb-1">
           <a href="placas.php" class="text-decoration-none stretched-link" title="Ver todos los Productos de placas">
-            <img src="imagenes/productos/placas.jpg" class="card-img-top d-none d-sm-none d-md-block"
+            <img src="{{ asset('storage/productos/placas.jpg') }}" class="card-img-top d-none d-sm-none d-md-block"
               alt="Detalle del producto">
             <div class="card-header border-0 border-top border-5 border-primary">
               <p class="card-title h5 mb-0 fw-semibold link-secondary">Placas</p>
