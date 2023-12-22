@@ -1,18 +1,59 @@
     <!-- footer -->
-    <div class="bg-dark bg-gradient">
+    <div class="bg-dark">
       <div class="container py-4 small">
-        <div class="row d-md-flex flex-md-row d-sm-flex flex-sm-column-reverse">
-          <div class="col mt-md-0 mt-4">
-            <img src="{{ asset('img/datafiscal-qr.png') }}">
+        <div class="row">
+          <!-- contacto -->
+          <div class="col-md-3 mb-3">
+            <p class="h6 fw-bold text-white">Contacto</p>
+            <ul class="list-unstyled light text-light">
+              <li> Av. H. Yrigoyen 15750 (1852) <br>
+                Burzaco, Buenos Aires, Argentina</li>
+              <li class="pt-3 pb-2 fw-bold h5 text-white"> (5411) 4002-4400 | <br>
+                4238-4000</li>
+            </ul>
+            <p class="h6 fw-bold text-white">Horarios</p>
+            <span class="text-light light"> lun a vier 9 a 12 y de 14 a 17:30</span>
           </div>
-          <div class="col-md-3 align-content-end">
-            <p class="h4 text-white">Contactanos</p>
-            <ul class="list-unstyled text-white-50">
-              <li class="pb-2"><i class="far fa-building"></i> Av. H. Yrigoyen 15750 <br>
-                (1852) Burzaco, Buenos Aires, Argentina</li>
-              <li class="pb-2"><i class="fas fa-phone-alt"></i> (5411) 4002-4400 / 4238-4000</li>
-              <li class="text-white-50"><i class="far fa-envelope"></i> <a href="mailto:info@placasur.com.ar"
-                  class="text-decoration-none text-white-50"> info@placasur.com.ar </a></li>
+          <!-- categorias -->
+          <div class="col-md-3 mb-3">
+            <p class="h6 fw-bold text-white">Categorías de productos</p>
+            <ul class="list-unstyled text-white-50 light">
+              <li><a href="{{ route('empresa') }}" class="text-decoration-none link-light"
+                  title="Saber más sobre la Empresa"> Empresa
+                </a></li>
+              <li><a href="{{ route('services-front') }}" class="text-decoration-none link-light"
+                  title="Todos los servicios"> Servicios
+                </a></li>
+              <li><a href="{{ route('productos') }}" class="text-decoration-none link-light"
+                  title="Todos nuestros productos">
+                  Productos </a></li>
+              <li><a href="/" class="text-decoration-none link-light" title="Solicitá tu presupuesto">
+                  Presupuestos </a></li>
+              <li><a href="{{ route('novelties') }}" class="text-decoration-none link-light"
+                  title="Todas la últimas novedades">
+                  Novedades </a></li>
+              <li><a href="{{ route('contacto') }}" class="text-decoration-none link-light" title="Nuestros contactos">
+                  Contacto </a>
+              </li>
+            </ul>
+          </div>
+          <!-- data fiscal -->
+          <div class="col-md-3 mb-3">
+            <p class="h6 fw-bold text-white">Data fiscal</p>
+            <img src="{{ asset('img/datafiscal-qr.png') }}" title="Imagen de data fiscal de la empresa">
+          </div>
+          <!-- redes -->
+          <div class="col-md-3">
+            <p class="h6 fw-bold text-white">Nuestras redes</p>
+            <ul class="list-group list-group-horizontal">
+              <li class="list-group-item bg-transparent ps-0 border-0 light text-light">
+                <a href="/" class="text-decoration-none link-light" title="Mirá nuestro canal de youtube"> <i
+                    class="fa-brands fa-youtube"></i> </a>
+              </li>
+              <li class="list-group-item bg-transparent ps-0 border-0 light text-light">
+                <a href="/" class="text-decoration-none link-light" title="Nuestro Instagram"> <i
+                    class="fa-brands fa-instagram"></i> </a>
+              </li>
             </ul>
           </div>
         </div>
