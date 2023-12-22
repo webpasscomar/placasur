@@ -42,7 +42,7 @@ class ServiciosTableSeeder extends Seeder
 
         $service = new Service();
         $service->id = 4;
-        $service->title = "Asistencia técnica<";
+        $service->title = "Asistencia técnica";
         $service->description = "Contamos con personal capacitado para asesorarte en cada rubro";
         $service->image = "asistencia.jpg";
         $service->order = 4;
