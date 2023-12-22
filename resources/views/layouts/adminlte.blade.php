@@ -6,15 +6,17 @@
 
 @stop
 
-
 @section('content')
     {{ $slot }}
 @stop
 
+
 @section('css')
 
+    {{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"> --}}
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @livewireStyles
+
 
 @stop
 
@@ -26,6 +28,30 @@
     <script src="{{ asset('vendor/ckeditor5/ckeditor.js') }}"></script>
 
     <script src="sweetalert2.all.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> --}}
+
+    {{-- <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable({
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ elementos por página",
+                    "zeroRecords": "No se encontraron resultados",
+                    "info": "Mostrando página _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros disponibles",
+                    "infoFiltered": "(filtrados de _MAX_ registros totales)",
+                    "search": "Buscar:",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                }
+            })
+        });
+    </script> --}}
+
 
     <script>
         Livewire.on('alertDelete', id => {

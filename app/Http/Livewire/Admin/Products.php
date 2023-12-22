@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Categoria;
 use App\Models\Product;
-
+use GuzzleHttp\Handler\Proxy;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
@@ -12,7 +12,8 @@ use Illuminate\Support\Str;
 
 class Products extends Component
 {
-    public $title, $description, $slug, $image, $order, $status, $product_id, $category_id;
+    public $title, $description, $slug, $image, $order, $status, $product_id, $category_id, $currentImage;
+    public $showModalImage = false;
 
     public $categorias;
 
@@ -30,6 +31,7 @@ class Products extends Component
 
     use WithPagination;
     use WithFileUploads;
+
 
     protected function rules()
     {
@@ -63,6 +65,7 @@ class Products extends Component
     public function closeModal()
     {
         $this->modal = 'none';
+
         $this->cambioImg = false;
     }
 
@@ -104,6 +107,7 @@ class Products extends Component
         Product::updateOrCreate(
             ['id' => $this->product_id],
             [
+                'category_id' => $this->category_id,
                 // 'categoriaPadre_id' => $this->categoriaPadre_id,
                 'title' => $this->title,
                 'description' => $this->description,
@@ -113,9 +117,43 @@ class Products extends Component
             ]
         );
 
-        $this->emit('alertSave');
+        $this->emit('mensajePositivo', ['mensaje' => 'Operación exitosa']);
 
         $this->closeModal();
         $this->cleanFields();
+    }
+
+    public function edit($id)
+    {
+        $this->accion = 'edit';
+
+        $product = Product::findOrFail($id);
+        $this->product_id = $product->id;
+        $this->category_id = $product->category_id;
+        $this->title = $product->title;
+        $this->description = $product->description;
+        $this->order = $product->order;
+        $this->image = $product->image;
+
+        $this->openModal();
+    }
+
+    public function delete($id)
+    {
+        Product::find($id)->delete();
+        $this->emit('mensajePositivo', ['mensaje' => 'Producto eliminado correctamente']);
+    }
+
+    // Mostrar modal de imágenes
+    public function openModalImage($id)
+    {
+        $this->currentImage = Product::find($id)->image;
+
+        $this->showModalImage = true;
+    }
+
+    public function closeModalImage()
+    {
+        $this->showModalImage = false;
     }
 }

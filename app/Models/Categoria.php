@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use app\Models\Product;
 
 class Categoria extends Model
 {
@@ -22,6 +23,7 @@ class Categoria extends Model
 
     public function productos()
     {
-        return $this->belongsToMany(Pedido_item::class);
+        // return $this->belongsToMany(Pedido_item::class);
+        return $this->hasMany(Product::class);
     }
 }

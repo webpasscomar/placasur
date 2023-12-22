@@ -15,6 +15,12 @@ class Product extends Model
         'image',
         'video',
         'order',
-        'status'
+        'status',
+        'category_id'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
 }
