@@ -28,6 +28,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/empresa', [EmpresaController::class, 'index'])->name('empresa');
 Route::get('/servicios', [ServicesController::class, 'index'])->name('services-front');
 Route::get('/novedades', [NoveltiesController::class, 'index'])->name('novelties');
+Route::get('/productos/{categoria}/{id}', [ProductosController::class, 'productos'])->name('productos.productos');
+Route::get('/productos/{categoria}', [ProductosController::class, 'subcategorias'])->name('productos.subcategorias');
 Route::get('/productos', [ProductosController::class, 'index'])->name('productos');
 Route::get('/presupuestos', [PresupuestosController::class, 'index'])->name('presupuestos');
 Route::get('/descargas', [DescargasController::class, 'index'])->name('descargas');
