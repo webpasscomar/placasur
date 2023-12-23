@@ -17,10 +17,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             RolesTableSeeder::class,
-            // CargosTableSeeder::class,
             UsuariosTableSeeder::class,
-            CategoriasTableSeeder::class
-            
+            CategoriasTableSeeder::class,
+            ServiciosTableSeeder::class
         ]);
     }
 }
