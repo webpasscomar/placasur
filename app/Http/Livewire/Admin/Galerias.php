@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Livewire\Admin;
+
 use App\Models\Galeria;
 
 use Livewire\Component;
@@ -10,7 +11,7 @@ use Illuminate\Support\Str;
 
 class Galerias extends Component
 {
-    public $galeria, $imagen, $estado, $id_galeria;
+    public $galeria, $imagen, $estado, $id_galeria, $currentImage;
     public $imagen_name;
 
     public $modal = 'none';
@@ -19,6 +20,7 @@ class Galerias extends Component
     public $order = 'desc';
     public $accion;
     public $cambioImg = false;
+    public $showModalImage = false;
 
     protected $galerias;
 
@@ -45,7 +47,7 @@ class Galerias extends Component
 
     public function render()
     {
-        $this->galerias = Galeria::where('estado', 1)->get();   
+        $this->galerias = Galeria::where('estado', 1)->get();
         return view('livewire.admin.galerias', ['filas' => $this->galerias])->layout('layouts.adminlte');
     }
     public function create()
@@ -53,23 +55,22 @@ class Galerias extends Component
         $this->accion = 'crear';
         $this->limpiarCampos();
         $this->abrirModal();
-     
     }
     public function abrirModal()
     {
         $this->modal = 'block';
-     }
+    }
 
     public function cerrarModal()
     {
         $this->modal = 'none';
         $this->cambioImg = false;
-        }
+    }
 
     public function limpiarCampos()
     {
         $this->galeria = '';
-        $this->imagen = '';   
+        $this->imagen = '';
         $this->estado = 0;
         $this->id_galeria = 0;
     }
@@ -124,7 +125,6 @@ class Galerias extends Component
 
         $this->cerrarModal();
         $this->limpiarCampos();
-
     }
     public function order($sort)
     {
@@ -143,5 +143,17 @@ class Galerias extends Component
     public function cambioImagen()
     {
         $this->cambioImg = true;
+    }
+
+    public function openModalImage($id)
+    {
+        $this->currentImage = Galeria::find($id)->imagen;
+
+        $this->showModalImage = true;
+    }
+
+    public function closeModalImage()
+    {
+        $this->showModalImage = false;
     }
 }

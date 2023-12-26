@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Galeria;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    public $slides;
     /**
      * Create a new controller instance.
      *
@@ -19,6 +21,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $this->slides = Galeria::where('estado', 1)->get();
+        return view('home', ['slides' => $this->slides]);
     }
 }
