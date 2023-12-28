@@ -37,12 +37,23 @@ class Categorias extends Component
             return [
                 'categoria' => 'required|max:20',
                 'imagen' => 'required|mimes:jpg,png|max:1024',
+                'slug' => 'required|unique',
             ];
         } else {
             return [
                 'categoria' => 'required|max:20',
             ];
         }
+    }
+
+    protected function messages()
+    {
+        return [
+            'categoria.required' => 'El nombre es requerido',
+            'imagen.required' => 'La imágen es requerida',
+            'slug.required' => 'El slug es requerido',
+            'slug.unique' => 'El slug está repetido. Elija uno distinto',
+        ];
     }
 
     public function render()

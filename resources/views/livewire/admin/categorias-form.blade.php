@@ -49,7 +49,8 @@
 
 
                             <div class="form-group col">
-                                <label for="categoria">Nombre:</label>
+                                <label for="categoria">Nombre:</label><span
+                                    class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                 <input type="text" class="form-control" id="categoria" wire:model="categoria">
 
                                 @error('categoria')
@@ -59,8 +60,13 @@
 
 
                             <div class="form-group col">
-                                <label for="slug">Slug:</label>
+                                <label for="slug">Slug:</label><span
+                                    class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                 <input type="text" class="form-control" id="slug" wire:model="slug">
+                                @error('slug')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+
                             </div>
 
 
@@ -78,7 +84,7 @@
                             <div class="form-group col-8">
                                 <label for="imagen" class="custom-file-upload ">
                                     Imagen
-                                </label>
+                                </label><span class="ms-1 text-danger fs-6 fw-semibold">*</span>
 
                                 <span id="file-name"></span>
                                 <input type="file" id="imagen" wire:model="imagen" wire:change="cambioImagen"
@@ -91,14 +97,14 @@
                             </div>
 
 
-                            <div class="form-group col-2">
+                            {{-- <div class="form-group col-2">
                                 <label for="menu">Menú</label><br>
                                 <select class="form-control" wire:model="menu">
                                     <option value="0">No</option>
                                     <option value="1">Si</option>
 
                                 </select>
-                            </div>
+                            </div> --}}
 
 
                             <div class="form-group col-2">
@@ -111,6 +117,11 @@
 
                     </div>
                 </form>
+
+            </div>
+            <div class="me-3 text-end">
+                <p class="fw-semibold" style="font-size: 12px;"><span class="text-danger fs-6 fw-semibold">*</span>
+                    Campos Obligatorios</p>
 
             </div>
 

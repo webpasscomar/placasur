@@ -35,12 +35,10 @@ class Services extends Component
         if ($this->action == 'create') {
             return [
                 'title' => 'required',
-                'order' => 'required',
             ];
         } else {
             return [
                 'title' => 'required',
-                'order' => 'required',
             ];
         }
 
@@ -58,12 +56,10 @@ class Services extends Component
         if ($this->action == 'create') {
             return [
                 'title.required' => 'El título del servicio es necesario',
-                'order.required' => 'El orden del servicio es requerido'
             ];
         } else {
             return [
                 'title.required' => 'El título del servicio es necesario',
-                'order.required' => 'El orden del servicio es requerido'
             ];
         }
     }
