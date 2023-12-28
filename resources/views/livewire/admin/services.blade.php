@@ -12,27 +12,27 @@
                         class="fas fa-plus-circle mr-2" style="color: white;"></i>Agregar</button>
             </div>
         </div>
-        <table class="table table-hover table-bordered mt-3 datatable" id="servicesTable">
+        <table class="table table-hover table-bordered mt-3 datatable" id="myTable">
             <thead>
-                <tr class="text-center">
-                    <th>
+                <tr>
+                    <th class="text-center">
                         COD
                     </th>
                     <th>
                         Imagen
                     </th>
-                    <th>
+                    <th class="text-center">
                         Titulo
                     </th>
-                    <th>
+                    <th class="text-center">
                         Descripción </th>
-                    <th>
+                    <th class="text-center">
                         Orden
                     </th>
-                    <th>
+                    <th class="text-center">
                         Estado
                     </th>
-                    <th style="width: 15%">
+                    <th class="text-center" style="width: 15%">
                         Acciones
                     </th>
                 </tr>
@@ -44,7 +44,7 @@
                         <td class="text-center align-middle" style="cursor: pointer"
                             wire:click="openModalImage({{ $service->id }})"><img
                                 src="{{ asset('storage/servicios/' . $service->image) }}" alt="{{ $service->title }}"
-                                width="30" height="40" />
+                                width="40" height="40" />
                         </td>
                         <td class="align-middle">{{ $service->title }}</td>
                         <td class="align-middle">{{ $service->description }}</td>
@@ -68,7 +68,7 @@
                     @if ($showModalImage)
                         {{-- Mostrar modal de imagén amliada --}}
                         <x-modal-image image="{{ asset('storage/servicios/' . $currentImage) }}"
-                            title="{{ $service->title }}" imageId="{{ $key }}" />
+                            title="{{ $currentTitle }}" imageId="{{ $key }}" />
                     @endif
                 @endforeach
             </tbody>
