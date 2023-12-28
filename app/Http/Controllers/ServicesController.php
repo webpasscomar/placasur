@@ -25,7 +25,7 @@ class ServicesController extends Controller
 
     public function index()
     {
-        $services = Service::where('status', 1);
+        $services = Service::where('status', 1)->get();
 
         return view('services-front', compact('services'));
     }
