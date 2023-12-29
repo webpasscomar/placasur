@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             RolesTableSeeder::class,
             UsuariosTableSeeder::class,
             CategoriasTableSeeder::class,
-            ServiciosTableSeeder::class
+            ServiciosTableSeeder::class,
+            ProductsTableSeeder::class
         ]);
     }
 }
