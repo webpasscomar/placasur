@@ -85,7 +85,7 @@
                 text: "La acción no podrá ser revertida!",
                 icon: 'warning',
                 showCancelButton: true,
-                backdrop: '#333',
+                backdrop: '#333333',
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Si, borrar!',

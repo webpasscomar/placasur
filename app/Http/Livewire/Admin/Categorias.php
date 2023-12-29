@@ -4,11 +4,14 @@ namespace App\Http\Livewire\Admin;
 
 
 use App\Models\Categoria;
-
+use Illuminate\Http\Client\Request as ClientRequest;
+use Illuminate\Support\Facades\Request;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
+use Livewire\Request as LivewireRequest;
 
 class Categorias extends Component
 {
@@ -25,7 +28,7 @@ class Categorias extends Component
 
     protected $categorias;
 
-    protected $listeners = ['delete'];
+    protected $listeners = ['delete', 'updateTable'];
 
     use WithPagination;
     use WithFileUploads;
@@ -41,6 +44,8 @@ class Categorias extends Component
     }
     protected function rules()
     {
+
+
         if (($this->cambioImg === true && $this->accion === 'editar') ||
             $this->accion === 'crear'
         ) {
@@ -52,7 +57,8 @@ class Categorias extends Component
         } else {
             return [
                 'categoria' => 'required|max:20',
-                'slug' => 'required|unique:categorias'
+                // 'slug' => 'required|unique:categorias,slug,' . $id
+                'slug' => ['required', Rule::unique('categorias', 'slug')->ignore($this->id_categoria)],
             ];
         }
     }
@@ -124,6 +130,7 @@ class Categorias extends Component
         $this->accion = 'editar';
 
         $categoria = Categoria::findOrFail($id);
+
         $this->id_categoria = $id;
         $this->categoriaPadre_id = $categoria->categoriaPadre_id;
         $this->categoria = $categoria->categoria;
