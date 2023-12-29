@@ -1,11 +1,11 @@
 <div class="modal fade show" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel" aria-hidden="true"
-    style="display: {{ $showModal }}; background-color:rgb(51,51,51);">
+    style="display: {{ $showModal }}; background-color:rgba(51,51,51,0.9);">
 
     <div class="modal-dialog modal-md modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #3332">
                 <h5 class="modal-title" id="roleModalLabel">
-                    Nuevo
+                    Servicios
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" wire:click="closeModal">
                     <span aria-hidden="true">&times;</span>
@@ -58,11 +58,11 @@
                         wire:change="cambioImagen" />
                 </div>
 
-            </div>
-            <div class="me-3 text-end">
-                <p class="fw-semibold" style="font-size: 12px;"><span class="text-danger fs-6 fw-semibold">*</span>
-                    Campos Obligatorios</p>
+                <div class="me-3 text-end">
+                    <p class="fw-semibold" style="font-size: 12px;"><span class="text-danger fs-6 fw-semibold">*</span>
+                        Campos Obligatorios</p>
 
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" wire:click="closeModal" class="btn btn-secondary"
@@ -76,13 +76,3 @@
         </div>
     </div>
 </div>
-
-{{-- @push('scripts2')
-    <script>
-        document.addEventListener('livewire:load', function() {
-            Livewire.on('tabla', () => {
-                $('#myTable').Datatable();
-            });
-        });
-    </script>
-@endpush --}}

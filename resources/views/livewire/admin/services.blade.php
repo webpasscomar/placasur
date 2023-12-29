@@ -18,7 +18,7 @@
                     <th class="text-center">
                         COD
                     </th>
-                    <th>
+                    <th class="text-center">
                         Imagen
                     </th>
                     <th class="text-center">

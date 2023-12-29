@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 
 class Categorias extends Component
 {
-    public $categoriaPadre_id, $categoria, $descripcion, $slug, $imagen, $menu, $orden, $estado, $id_categoria, $categoriasAnt;
+    public $categoriaPadre_id, $categoria, $descripcion, $slug, $imagen, $menu, $orden, $estado, $id_categoria, $categoriasAnt, $currentImage, $currentTitle;
     public $imagen_name;
 
     public $modal = 'none';
@@ -21,6 +21,7 @@ class Categorias extends Component
     public $order = 'desc';
     public $accion;
     public $cambioImg = false;
+    public $showModalImage = false;
 
     protected $categorias;
 
@@ -29,6 +30,15 @@ class Categorias extends Component
     use WithPagination;
     use WithFileUploads;
 
+
+    public function changeSlug()
+    {
+        $this->slug = Str::slug($this->categoria);
+    }
+    public function updateTable()
+    {
+        $this->emit('table');
+    }
     protected function rules()
     {
         if (($this->cambioImg === true && $this->accion === 'editar') ||
@@ -37,11 +47,12 @@ class Categorias extends Component
             return [
                 'categoria' => 'required|max:20',
                 'imagen' => 'required|mimes:jpg,png|max:1024',
-                'slug' => 'required|unique',
+                'slug' => 'required|unique:categorias'
             ];
         } else {
             return [
                 'categoria' => 'required|max:20',
+                'slug' => 'required|unique:categorias'
             ];
         }
     }
@@ -52,7 +63,7 @@ class Categorias extends Component
             'categoria.required' => 'El nombre es requerido',
             'imagen.required' => 'La imágen es requerida',
             'slug.required' => 'El slug es requerido',
-            'slug.unique' => 'El slug está repetido. Elija uno distinto',
+            'slug.unique' => 'El slug ya existe',
         ];
     }
 
@@ -81,14 +92,17 @@ class Categorias extends Component
 
     public function abrirModal()
     {
+        $this->emit('table');
         $this->modal = 'block';
         $this->emit('mensaje', 'Ejecutando Método 1');
     }
 
     public function cerrarModal()
     {
+        $this->emit('table');
         $this->modal = 'none';
         $this->cambioImg = false;
+        $this->limpiarCampos();
     }
 
     public function limpiarCampos()
@@ -98,11 +112,11 @@ class Categorias extends Component
         $this->descripcion = '';
         $this->slug = '';
         $this->imagen = '';
-
         $this->menu = 0;
         $this->orden = 0;
         $this->estado = 0;
         $this->id_categoria = 0;
+        $this->resetErrorBag();
     }
 
     public function edit($id)
@@ -113,7 +127,7 @@ class Categorias extends Component
         $this->id_categoria = $id;
         $this->categoriaPadre_id = $categoria->categoriaPadre_id;
         $this->categoria = $categoria->categoria;
-        $this->slug = Str::slug($categoria->categoria);
+        $this->slug = Str::slug($categoria->slug);
         $this->descripcion = $categoria->descripcion;
         $this->menu = $categoria->menu;
         $this->imagen = $categoria->imagen;
@@ -121,15 +135,16 @@ class Categorias extends Component
         $this->abrirModal();
     }
 
-    public function borrar($id)
-    {
-        Categoria::find($id)->delete();
-        session()->flash('message', 'Registro eliminado correctamente');
-    }
+    // public function borrar($id)
+    // {
+    //     Categoria::find($id)->delete();
+    //     session()->flash('message', 'Registro eliminado correctamente');
+    // }
 
     public function delete($id)
     {
         Categoria::find($id)->delete();
+        $this->emit('table');
     }
 
     public function store()
@@ -155,8 +170,7 @@ class Categorias extends Component
                 'categoriaPadre_id' => $this->categoriaPadre_id,
                 'categoria' => $this->categoria,
                 'descripcion' => $this->descripcion,
-
-                'slug' => Str::slug($this->categoria),
+                'slug' => Str::slug($this->slug),
                 'imagen' => $imagen_name,
                 'menu' => $this->menu,
                 'orden' => $this->orden,
@@ -165,7 +179,6 @@ class Categorias extends Component
         );
 
         $this->emit('alertSave');
-
         $this->cerrarModal();
         $this->limpiarCampos();
     }
@@ -188,5 +201,20 @@ class Categorias extends Component
     public function cambioImagen()
     {
         $this->cambioImg = true;
+    }
+
+    public function openModalImage($id)
+    {
+        $this->emit('table');
+        $this->currentImage = Categoria::find($id)->imagen;
+        $this->currentTitle = Categoria::find($id)->categoria;
+
+        $this->showModalImage = true;
+    }
+
+    public function closeModalImage()
+    {
+        $this->emit('table');
+        $this->showModalImage = false;
     }
 }

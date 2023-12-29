@@ -115,7 +115,6 @@ class Services extends Component
         $this->emit('mensajePositivo', ['mensaje' => 'Operación exitosa']);
         $this->resetInputField();
         $this->closeModal();
-        // $this->redirect('servicios');
     }
 
 
@@ -137,6 +136,7 @@ class Services extends Component
         $this->emit('table');
         $this->showModal = 'none';
         $this->changeImg = false;
+        $this->resetInputField();
     }
 
     public function cambioImagen()
@@ -152,10 +152,12 @@ class Services extends Component
         $this->status = '';
         $this->image = '';
         $this->service_id = 0;
+        $this->resetErrorBag();
     }
 
     public function openModalImage($id)
     {
+        $this->emit('table');
         $this->currentImage = Service::find($id)->image;
         $this->currentTitle = Service::find($id)->title;
 
@@ -164,6 +166,7 @@ class Services extends Component
 
     public function closeModalImage()
     {
+        $this->emit('table');
         $this->showModalImage = false;
     }
 }

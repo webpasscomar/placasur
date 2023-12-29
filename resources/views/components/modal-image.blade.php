@@ -1,8 +1,8 @@
 <div class="modal fade show" id="{{ $imageId }}" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel"
-    aria-hidden="true" style="display: block; background-color:rgb(51,51,51)">
+    aria-hidden="true" style="display: block; background-color:rgba(51,51,51,0.5);">
 
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-        <div class="modal-content border-0" style="box-shadow: 0px 0px 5px 1px #adadad;">
+        <div class="modal-content border-0" style="box-shadow: 1px 1px 5px 1px #4b4b4b;">
             <div class="modal-header" style="background-color: #3332">
                 <h5 class="modal-title" id="roleModalLabel">
                     {{ $title }}
