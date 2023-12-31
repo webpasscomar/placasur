@@ -157,10 +157,10 @@ class Services extends Component
 
     public function openModalImage($id)
     {
-        $this->emit('table');
         $this->currentImage = Service::find($id)->image;
         $this->currentTitle = Service::find($id)->title;
 
+        $this->emit('table');
         $this->showModalImage = true;
     }
 

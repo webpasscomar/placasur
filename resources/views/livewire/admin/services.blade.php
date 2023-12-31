@@ -1,4 +1,4 @@
-@section('title', 'Servicios')
+@section('title', 'Admin Servicios')
 
 <div>
     <div class="container mt-4">

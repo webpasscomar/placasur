@@ -10,7 +10,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- .ico -->
-    <link href='imagenes/placasur.ico' rel='shortcut icon' type='image/x-icon' />
+    <link rel="shortcut icon" href="{{ asset('favicons/favicon.ico') }}" type="image/x-icon">
     <title>{{ config('app.name', 'Consejo') }}</title>
 
     <!-- CSS - bs - custom -->

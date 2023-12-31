@@ -14,8 +14,8 @@ return [
     |
     */
 
-    'title' => 'Placa SUR - Admin Panel',
-    'title_prefix' => '',
+    'title' => 'Admin Panel',
+    'title_prefix' => 'Placa SUR -',
     'title_postfix' => '',
 
     /*
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
@@ -150,8 +150,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => ['xs' => true, 'sm' => false],
+    'layout_fixed_navbar' => ['xs' => true],
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 

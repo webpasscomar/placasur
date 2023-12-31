@@ -44,8 +44,6 @@ class Categorias extends Component
     }
     protected function rules()
     {
-
-
         if (($this->cambioImg === true && $this->accion === 'editar') ||
             $this->accion === 'crear'
         ) {
@@ -57,7 +55,6 @@ class Categorias extends Component
         } else {
             return [
                 'categoria' => 'required|max:20',
-                // 'slug' => 'required|unique:categorias,slug,' . $id
                 'slug' => ['required', Rule::unique('categorias', 'slug')->ignore($this->id_categoria)],
             ];
         }

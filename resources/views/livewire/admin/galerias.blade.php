@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <table class="table table-hover table-striped  table-bordered mt-3 datatable" id="miTabla">
+        <table class="table table-hover table-striped table-bordered mt-3 datatable" id="miTabla">
             <thead>
                 <tr class="text-center">
                     <th>COD</th>
