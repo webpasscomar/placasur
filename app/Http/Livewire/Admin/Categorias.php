@@ -4,15 +4,18 @@ namespace App\Http\Livewire\Admin;
 
 
 use App\Models\Categoria;
-
+use Illuminate\Http\Client\Request as ClientRequest;
+use Illuminate\Support\Facades\Request;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
+use Livewire\Request as LivewireRequest;
 
 class Categorias extends Component
 {
-    public $categoriaPadre_id, $categoria, $descripcion, $slug, $imagen, $menu, $orden, $estado, $id_categoria, $categoriasAnt;
+    public $categoriaPadre_id, $categoria, $descripcion, $slug, $imagen, $menu, $orden, $estado, $id_categoria, $categoriasAnt, $currentImage, $currentTitle;
     public $imagen_name;
 
     public $modal = 'none';
@@ -21,13 +24,25 @@ class Categorias extends Component
     public $order = 'desc';
     public $accion;
     public $cambioImg = false;
+    public $showModalImage = false;
 
     protected $categorias;
 
-    protected $listeners = ['delete'];
+    protected $listeners = ['delete', 'updateTable'];
 
     use WithPagination;
     use WithFileUploads;
+
+
+    public function changeSlug()
+    {
+        $this->slug = Str::slug($this->categoria);
+    }
+
+    public function updateTable()
+    {
+        $this->emit('table');
+    }
 
     protected function rules()
     {
@@ -37,12 +52,24 @@ class Categorias extends Component
             return [
                 'categoria' => 'required|max:20',
                 'imagen' => 'required|mimes:jpg,png|max:1024',
+                'slug' => 'required|unique:categorias'
             ];
         } else {
             return [
                 'categoria' => 'required|max:20',
+                'slug' => ['required', Rule::unique('categorias', 'slug')->ignore($this->id_categoria)],
             ];
         }
+    }
+
+    protected function messages()
+    {
+        return [
+            'categoria.required' => 'El nombre es requerido',
+            'imagen.required' => 'La imágen es requerida',
+            'slug.required' => 'El slug es requerido',
+            'slug.unique' => 'El slug ya existe',
+        ];
     }
 
     public function render()
@@ -55,8 +82,7 @@ class Categorias extends Component
                     ->orWhere('categoria', 'like', '%' . $this->search . '%');
             }
         )
-            ->orderBy($this->sort, $this->order)
-            ->paginate(5);
+            ->orderBy($this->sort, $this->order)->get();
         // $this->dispatchBrowserEvent('actualizarDataTable');
         return view('livewire.admin.categorias', ['filas' => $this->categorias])->layout('layouts.adminlte');
     }
@@ -70,14 +96,17 @@ class Categorias extends Component
 
     public function abrirModal()
     {
+        $this->emit('table');
         $this->modal = 'block';
         $this->emit('mensaje', 'Ejecutando Método 1');
     }
 
     public function cerrarModal()
     {
+        $this->emit('table');
         $this->modal = 'none';
         $this->cambioImg = false;
+        $this->limpiarCampos();
     }
 
     public function limpiarCampos()
@@ -87,11 +116,11 @@ class Categorias extends Component
         $this->descripcion = '';
         $this->slug = '';
         $this->imagen = '';
-
         $this->menu = 0;
         $this->orden = 0;
         $this->estado = 0;
         $this->id_categoria = 0;
+        $this->resetErrorBag();
     }
 
     public function edit($id)
@@ -99,10 +128,11 @@ class Categorias extends Component
         $this->accion = 'editar';
 
         $categoria = Categoria::findOrFail($id);
+
         $this->id_categoria = $id;
         $this->categoriaPadre_id = $categoria->categoriaPadre_id;
         $this->categoria = $categoria->categoria;
-        $this->slug = Str::slug($categoria->categoria);
+        $this->slug = Str::slug($categoria->slug);
         $this->descripcion = $categoria->descripcion;
         $this->menu = $categoria->menu;
         $this->imagen = $categoria->imagen;
@@ -110,15 +140,16 @@ class Categorias extends Component
         $this->abrirModal();
     }
 
-    public function borrar($id)
-    {
-        Categoria::find($id)->delete();
-        session()->flash('message', 'Registro eliminado correctamente');
-    }
+    // public function borrar($id)
+    // {
+    //     Categoria::find($id)->delete();
+    //     session()->flash('message', 'Registro eliminado correctamente');
+    // }
 
     public function delete($id)
     {
         Categoria::find($id)->delete();
+        $this->emit('table');
     }
 
     public function store()
@@ -144,8 +175,7 @@ class Categorias extends Component
                 'categoriaPadre_id' => $this->categoriaPadre_id,
                 'categoria' => $this->categoria,
                 'descripcion' => $this->descripcion,
-
-                'slug' => Str::slug($this->categoria),
+                'slug' => Str::slug($this->slug),
                 'imagen' => $imagen_name,
                 'menu' => $this->menu,
                 'orden' => $this->orden,
@@ -154,7 +184,6 @@ class Categorias extends Component
         );
 
         $this->emit('alertSave');
-
         $this->cerrarModal();
         $this->limpiarCampos();
     }
@@ -177,5 +206,20 @@ class Categorias extends Component
     public function cambioImagen()
     {
         $this->cambioImg = true;
+    }
+
+    public function openModalImage($id)
+    {
+        $this->emit('table');
+        $this->currentImage = Categoria::find($id)->imagen;
+        $this->currentTitle = Categoria::find($id)->categoria;
+
+        $this->showModalImage = true;
+    }
+
+    public function closeModalImage()
+    {
+        $this->emit('table');
+        $this->showModalImage = false;
     }
 }

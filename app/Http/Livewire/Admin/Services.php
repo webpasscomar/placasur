@@ -9,16 +9,21 @@ use Livewire\WithFileUploads;
 class Services extends Component
 {
     protected $services;
-    protected $listeners = ['delete'];
+    protected $listeners = ['delete', 'updateTable'];
 
     public $showModal = 'none';
     public $showModalImage = false;
-    public $service_id, $service, $currentImage, $action, $title, $description, $status, $image, $image_name;
+    public $service_id, $service, $currentImage, $currentTitle, $action, $title, $description, $status, $image, $image_name;
     public $order = 0;
     public $changeImg = false;
 
     use WithFileUploads;
 
+
+    public function updateTable()
+    {
+        $this->emit('table');
+    }
     public function render()
     {
         $services = Service::all();
@@ -30,12 +35,10 @@ class Services extends Component
         if ($this->action == 'create') {
             return [
                 'title' => 'required',
-                'order' => 'required',
             ];
         } else {
             return [
                 'title' => 'required',
-                'order' => 'required',
             ];
         }
 
@@ -53,12 +56,10 @@ class Services extends Component
         if ($this->action == 'create') {
             return [
                 'title.required' => 'El título del servicio es necesario',
-                'order.required' => 'El orden del servicio es requerido'
             ];
         } else {
             return [
                 'title.required' => 'El título del servicio es necesario',
-                'order.required' => 'El orden del servicio es requerido'
             ];
         }
     }
@@ -111,10 +112,9 @@ class Services extends Component
                 'status' => 1
             ]
         );
-
-        $this->closeModal();
-        $this->resetInputField();
         $this->emit('mensajePositivo', ['mensaje' => 'Operación exitosa']);
+        $this->resetInputField();
+        $this->closeModal();
     }
 
 
@@ -122,17 +122,21 @@ class Services extends Component
     {
         Service::find($id)->delete();
         $this->emit('mensajePositivo', ['mensaje' => 'Servicio eliminado correctamente']);
+        $this->emit('table');
     }
 
     public function openModal()
     {
+        $this->emit('table');
         $this->showModal = 'block';
     }
 
     public function closeModal()
     {
+        $this->emit('table');
         $this->showModal = 'none';
         $this->changeImg = false;
+        $this->resetInputField();
     }
 
     public function cambioImagen()
@@ -148,17 +152,21 @@ class Services extends Component
         $this->status = '';
         $this->image = '';
         $this->service_id = 0;
+        $this->resetErrorBag();
     }
 
     public function openModalImage($id)
     {
         $this->currentImage = Service::find($id)->image;
+        $this->currentTitle = Service::find($id)->title;
 
+        $this->emit('table');
         $this->showModalImage = true;
     }
 
     public function closeModalImage()
     {
+        $this->emit('table');
         $this->showModalImage = false;
     }
 }

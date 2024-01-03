@@ -1,11 +1,11 @@
 <div class="modal fade show" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel" aria-hidden="true"
-    style="display: {{ $showModal }}">
+    style="display: {{ $showModal }}; background-color:rgba(51,51,51,0.9);">
 
-    <div class="modal-dialog modal-md" role="document">
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" style="background-color: #3332;">
                 <h5 class="modal-title" id="roleModalLabel">
-                    Nuevo
+                    Novedades
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" wire:click="closeModal">
                     <span aria-hidden="true">&times;</span>
@@ -53,8 +53,8 @@
                 <div class="form-group">
                     <label for="image" class="custom-file-upload">Imágen</label>
                     <span id="file-name"></span>
-
-                    <input type="file" id="image" class="btn" wire:model="image" wire:change="cambioImagen" />
+                    <input type="file" id="image" class="form-control" wire:model="image"
+                        wire:change="cambioImagen" />
                 </div>
 
             </div>

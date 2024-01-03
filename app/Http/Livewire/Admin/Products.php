@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 
 class Products extends Component
 {
-    public $title, $description, $slug, $image, $order, $status, $product_id, $category_id, $currentImage;
+    public $title, $description, $slug, $image, $order, $status, $product_id, $category_id, $currentImage, $currentTitle;
     public $showModalImage = false;
 
     public $categorias;
@@ -27,11 +27,16 @@ class Products extends Component
 
     protected $products;
 
-    protected $listeners = ['delete'];
+    protected $listeners = ['delete', 'updateTable'];
 
     use WithPagination;
     use WithFileUploads;
 
+
+    public function updateTable()
+    {
+        $this->emit('table');
+    }
 
     protected function rules()
     {
@@ -59,13 +64,14 @@ class Products extends Component
 
     public function openModal()
     {
+        $this->emit('table');
         $this->modal = 'block';
     }
 
     public function closeModal()
     {
+        $this->emit('table');
         $this->modal = 'none';
-
         $this->cambioImg = false;
     }
 
@@ -85,6 +91,7 @@ class Products extends Component
         $this->order = 0;
         $this->status = 0;
         $this->category_id = 0;
+        $this->resetErrorBag();
     }
 
     public function changeImage()
@@ -141,19 +148,22 @@ class Products extends Component
     public function delete($id)
     {
         Product::find($id)->delete();
-        $this->emit('mensajePositivo', ['mensaje' => 'Producto eliminado correctamente']);
+        $this->emit('table');
     }
 
     // Mostrar modal de imágenes
     public function openModalImage($id)
     {
+        $this->emit('table');
         $this->currentImage = Product::find($id)->image;
+        $this->currentTitle = Product::find($id)->title;
 
         $this->showModalImage = true;
     }
 
     public function closeModalImage()
     {
+        $this->emit('table');
         $this->showModalImage = false;
     }
 }

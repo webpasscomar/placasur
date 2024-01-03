@@ -20,6 +20,8 @@ class ServiciosTableSeeder extends Seeder
         $service->image = "estacionamiento.jpg";
         $service->order = 1;
         $service->status = 1;
+        $service->created_at = now();
+        $service->updated_at = now();
         $service->save();
 
         $service = new Service();
@@ -29,6 +31,8 @@ class ServiciosTableSeeder extends Seeder
         $service->image = "asistencia.jpg";
         $service->order = 2;
         $service->status = 1;
+        $service->created_at = now();
+        $service->updated_at = now();
         $service->save();
 
         $service = new Service();
@@ -38,6 +42,8 @@ class ServiciosTableSeeder extends Seeder
         $service->image = "showroom.jpg";
         $service->order = 3;
         $service->status = 1;
+        $service->created_at = now();
+        $service->updated_at = now();
         $service->save();
 
         $service = new Service();
@@ -47,6 +53,8 @@ class ServiciosTableSeeder extends Seeder
         $service->image = "asistencia.jpg";
         $service->order = 4;
         $service->status = 1;
+        $service->created_at = now();
+        $service->updated_at = now();
         $service->save();
 
         $service = new Service();
@@ -56,6 +64,8 @@ class ServiciosTableSeeder extends Seeder
         $service->image = "estacionamiento.jpg";
         $service->order = 5;
         $service->status = 1;
+        $service->created_at = now();
+        $service->updated_at = now();
         $service->save();
 
         $service = new Service();
@@ -65,6 +75,8 @@ class ServiciosTableSeeder extends Seeder
         $service->image = "pegado.jpg";
         $service->order = 6;
         $service->status = 1;
+        $service->created_at = now();
+        $service->updated_at = now();
         $service->save();
 
         $service = new Service();
@@ -74,6 +86,8 @@ class ServiciosTableSeeder extends Seeder
         $service->image = "entregas.jpg";
         $service->order = 7;
         $service->status = 1;
+        $service->created_at = now();
+        $service->updated_at = now();
         $service->save();
 
         $service = new Service();
@@ -83,6 +97,8 @@ class ServiciosTableSeeder extends Seeder
         $service->image = "stock.jpg";
         $service->order = 8;
         $service->status = 1;
+        $service->created_at = now();
+        $service->updated_at = now();
         $service->save();
     }
 }

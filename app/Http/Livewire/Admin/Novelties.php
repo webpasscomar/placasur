@@ -10,14 +10,20 @@ class Novelties extends Component
 {
 
     protected $novelties;
-    protected $listeners = ['delete'];
+    protected $listeners = ['delete', 'updateTable'];
 
     public $showModal = 'none';
     public $showModalImage = false;
-    public $novelty_id, $novelty, $currentImage, $action, $title, $description, $status, $image, $image_name;
+    public $novelty_id, $novelty, $currentImage, $currentTitle, $action, $title, $description, $status, $image, $image_name;
     public $changeImg = false;
     public $order = 0;
     use WithFileUploads;
+
+
+    public function updateTable()
+    {
+        $this->emit('table');
+    }
 
     public function render()
     {
@@ -121,16 +127,18 @@ class Novelties extends Component
     public function delete($id)
     {
         Novelty::find($id)->delete();
-        $this->emit('mensajePositivo', ['mensaje' => 'Novedad eliminada correctamente']);
+        $this->emit('table');
     }
 
     public function openModal()
     {
+        $this->emit('table');
         $this->showModal = 'block';
     }
 
     public function closeModal()
     {
+        $this->emit('table');
         $this->showModal = 'none';
         $this->changeImg = false;
     }
@@ -148,17 +156,20 @@ class Novelties extends Component
         $this->status = '';
         $this->image = '';
         $this->novelty_id = 0;
+        $this->resetErrorBag();
     }
 
     public function openModalImage($id)
     {
+        $this->emit('table');
         $this->currentImage = Novelty::find($id)->image;
-
+        $this->currentTitle = Novelty::find($id)->title;
         $this->showModalImage = true;
     }
 
     public function closeModalImage()
     {
+        $this->emit('table');
         $this->showModalImage = false;
     }
 }
