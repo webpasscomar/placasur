@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             UsuariosTableSeeder::class,
             CategoriasTableSeeder::class,
             ServiciosTableSeeder::class,
-            ProductsTableSeeder::class
+            ProductsTableSeeder::class,
+            GaleriasTableSeeder::class
         ]);
     }
 }
