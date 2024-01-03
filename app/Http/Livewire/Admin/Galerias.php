@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 
 class Galerias extends Component
 {
-    public $galeria, $imagen, $estado, $id_galeria, $currentImage;
+    public $galeria, $imagen, $estado, $id_galeria, $currentImage, $currentTitle;
     public $imagen_name;
 
     public $modal = 'none';
@@ -24,10 +24,16 @@ class Galerias extends Component
 
     protected $galerias;
 
-    protected $listeners = ['delete'];
+    protected $listeners = ['delete', 'updateTable'];
 
     use WithPagination;
     use WithFileUploads;
+
+
+    public function updateTable()
+    {
+        $this->emit('table');
+    }
 
     protected function rules()
     {
@@ -58,11 +64,13 @@ class Galerias extends Component
     }
     public function abrirModal()
     {
+        $this->emit('table');
         $this->modal = 'block';
     }
 
     public function cerrarModal()
     {
+        $this->emit('table');
         $this->modal = 'none';
         $this->cambioImg = false;
     }
@@ -73,6 +81,7 @@ class Galerias extends Component
         $this->imagen = '';
         $this->estado = 0;
         $this->id_galeria = 0;
+        $this->resetErrorBag();
     }
     public function edit($id)
     {
@@ -93,6 +102,7 @@ class Galerias extends Component
     public function delete($id)
     {
         Galeria::find($id)->delete();
+        $this->emit('table');
     }
 
     public function store()
@@ -147,13 +157,15 @@ class Galerias extends Component
 
     public function openModalImage($id)
     {
+        $this->emit('table');
         $this->currentImage = Galeria::find($id)->imagen;
-
+        $this->currentTitle = Galeria::find($id)->galeria;
         $this->showModalImage = true;
     }
 
     public function closeModalImage()
     {
+        $this->emit('table');
         $this->showModalImage = false;
     }
 }

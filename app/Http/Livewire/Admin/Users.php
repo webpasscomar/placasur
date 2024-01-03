@@ -25,7 +25,13 @@ class Users extends Component
     public $muestraModalRole = 'none';
 
     protected $users, $roles, $users_roles;
-    protected $listeners = ['delete'];
+    protected $listeners = ['delete', 'updateTable'];
+
+
+    public function updateTable()
+    {
+        $this->emit('table');
+    }
 
     public function render()
     {
@@ -155,17 +161,20 @@ class Users extends Component
     public function delete($id)
     {
         User::find($id)->delete();
+        $this->emit('table');
     }
 
     public function closeModal()
     {
         // $this->isOpen = false;
+        $this->emit('table');
         $this->muestraModal = 'none';
     }
 
     public function openModal()
     {
         // $this->isOpen = true;
+        $this->emit('table');
         $this->muestraModal = 'block';
     }
 
@@ -174,29 +183,34 @@ class Users extends Component
         $this->name = '';
         $this->email = '';
         $this->password = '';
+        $this->resetErrorBag();
     }
 
     public function closeModalPass()
     {
         // $this->isOpen = false;
+        $this->emit('table');
         $this->muestraModalPass = 'none';
     }
 
     public function openModalPass()
     {
         // $this->isOpen = true;
+        $this->emit('table');
         $this->muestraModalPass = 'block';
     }
 
     public function closeModalRoles()
     {
         // $this->isOpen = false;
+        $this->emit('table');
         $this->muestraModalRoles = 'none';
     }
 
     public function openModalRoles()
     {
         // $this->isOpen = true;
+        $this->emit('table');
         $this->muestraModalRoles = 'block';
     }
 
@@ -204,12 +218,14 @@ class Users extends Component
     public function closeModalRole()
     {
         // $this->isOpen = false;
+        $this->emit('table');
         $this->muestraModalRole = 'none';
     }
 
     public function openModalRole()
     {
         // $this->isOpen = true;
+        $this->emit('table');
         $this->muestraModalRole = 'block';
     }
 

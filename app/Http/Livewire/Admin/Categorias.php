@@ -38,10 +38,12 @@ class Categorias extends Component
     {
         $this->slug = Str::slug($this->categoria);
     }
+
     public function updateTable()
     {
         $this->emit('table');
     }
+
     protected function rules()
     {
         if (($this->cambioImg === true && $this->accion === 'editar') ||
@@ -80,8 +82,7 @@ class Categorias extends Component
                     ->orWhere('categoria', 'like', '%' . $this->search . '%');
             }
         )
-            ->orderBy($this->sort, $this->order)
-            ->paginate(5);
+            ->orderBy($this->sort, $this->order)->get();
         // $this->dispatchBrowserEvent('actualizarDataTable');
         return view('livewire.admin.categorias', ['filas' => $this->categorias])->layout('layouts.adminlte');
     }

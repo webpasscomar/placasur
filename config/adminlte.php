@@ -150,8 +150,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => ['xs' => true, 'sm' => false],
-    'layout_fixed_navbar' => ['xs' => true],
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
@@ -307,15 +307,10 @@ return [
             'text' => 'Buscar',
         ],
         // [
-        //     'text' => 'blog',
-        //     'url'  => 'admin/blog',
-        //     'can'  => 'manage-blog',
+        //     'text' => 'Roles',
+        //     'url' => 'admin/roles',
+        //     'icon' => 'fas fa-fw fa-user',
         // ],
-        [
-            'text' => 'Roles',
-            'url' => 'admin/roles',
-            'icon' => 'fas fa-fw fa-user',
-        ],
         [
             'text' => 'Usuarios',
             'url' => 'admin/users',
@@ -464,7 +459,7 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -509,12 +504,12 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@11',
                 ],
             ],
         ],
