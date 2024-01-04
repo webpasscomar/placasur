@@ -2,6 +2,7 @@
 
 {{-- @section('title', $title) --}}
 
+
 @section('content_header')
 
 @stop
@@ -21,7 +22,6 @@
 
 
 @stop
-
 
 @section('js')
     @stack('modals')

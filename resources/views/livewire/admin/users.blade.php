@@ -5,7 +5,7 @@
             <div class="col-md-8 col-6 mt-4">
                 <h3>Usuarios</h3>
             </div>
-            <div class="col-md-4 col-6 mt-4 text-right">
+            <div class="col-md-4 col-6 mt-3 mt-md-4 text-right">
                 <button wire:click="create" class="btn btn-success" data-toggle="modal" data-target="#roleModal"><i
                         class="fas fa-plus-circle mr-2" style="color: white;"></i>Agregar
                 </button>
