@@ -1218,5 +1218,53 @@ class ProductsTableSeeder extends Seeder
         $prod->order = 5;
         $prod->status = 1;
         $prod->save();
+     // barnices
+        $prod = new Product();
+        $prod->id     = 133;
+        $prod->title = "Protector para Decks PETRILAC";
+        $prod->category_id = 15;
+        $prod->image = "prod0133.jpg";
+        $prod->order = 1;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 134;
+        $prod->title = "Diluyente PETRILAC";
+        $prod->category_id = 15;
+        $prod->image = "prod0134.jpeg";
+        $prod->order = 2;
+        $prod->status = 1;
+        $prod->save();
+
+        // adhesivos
+        $prod = new Product();
+        $prod->id     = 135;
+        $prod->title = "Adhesivos Vinílico para Carpintería K-990";
+        $prod->category_id = 14;
+        $prod->image = "prod0135.jpg";
+        $prod->order = 1;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 136;
+        $prod->title = "Adhesivos Vinílico para Carpintería D2 K-1000";
+        $prod->category_id = 14;
+        $prod->image = "prod0136.jpg";
+        $prod->order = 2;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 137;
+        $prod->title = "Adhesivos Monocomponente para Carpintería K-1030";
+        $prod->category_id = 14;
+        $prod->image = "prod0137.jpg";
+        $prod->order = 3;
+        $prod->status = 1;
+        $prod->save();
+
+
     }
 }
