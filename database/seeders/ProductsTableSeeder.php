@@ -532,7 +532,7 @@ class ProductsTableSeeder extends Seeder
         $prod->order = 10;
         $prod->status = 1;
         $prod->save();
-    
+
         // placas - EGGER - FEELWOOD
         $prod = new Product();
         $prod->id     = 58;
@@ -642,7 +642,7 @@ class ProductsTableSeeder extends Seeder
         $prod->image = "prod0069.jpg";
         $prod->order = 1;
         $prod->status = 1;
-        $prod->save();    
+        $prod->save();
 
         $prod = new Product();
         $prod->id     = 70;
@@ -651,7 +651,7 @@ class ProductsTableSeeder extends Seeder
         $prod->image = "prod0070.jpg";
         $prod->order = 2;
         $prod->status = 1;
-        $prod->save();    
+        $prod->save();
 
         $prod = new Product();
         $prod->id     = 71;
@@ -660,8 +660,8 @@ class ProductsTableSeeder extends Seeder
         $prod->image = "prod0071.jpg";
         $prod->order = 3;
         $prod->status = 1;
-        $prod->save();  
-        
+        $prod->save();
+
         $prod = new Product();
         $prod->id     = 72;
         $prod->title = "Diseño: FRESNO NEGRO";
@@ -669,7 +669,7 @@ class ProductsTableSeeder extends Seeder
         $prod->image = "prod0072.jpg";
         $prod->order = 4;
         $prod->status = 1;
-        $prod->save();    
+        $prod->save();
 
         $prod = new Product();
         $prod->id     = 73;
@@ -678,7 +678,7 @@ class ProductsTableSeeder extends Seeder
         $prod->image = "prod0073.jpg";
         $prod->order = 5;
         $prod->status = 1;
-        $prod->save();    
+        $prod->save();
 
         $prod = new Product();
         $prod->id     = 74;
@@ -687,7 +687,7 @@ class ProductsTableSeeder extends Seeder
         $prod->image = "prod0074.jpg";
         $prod->order = 6;
         $prod->status = 1;
-        $prod->save();    
+        $prod->save();
 
         $prod = new Product();
         $prod->id     = 75;
@@ -696,8 +696,8 @@ class ProductsTableSeeder extends Seeder
         $prod->image = "prod0075.jpg";
         $prod->order = 7;
         $prod->status = 1;
-        $prod->save();  
-        
+        $prod->save();
+
         $prod = new Product();
         $prod->id     = 76;
         $prod->title = "Diseño: ROBLE NATURAL";
@@ -705,7 +705,7 @@ class ProductsTableSeeder extends Seeder
         $prod->image = "prod0076.jpg";
         $prod->order = 8;
         $prod->status = 1;
-        $prod->save();    
+        $prod->save();
 
         $prod = new Product();
         $prod->id     = 77;
@@ -714,7 +714,7 @@ class ProductsTableSeeder extends Seeder
         $prod->image = "prod0077.jpg";
         $prod->order = 9;
         $prod->status = 1;
-        $prod->save();    
+        $prod->save();
 
         $prod = new Product();
         $prod->id     = 78;
@@ -723,7 +723,548 @@ class ProductsTableSeeder extends Seeder
         $prod->image = "prod0078.jpg";
         $prod->order = 10;
         $prod->status = 1;
-        $prod->save();    
+        $prod->save();
+
+        // placas - EGGER - MATERIA
+        $prod = new Product();
+        $prod->id     = 79;
+        $prod->title = "Diseño: CARRARA";
+        $prod->category_id = 44;
+        $prod->image = "prod0079.jpg";
+        $prod->order = 1;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 80;
+        $prod->title = "Diseño: CONCRETO METROPOLITANO";
+        $prod->category_id = 44;
+        $prod->image = "prod0080.jpg";
+        $prod->order = 2;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 81;
+        $prod->title = "Diseño: LINO";
+        $prod->category_id = 44;
+        $prod->image = "prod0081.jpg";
+        $prod->order = 3;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 82;
+        $prod->title = "Diseño: NEBRASKA";
+        $prod->category_id = 44;
+        $prod->image = "prod0082.jpg";
+        $prod->order = 4;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 83;
+        $prod->title = "Diseño: OXIDO";
+        $prod->category_id = 44;
+        $prod->image = "prod0083.jpg";
+        $prod->order = 5;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 84;
+        $prod->title = "Diseño: RAMIO CAFÉ";
+        $prod->category_id = 44;
+        $prod->image = "prod0084.jpg";
+        $prod->order = 6;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 85;
+        $prod->title = "Diseño: RAMIO PLATA";
+        $prod->category_id = 44;
+        $prod->image = "prod0085.jpg";
+        $prod->order = 7;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 86;
+        $prod->title = "Diseño: RAMIO SEPIA";
+        $prod->category_id = 44;
+        $prod->image = "prod0086.jpg";
+        $prod->order = 8;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 87;
+        $prod->title = "Diseño: ROBLE MIEL";
+        $prod->category_id = 44;
+        $prod->image = "prod0087.jpg";
+        $prod->order = 9;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 88;
+        $prod->title = "Diseño: SANTORINI";
+        $prod->category_id = 44;
+        $prod->image = "prod0088.jpg";
+        $prod->order = 10;
+        $prod->status = 1;
+        $prod->save();
+
+        // placas - EGGER - CLASICA
+        $prod = new Product();
+        $prod->id     = 89;
+        $prod->title = "Diseño: CEDRO";
+        $prod->category_id = 45;
+        $prod->image = "prod0089.jpg";
+        $prod->order = 1;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 90;
+        $prod->title = "Diseño: CEREJEIRA";
+        $prod->category_id = 45;
+        $prod->image = "prod0090.jpg";
+        $prod->order = 2;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 91;
+        $prod->title = "Diseño: GUINDO";
+        $prod->category_id = 45;
+        $prod->image = "prod0091.jpg";
+        $prod->order = 3;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 92;
+        $prod->title = "Diseño: HAYA";
+        $prod->category_id = 45;
+        $prod->image = "prod0092.jpg";
+        $prod->order = 4;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 93;
+        $prod->title = "Diseño: ROBLE MORO";
+        $prod->category_id = 45;
+        $prod->image = "prod0093.jpg";
+        $prod->order = 5;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 94;
+        $prod->title = "Diseño: TECA";
+        $prod->category_id = 45;
+        $prod->image = "prod0094.jpg";
+        $prod->order = 6;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 95;
+        $prod->title = "Diseño: WENGUE";
+        $prod->category_id = 45;
+        $prod->image = "prod0095.jpg";
+        $prod->order = 7;
+        $prod->status = 1;
+        $prod->save();
+
+        // placas - REHAU
+        $prod = new Product();
+        $prod->id     = 96;
+        $prod->title = "Cantos UNICOLOR";
+        $prod->category_id = 46;
+        $prod->image = "prod0096.jpg";
+        $prod->order = 1;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 97;
+        $prod->title = "Cantos DEKOR";
+        $prod->category_id = 46;
+        $prod->image = "prod0097.jpg";
+        $prod->order = 2;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 98;
+        $prod->title = "Cantos MIRROR GLOSS";
+        $prod->category_id = 46;
+        $prod->image = "prod0098.jpg";
+        $prod->order = 3;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 99;
+        $prod->title = "Cantos VISIONS";
+        $prod->category_id = 46;
+        $prod->image = "prod0099.jpg";
+        $prod->order = 4;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 100;
+        $prod->title = "Rauvisio RADIANT";
+        $prod->category_id = 46;
+        $prod->image = "prod0100.jpg";
+        $prod->order = 5;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 101;
+        $prod->title = "Rauvisio CRISTAL";
+        $prod->category_id = 46;
+        $prod->image = "prod0101.jpg";
+        $prod->order = 6;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 102;
+        $prod->title = "Rauvisio BRILLANT";
+        $prod->category_id = 46;
+        $prod->image = "prod0102.jpg";
+        $prod->order = 6;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 103;
+        $prod->title = "Rauvisio SKY";
+        $prod->category_id = 46;
+        $prod->image = "prod0103.jpg";
+        $prod->order = 7;
+        $prod->status = 1;
+        $prod->save();
+
+        // placas - SADEPAN SIMPLECE
+        $prod = new Product();
+        $prod->id     = 104;
+        $prod->title = "Color: VERDE";
+        $prod->category_id = 47;
+        $prod->image = "prod0104.jpg";
+        $prod->order = 1;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 105;
+        $prod->title = "Color: PANNA";
+        $prod->category_id = 47;
+        $prod->image = "prod0105.jpg";
+        $prod->order = 2;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 106;
+        $prod->title = "Color: NERO";
+        $prod->category_id = 47;
+        $prod->image = "prod0106.jpg";
+        $prod->order = 3;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 107;
+        $prod->title = "Color: GRIGIO 251";
+        $prod->category_id = 47;
+        $prod->image = "prod0107.jpg";
+        $prod->order = 4;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 108;
+        $prod->title = "Color: GRIGIO 068";
+        $prod->category_id = 47;
+        $prod->image = "prod0108.jpg";
+        $prod->order = 5;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 109;
+        $prod->title = "Color: BLU";
+        $prod->category_id = 47;
+        $prod->image = "prod0109.jpg";
+        $prod->order = 6;
+        $prod->status = 1;
+        $prod->save();
+
+        // placas - SADEPAN REGAZZI
+        $prod = new Product();
+        $prod->id     = 110;
+        $prod->title = "Color: VERDE ALPI";
+        $prod->category_id = 48;
+        $prod->image = "prod0110.jpg";
+        $prod->order = 1;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 111;
+        $prod->title = "Color: ROSSO";
+        $prod->category_id = 48;
+        $prod->image = "prod0111.jpg";
+        $prod->order = 2;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 112;
+        $prod->title = "Color: LILLA";
+        $prod->category_id = 48;
+        $prod->image = "prod0112.jpg";
+        $prod->order = 3;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 113;
+        $prod->title = "Color: ARANCIO";
+        $prod->category_id = 48;
+        $prod->image = "prod0113.jpg";
+        $prod->order = 4;
+        $prod->status = 1;
+        $prod->save();
+
+        // placas - SADEPAN PIACERE
+        $prod = new Product();
+        $prod->id     = 114;
+        $prod->title = "Diseño TEAK";
+        $prod->category_id = 49;
+        $prod->image = "prod0114.jpg";
+        $prod->order = 1;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 115;
+        $prod->title = "Diseño ROVERE";
+        $prod->category_id = 49;
+        $prod->image = "prod0115.jpg";
+        $prod->order = 2;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 116;
+        $prod->title = "Diseño ROVERE FOSCARI";
+        $prod->category_id = 49;
+        $prod->image = "prod0116.png";
+        $prod->order = 3;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 117;
+        $prod->title = "Diseño NOCE GUARNIERI";
+        $prod->category_id = 49;
+        $prod->image = "prod0117.jpg";
+        $prod->order = 4;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 118;
+        $prod->title = "Diseño NOCE FARNESE";
+        $prod->category_id = 49;
+        $prod->image = "prod0118.jpg";
+        $prod->order = 5;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 119;
+        $prod->title = "Diseño NOCE DOMINO";
+        $prod->category_id = 49;
+        $prod->image = "prod0119.jpg";
+        $prod->order = 6;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 120;
+        $prod->title = "Diseño MELO";
+        $prod->category_id = 49;
+        $prod->image = "prod0120.jpg";
+        $prod->order = 7;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 121;
+        $prod->title = "Diseño FAGGIO";
+        $prod->category_id = 49;
+        $prod->image = "prod0121.jpg";
+        $prod->order = 8;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 122;
+        $prod->title = "Diseño CILIEGIO EUROPEO";
+        $prod->category_id = 49;
+        $prod->image = "prod0122.jpg";
+        $prod->order = 9;
+        $prod->status = 1;
+        $prod->save();
+
+        // placas - SADEPAN SENSAZIONI
+        $prod = new Product();
+        $prod->id     = 123;
+        $prod->title = "Diseño CILIEGIO";
+        $prod->category_id = 50;
+        $prod->image = "prod0123.jpg";
+        $prod->order = 1;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 124;
+        $prod->title = "Diseño NOCE";
+        $prod->category_id = 50;
+        $prod->image = "prod0124.jpg";
+        $prod->order = 2;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 125;
+        $prod->title = "Diseño OLMO";
+        $prod->category_id = 50;
+        $prod->image = "prod0125.jpg";
+        $prod->order = 3;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 126;
+        $prod->title = "Diseño RIGOLETTO";
+        $prod->category_id = 50;
+        $prod->image = "prod0126.jpg";
+        $prod->order = 4;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 127;
+        $prod->title = "Diseño ZEBRANO";
+        $prod->category_id = 50;
+        $prod->image = "prod0127.jpg";
+        $prod->order = 5;
+        $prod->status = 1;
+        $prod->save();
+
+        // placas - SADEPAN POTENZA
+        $prod = new Product();
+        $prod->id     = 128;
+        $prod->title = "Diseño ATAKAMA";
+        $prod->category_id = 51;
+        $prod->image = "prod0128.jpg";
+        $prod->order = 1;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 129;
+        $prod->title = "Diseño LARICE SCURO";
+        $prod->category_id = 51;
+        $prod->image = "prod0129.jpg";
+        $prod->order = 2;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 130;
+        $prod->title = "Diseño OLMO FIDIA";
+        $prod->category_id = 51;
+        $prod->image = "prod0130.jpg";
+        $prod->order = 3;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 131;
+        $prod->title = "Diseño ORINOCO";
+        $prod->category_id = 51;
+        $prod->image = "prod0131.jpg";
+        $prod->order = 4;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 132;
+        $prod->title = "Diseño WALNUT";
+        $prod->category_id = 51;
+        $prod->image = "prod0132.jpg";
+        $prod->order = 5;
+        $prod->status = 1;
+        $prod->save();
+     // barnices
+        $prod = new Product();
+        $prod->id     = 133;
+        $prod->title = "Protector para Decks PETRILAC";
+        $prod->category_id = 15;
+        $prod->image = "prod0133.jpg";
+        $prod->order = 1;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 134;
+        $prod->title = "Diluyente PETRILAC";
+        $prod->category_id = 15;
+        $prod->image = "prod0134.jpeg";
+        $prod->order = 2;
+        $prod->status = 1;
+        $prod->save();
+
+        // adhesivos
+        $prod = new Product();
+        $prod->id     = 135;
+        $prod->title = "Adhesivos Vinílico para Carpintería K-990";
+        $prod->category_id = 14;
+        $prod->image = "prod0135.jpg";
+        $prod->order = 1;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 136;
+        $prod->title = "Adhesivos Vinílico para Carpintería D2 K-1000";
+        $prod->category_id = 14;
+        $prod->image = "prod0136.jpg";
+        $prod->order = 2;
+        $prod->status = 1;
+        $prod->save();
+
+        $prod = new Product();
+        $prod->id     = 137;
+        $prod->title = "Adhesivos Monocomponente para Carpintería K-1030";
+        $prod->category_id = 14;
+        $prod->image = "prod0137.jpg";
+        $prod->order = 3;
+        $prod->status = 1;
+        $prod->save();
+
 
     }
 }
