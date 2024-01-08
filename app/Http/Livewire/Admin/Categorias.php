@@ -28,7 +28,7 @@ class Categorias extends Component
 
     protected $categorias;
 
-    protected $listeners = ['delete', 'updateTable'];
+    protected $listeners = ['delete', 'updateTable', 'slugString'];
 
     use WithPagination;
     use WithFileUploads;
@@ -37,6 +37,7 @@ class Categorias extends Component
     public function changeSlug()
     {
         $this->slug = Str::slug($this->categoria);
+        // $this->emit('slug-string');
     }
 
     public function updateTable()
@@ -84,6 +85,7 @@ class Categorias extends Component
         )
             ->orderBy($this->sort, $this->order)->get();
         // $this->dispatchBrowserEvent('actualizarDataTable');
+        $this->dispatchBrowserEvent('slugString');
         return view('livewire.admin.categorias', ['filas' => $this->categorias])->layout('layouts.adminlte');
     }
 
@@ -132,7 +134,7 @@ class Categorias extends Component
         $this->id_categoria = $id;
         $this->categoriaPadre_id = $categoria->categoriaPadre_id;
         $this->categoria = $categoria->categoria;
-        $this->slug = Str::slug($categoria->slug);
+        $this->slug = $categoria->slug;
         $this->descripcion = $categoria->descripcion;
         $this->menu = $categoria->menu;
         $this->imagen = $categoria->imagen;
@@ -175,7 +177,7 @@ class Categorias extends Component
                 'categoriaPadre_id' => $this->categoriaPadre_id,
                 'categoria' => $this->categoria,
                 'descripcion' => $this->descripcion,
-                'slug' => Str::slug($this->slug),
+                'slug' => $this->slug,
                 'imagen' => $imagen_name,
                 'menu' => $this->menu,
                 'orden' => $this->orden,

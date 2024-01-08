@@ -32,8 +32,8 @@
                         <div class="form-group col-md-6">
                             <label for="categoria">Nombre:</label><span
                                 class="ms-1 text-danger fs-6 fw-semibold">*</span>
-                            <input type="text" class="form-control" id="categoria" wire:model="categoria"
-                                wire:change='changeSlug'>
+                            <input type="text" class="form-control" id="categoria" wire:model.inmediate="categoria"
+                                wire:keyup='changeSlug'>
 
                             @error('categoria')
                                 <span class="text-danger">{{ $message }}</span>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="slug">Slug:</label><span class="ms-1 text-danger fs-6 fw-semibold">*</span>
-                            <input type="text" class="form-control" id="slug" wire:model="slug">
+                            <input type="text" class="form-control" id="slug" wire:model.inmediate="slug">
                             @error('slug')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror

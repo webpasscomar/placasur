@@ -32,7 +32,6 @@
         integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script> --}}
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/ckeditor5/ckeditor.js') }}"></script>
-
     {{-- <script src="sweetalert2.all.min.js"></script> --}}
 
     {{-- <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> --}}
@@ -54,14 +53,9 @@
                         "previous": "Anterior"
                     }
                 }
-            })
+            });
         });
-    </script>
 
-    <script>
-        // document.addEventListener('livewire:load', function() {
-
-        // });
         Livewire.on('table', () => {
             $('#myTable').DataTable().destroy();
             $('#myTable').DataTable({
@@ -97,11 +91,11 @@
                 if (result.isConfirmed) {
                     Livewire.emit('updateTable');
                     Livewire.emit('delete', id);
-                    //    Swal.fire(
-                    //        'Borrado!',
-                    //        'Ha sido eliminado con éxito.',
-                    //        'success'
-                    //    )
+                    // Swal.fire(
+                    // 'Borrado!',
+                    // 'Ha sido eliminado con éxito.',
+                    // 'success'
+                    // )
                 } else {
                     Livewire.emit('updateTable');
                 }
@@ -135,45 +129,45 @@
         // Funcion que refresca los datatables c/ vez que se vuelve a renderizar un componente
         // document.addEventListener('livewire:load', function() {
 
-        //   console.log(mensaje); // Mostrar mensaje en la consola
-        //   console.log('Livewire Load Event'); // Mensaje en consola
+        // console.log(mensaje); // Mostrar mensaje en la consola
+        // console.log('Livewire Load Event'); // Mensaje en consola
 
-        //   Livewire.on('actualizarDataTable', function() {
+        // Livewire.on('actualizarDataTable', function() {
 
-        //     console.log('Evento actualizarDataTable recibido'); // Mensaje en consola
-        //     // Reinicializar DataTable
-        //     $('#miTabla').DataTable().destroy(); // Reemplaza 'miTabla' con tu ID de tabla
-        //     $('#miTabla').DataTable(); // Vuelve a inicializar DataTable
-        //   });
+        // console.log('Evento actualizarDataTable recibido'); // Mensaje en consola
+        // // Reinicializar DataTable
+        // $('#miTabla').DataTable().destroy(); // Reemplaza 'miTabla' con tu ID de tabla
+        // $('#miTabla').DataTable(); // Vuelve a inicializar DataTable
+        // });
         // });
 
         // $('#rolesTable').DataTable();
         // $(document).ready(function() {
         // $('#rolesTable').DataTable({
-        //   "language": {
-        //     "sProcessing": "Procesando...",
-        //     "sLengthMenu": "Mostrar _MENU_ registros",
-        //     "sZeroRecords": "No se encontraron resultados",
-        //     "sEmptyTable": "Ningún dato disponible en esta tabla",
-        //     "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ registros",
-        //     "sInfoEmpty": "Mostrando 0 al 0 de 0 registros",
-        //     "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-        //     "sInfoPostFix": "",
-        //     "sSearch": "Buscar:",
-        //     "sUrl": "",
-        //     "sInfoThousands": ",",
-        //     "sLoadingRecords": "Cargando...",
-        //     "oPaginate": {
-        //       "sFirst": "Primero",
-        //       "sLast": "Último",
-        //       "sNext": "Siguiente",
-        //       "sPrevious": "Anterior"
-        //     },
-        //     "oAria": {
-        //       "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-        //       "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-        //     }
-        //   }
+        // "language": {
+        // "sProcessing": "Procesando...",
+        // "sLengthMenu": "Mostrar _MENU_ registros",
+        // "sZeroRecords": "No se encontraron resultados",
+        // "sEmptyTable": "Ningún dato disponible en esta tabla",
+        // "sInfo": "Mostrando _START_ al _END_ de _TOTAL_ registros",
+        // "sInfoEmpty": "Mostrando 0 al 0 de 0 registros",
+        // "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+        // "sInfoPostFix": "",
+        // "sSearch": "Buscar:",
+        // "sUrl": "",
+        // "sInfoThousands": ",",
+        // "sLoadingRecords": "Cargando...",
+        // "oPaginate": {
+        // "sFirst": "Primero",
+        // "sLast": "Último",
+        // "sNext": "Siguiente",
+        // "sPrevious": "Anterior"
+        // },
+        // "oAria": {
+        // "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+        // "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+        // }
+        // }
         // });
         // // });
 
