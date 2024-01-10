@@ -23,6 +23,11 @@
     <!-- card servicios -->
     <div class="container-md mt-5">
         <div class="row">
+            @if (count($services) == 0)
+                <div class="col-md-12 text-center mt-5">
+                    <h3>Servicios no disponibles</h3>
+                </div>
+            @endif
             @foreach ($services as $service)
                 <div class="col-sm-12 col-md-3 mb-3">
                     <div class="slide-up">

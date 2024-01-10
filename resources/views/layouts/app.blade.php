@@ -30,7 +30,9 @@
 
     @include('layouts.partials.header')
 
-    @yield('content')
+    <div class="min-vh-100">
+        @yield('content')
+    </div>
 
     @include('layouts.partials.footer')
 

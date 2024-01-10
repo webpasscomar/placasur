@@ -11,9 +11,9 @@
             </div>
             <div class="modal-body">
 
-                <label>Role <span class="text-danger">*</span></label>
-                <select class="form-control" id="user_rol_id" wire:model="user_rol_id">
-                    <option value="0">
+                <label>Role <span class="ms-1 text-danger fs-6 fw-semibold">*</span></label>
+                <select class="form-select" id="user_rol_id" wire:model="user_rol_id">
+                    <option value="">
                         Seleccione un Role
                     </option>
                     @if ($roles)
@@ -28,6 +28,10 @@
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
 
+                <div class="me-3 text-end mt-5">
+                    <p class="fw-semibold" style="font-size: 12px;"><span class="text-danger fs-6 fw-semibold">*</span>
+                        Campos Obligatorios</p>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" wire:click="closeModalRole" class="btn btn-secondary"

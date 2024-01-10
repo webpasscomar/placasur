@@ -61,7 +61,6 @@
                 <div class="me-3 text-end">
                     <p class="fw-semibold" style="font-size: 12px;"><span class="text-danger fs-6 fw-semibold">*</span>
                         Campos Obligatorios</p>
-
                 </div>
             </div>
             <div class="modal-footer">

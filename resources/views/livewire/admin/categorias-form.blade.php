@@ -86,6 +86,7 @@
 
                                 </select>
                             </div> --}}
+                    {{-- Mensaje de campos obligatorios en el formulario --}}
                     <div class="me-3 text-end">
                         <p class="fw-semibold" style="font-size: 12px;"><span
                                 class="text-danger fs-6 fw-semibold">*</span>

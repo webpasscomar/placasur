@@ -177,7 +177,7 @@ class Categorias extends Component
                 'categoriaPadre_id' => $this->categoriaPadre_id,
                 'categoria' => $this->categoria,
                 'descripcion' => $this->descripcion,
-                'slug' => $this->slug,
+                'slug' => Str::slug($this->slug),
                 'imagen' => $imagen_name,
                 'menu' => $this->menu,
                 'orden' => $this->orden,

@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\User_rol;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
@@ -17,8 +18,10 @@ class Users extends Component
     // public $cargos;
     public $user_id, $user_nombre_rol, $user_rol_id;
     public $name;
+    public $lastname;
     public $email;
-    public $password;
+    public $password, $repassword;
+    public $rolesSelected = [];
     public $muestraModal     = 'none';
     public $muestraModalPass = 'none';
     public $muestraModalRoles = 'none';
@@ -58,6 +61,8 @@ class Users extends Component
         ])->layout('layouts.adminlte');
     }
 
+
+
     protected function rules()
     {
 
@@ -65,12 +70,16 @@ class Users extends Component
             return [
                 'name' => 'required',
                 'email' => 'required | email',
+                'lastname' => 'required',
+                'rolesSelected' => 'required',
+                'password' => 'required|min:8|same:repassword',
+                'repassword' => 'required|min:8|same:password',
             ];
         }
 
         if ($this->muestraModalPass == 'block') {
             return [
-                'password' => 'required',
+                'password' => 'required|min:8',
             ];
         }
 
@@ -81,14 +90,22 @@ class Users extends Component
         }
     }
 
+
     protected function messages()
     {
         return [
             'name.required' => 'El nombre del usuario es requerido',
+            'lastname.required' => 'El apellido del usuario es requerido',
             'email.required' => 'El E-mail del usuario es requerido',
             'email.email' => 'El E-mail no responde al formato de correo electronico',
-            'password.required' => 'La password del usuario es requerida',
+            'password.required' => 'La contraseña del usuario es requerida',
+            'password.same' => 'Las contraseñas no coinciden',
+            'repassword.required' => 'La confirmación de la contraseña es requerida',
+            'repassword.same' => 'Las contraseñas no coinciden',
+            'password.min' => 'La contraseña debe tenes al menos 8 caracteres',
+            'repassword.min' => 'La contraseña debe tenes al menos 8 caracteres',
             'user_rol_id.required' => 'Debe seleccionar un role',
+            'rolesSelected.required' => 'Debe seleccionar un Role',
         ];
     }
 
@@ -97,6 +114,7 @@ class Users extends Component
         $this->user_id = 0;
         $this->password = 'asdffasd***1asdsf***..webpass';
         $this->resetInputFields();
+        $this->resetErrorBag();
         $this->openModal();
     }
 
@@ -106,8 +124,13 @@ class Users extends Component
         $user = User::findOrFail($id);
         $this->user_id = $id;
         $this->name = $user->name;
+        $this->lastname = $user->lastname;
         $this->email = $user->email;
         $this->password = $user->password;
+        $this->repassword = $user->password;
+        $this->rolesSelected = $user->roles->pluck('id')->toArray();
+
+        $this->resetErrorBag();
         $this->openModal();
     }
 
@@ -117,7 +140,9 @@ class Users extends Component
         $user = User::findOrFail($id);
         $this->user_id = $id;
         $this->name = $user->name;
+        $this->lastname = $user->lastname;
         $this->email = $user->email;
+
         $this->password = null;
         $this->openModalPass();
     }
@@ -127,14 +152,19 @@ class Users extends Component
         $this->validate();
 
 
-        User::updateOrCreate(
+        $user = User::updateOrCreate(
             ['id' => $this->user_id],
             [
                 'name' => $this->name,
+                'lastname' => $this->lastname,
                 'email' => $this->email,
                 'password' => $this->password,
             ]
         );
+
+        if ($user) {
+            $user->roles()->sync($this->rolesSelected);
+        }
 
         $this->closeModal();
         $this->resetInputFields();
@@ -181,8 +211,11 @@ class Users extends Component
     private function resetInputFields()
     {
         $this->name = '';
+        $this->lastname = '';
         $this->email = '';
         $this->password = '';
+        $this->repassword = '';
+        $this->rolesSelected = [];
         $this->resetErrorBag();
     }
 
@@ -190,6 +223,7 @@ class Users extends Component
     {
         // $this->isOpen = false;
         $this->emit('table');
+        $this->resetErrorBag();
         $this->muestraModalPass = 'none';
     }
 
@@ -197,6 +231,7 @@ class Users extends Component
     {
         // $this->isOpen = true;
         $this->emit('table');
+        $this->resetErrorBag();
         $this->muestraModalPass = 'block';
     }
 
@@ -219,6 +254,7 @@ class Users extends Component
     {
         // $this->isOpen = false;
         $this->emit('table');
+        $this->resetErrorBag();
         $this->muestraModalRole = 'none';
     }
 
@@ -226,6 +262,7 @@ class Users extends Component
     {
         // $this->isOpen = true;
         $this->emit('table');
+        $this->resetErrorBag();
         $this->muestraModalRole = 'block';
     }
 

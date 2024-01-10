@@ -17,7 +17,7 @@
                     <thead>
                         <tr>
                             <th scope="col">COD</th>
-                            <th scope="col">Imágen</th>
+                            <th scope="col">Imagen</th>
                             <th scope="col">Título</th>
                             <th scope="col" class="text-center" style="width: 15%">Acciones</th>
                         </tr>
