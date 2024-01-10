@@ -12,7 +12,7 @@
                         Crear usuario
                     @endif
                 </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" wire:click='closeModal'>
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -20,11 +20,11 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-6 mb-2">
-                            <label class="sr-only" for="lastname">Apellido <small class="text-danger">
-                                    *</small></label>
+                            <label class="sr-only" for="lastname">Apellido</label>
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">Apellido <span class="text-danger"> *</span>
+                                    <div class="input-group-text">Apellido<span
+                                            class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                     </div>
                                 </div>
                                 <input type="text" class="form-control" name="lastname" id="lastname"
@@ -41,7 +41,8 @@
                                     *</small></label>
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">Nombre <span class="text-danger"> *</span>
+                                    <div class="input-group-text">Nombre<span
+                                            class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                     </div>
                                 </div>
                                 <input type="text" class="form-control" name="name" id="name"
@@ -58,7 +59,8 @@
                                     *</small></label>
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">E-mail <span class="text-danger"> *</span>
+                                    <div class="input-group-text">E-mail<span
+                                            class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                     </div>
                                 </div>
                                 <input type="mail" class="form-control" name="email" id="email"
@@ -70,43 +72,40 @@
                             @enderror
                         </div>
 
-
-
                         <div class="col-6 mb-2">
-                            <label class="sr-only" for="rol">Rol</label>
+                            <label class="sr-only" for="rolesSelected">Role</label>
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">Rol
+                                    <div class="input-group-text">Role<span
+                                            class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                     </div>
                                 </div>
-                                <select class="form-control" id="rol" aria-label="Default select example"
-                                    name="rol" wire:model="rol">
-                                    <option selected>Seleccione un rol</option>
+                                <select class="form-select" id="rolesSelected" aria-label="Default select example"
+                                    name="rolesSelected" wire:model="rolesSelected">
+                                    <option value="" selected>Seleccione un role</option>
                                     @foreach ($roles as $rol)
-                                        <option value="{{ $rol->id }}">{{ $rol->name }}</option>
+                                        <option value="{{ $rol->id }}">{{ $rol->name }}
+                                        </option>
                                     @endforeach
                                 </select>
 
                             </div>
-                            @error('rol')
+                            @error('rolesSelected')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
-
-
-
 
                         <div class="col-6 mb-2">
                             <label class="sr-only" for="password">Contraseña</label>
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">Contraseña <span class="text-danger">
-                                            *</span>
+                                    <div class="input-group-text">Contraseña<span
+                                            class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                     </div>
                                 </div>
                                 <input type="password" class="form-control" name="password" wire:model="password">
                             </div>
-                            @error('repassword')
+                            @error('password')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
@@ -115,22 +114,24 @@
                             <label class="sr-only" for="repassword">Repetir contraseña</label>
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">Repetir contraseña <span class="text-danger"> *</span>
+                                    <div class="input-group-text">Repetir contraseña<span
+                                            class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                     </div>
                                 </div>
-                                <input type="text" class="form-control" id="repassword" name="repassword"
-                                    wire:model="password">
+                                <input type="password" class="form-control" id="repassword" name="repassword"
+                                    wire:model="repassword">
                             </div>
                             @error('repassword')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
-
-
                     </div>
-
                 </div>
-
+                <div class="me-3 text-end">
+                    <p class="fw-semibold" style="font-size: 12px;"><span
+                            class="text-danger fs-6 fw-semibold">*</span>
+                        Campos Obligatorios</p>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" wire:click="closeModal" class="btn btn-secondary"

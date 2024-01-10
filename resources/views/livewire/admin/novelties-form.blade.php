@@ -38,7 +38,7 @@
                 </div>
                 <div class="form-group" wire:ignore>
                     <label for="description">Descripción</label>
-                    <textarea class="form-control" wire:model="description" id="edit"></textarea>
+                    <textarea class="ckeditor form-control" wire:model="description" id="edit"></textarea>
                     @error('description')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror

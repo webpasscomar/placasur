@@ -1,4 +1,5 @@
 @section('title', 'Admin Categorias')
+
 <div>
     {{-- The Master doesn't talk, he acts. --}}
     <div class="container-fluid">
@@ -6,7 +7,7 @@
             <div class="col-md-8 mt-4 col-6">
                 <h3>Categorías</h3>
             </div>
-            <div class="col-md-4 text-right mt-4 col-6">
+            <div class="col-md-4 text-right mt-3 mt-md-4 col-6">
                 <button wire:click="create" class="btn btn-success" data-toggle="modal" data-target="#roleModal"><i
                         class="fas fa-plus-circle mr-2" style="color: white;"></i>Agregar</button>
             </div>

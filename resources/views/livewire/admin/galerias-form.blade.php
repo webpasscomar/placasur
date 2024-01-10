@@ -32,7 +32,7 @@
 
                         <div class="row">
                             <div class="form-group">
-                                <label for="galeria">Titulo:</label>
+                                <label for="galeria">Título:</label>
                                 <input type="text" class="form-control" id="galeria" wire:model="galeria">
                             </div>
                         </div>
@@ -42,6 +42,7 @@
                                 <label for="imagen" class="custom-file-upload ">
                                     Imagen
                                 </label>
+                                <span class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                 <span id="file-name"></span>
                                 <input type="file" id="imagen" wire:model="imagen" wire:change="cambioImagen"
                                     class="form-control">
@@ -51,13 +52,13 @@
                                 @enderror
 
                             </div>
-
                         </div>
-
-
                     </div>
                 </form>
-
+                <div class="me-3 text-end">
+                    <p class="fw-semibold" style="font-size: 12px;"><span class="text-danger fs-6 fw-semibold">*</span>
+                        Campos Obligatorios</p>
+                </div>
             </div>
 
             <div class="modal-footer">
