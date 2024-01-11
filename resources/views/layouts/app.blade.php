@@ -11,16 +11,20 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- .ico -->
     <link rel="shortcut icon" href="{{ asset('favicons/favicon.ico') }}" type="image/x-icon">
-    <title>{{ config('app.name', 'Consejo') }}</title>
+    <title>{{ config('app.name', 'PlacaSUR') }} - @yield('title')</title>
 
     <!-- CSS - bs - custom -->
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <!-- fontawesome iconos -->
-    <link href="fontawesome/css/all.css" rel="stylesheet">
-    <link href="fontawesome/css/fontawesome.css" rel="stylesheet">
-    <link href="fontawesome/css/brands.css" rel="stylesheet">
-    <link href="fontawesome/css/solid.css" rel="stylesheet">
+    {{-- <link href="fontawesome-free/css/all.css" rel="stylesheet">
+    <link href="fontawesome-free/css/fontawesome.css" rel="stylesheet">
+    <link href="fontawesome-free/css/brands.css" rel="stylesheet">
+    <link href="fontawesome-free/css/solid.css" rel="stylesheet"> --}}
+    <link href="{{ asset('vendor/fontawesome-free/css/all.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/fontawesome-free/css/fontawesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/fontawesome-free/css/brands.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/fontawesome-free/css/solid.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])

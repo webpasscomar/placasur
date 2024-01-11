@@ -88,7 +88,6 @@
                                         </option>
                                     @endforeach
                                 </select>
-
                             </div>
                             @error('rolesSelected')
                                 <span class="text-danger">{{ $message }}</span>
