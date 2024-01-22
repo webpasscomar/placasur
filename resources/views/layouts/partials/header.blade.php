@@ -86,9 +86,9 @@
                   <a class="dropdown-item" href="#">Herrajes</a>
                 </div>
               </li>
-              <li class="nav-item {{ request()->routeIS('presupuestos') ? 'active' : '' }}">
+              {{-- <li class="nav-item {{ request()->routeIS('presupuestos') ? 'active' : '' }}">
                 <a href="{{ route('presupuestos') }}" title="Nuestras actividades" class="nav-link">Presupuestos</a>
-              </li>
+              </li> --}}
               <li class="nav-item {{ request()->routeIS('novelties') ? 'active' : '' }}">
                 <a href="{{ route('novelties') }}" title="Nuestras actividades" class="nav-link">Novedades</a>
               </li>
