@@ -15,7 +15,7 @@
 
     <!-- CSS - bs - custom -->
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <!-- fontawesome iconos -->
     {{-- <link href="fontawesome-free/css/all.css" rel="stylesheet">
     <link href="fontawesome-free/css/fontawesome.css" rel="stylesheet">

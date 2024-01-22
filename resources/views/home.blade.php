@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Inicio')
 
 @section('content')
     <!-- carousel - slide imagenes -->
@@ -68,13 +69,13 @@
                     <img src="{{ asset('img/home/novedades.png') }}" alt="Productos Placa Sur" class="img-fluid shadow">
                 </a>
                 <!-- <a href="novedades.php" class="box link-light" target="_blank">
-                                                                                      <div class="card card-cover">
-                                                                                          <img src="{{ asset('img/novedades.png" c') }}lass="card-img h-100" alt="...">
-                                                                                          <div class="card-img-overlay d-flex justify-content-end align-items-end">
-                                                                                              <span class="fs-4 fw-light pb-0">NOVEDADES</span>
+                                                                                          <div class="card card-cover">
+                                                                                              <img src="{{ asset('img/novedades.png" c') }}lass="card-img h-100" alt="...">
+                                                                                              <div class="card-img-overlay d-flex justify-content-end align-items-end">
+                                                                                                  <span class="fs-4 fw-light pb-0">NOVEDADES</span>
+                                                                                              </div>
                                                                                           </div>
-                                                                                      </div>
-                                                                                  </a>   -->
+                                                                                      </a>   -->
             </div>
         </div>
     </div>

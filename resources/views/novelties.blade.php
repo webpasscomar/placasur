@@ -37,9 +37,7 @@
                                 <img src="{{ $novelty->image ? asset('storage/servicios/' . $novelty->image) : asset('img/no_disponible.png') }}"
                                     class="card-img-top" height="180" alt="{{ $novelty->title }}">
                                 <div class="overlay bg-gradient">
-                                    @php
-                                        echo $novelty->description;
-                                    @endphp
+                                    {!! $novelty->description !!}
                                 </div>
                             </div>
                         </div>
