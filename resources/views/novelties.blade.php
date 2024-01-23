@@ -52,6 +52,224 @@
     </div>
 
 
+  <!-- solapas novedades -->
+  <div class="container-md pt-4">
+    <div class="row">
+      <div class="col-md-12">
+
+        <!-- solapas Productos / Promociones / Herrajes -->
+        <ul class="nav nav-pills justify-content-center" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="btn btn-outline-primary rounded-top rounded-0 shadow-sm active" id="productos-tab"
+              data-bs-toggle="tab" data-bs-target="#productos-tab-pane" type="button" role="tab"
+              aria-controls="productos-tab-pane" aria-selected="true">Productos</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="btn btn-outline-primary rounded-top rounded-0 shadow-sm" id="promociones-tab"
+              data-bs-toggle="tab" data-bs-target="#promociones-tab-pane" type="button" role="tab"
+              aria-controls="promociones-tab-pane" aria-selected="false">Promociones</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="btn btn-outline-primary rounded-top rounded-0 shadow-sm" id="herrajes-tab" data-bs-toggle="tab"
+              data-bs-target="#herrajes-tab-pane" type="button" role="tab" aria-controls="herrajes-tab-pane"
+              aria-selected="false">Herrajes</button>
+          </li>
+        </ul>
+
+        <!-- contenidos productos / promociones / herrajes -->
+        <div class="tab-content mx-2 mt-0" id="myTabContent">
+
+          <!-- PRODUCTOS -->
+          <div class="tab-pane fade show active" id="productos-tab-pane" role="tabpanel" aria-labelledby="productos-tab"
+            tabindex="0">
+
+            <!-- destacada / última -->
+            <div class="row py-3 px-2 shadow rounded-2">
+              <div class="col-md-5">
+                <img src="imagenes/productos/tapacantos.jpg" class="d-block img-fluid rounded-2" alt="Fachada Placasur">
+              </div>
+              <div class="col">
+                <span class="badge rounded-pill border border-primary text-primary mt-4 mt-md-0 mb-3 shadow-sm">15 Ene
+                  2024</span>
+                <!-- <br><small>15/01/2024</small> -->
+                <h3 class="bold text-black-50">Bisagra Negra</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, seddiam nonummy nibh euismod tincidunt ut
+                  laoreet dolore.</p>
+                <a href="#" class="btn btn-sm btn-outline-primary" role="button"> Ver nota <i
+                    class="fas fa-chevron-right ml-3"></i> </a>
+              </div>
+            </div>
+
+            <!-- todas -->
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <h3>Productos y consejos</h3>
+              </div>
+              <!-- contenido -->
+              <div class="card-columns mt-3 px-0">
+                <!-- 1 -->
+                <div class="card text-bg-light p-0 info-box__shadow">
+                  <div class="card-body">
+                    <div class="badge rounded-pill border border-primary text-primary mb-3 shadow-sm">07 Ene 2024</div>
+                    <h2 class="card-title h5 text-primary bold">Aislantes para el hogar</h2>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                    <a href="novedades/consejo.php" class="btn btn-sm btn-outline-primary stretched-link"
+                      title="Detalle del consejo">
+                      Ver consejo <i class="fas fa-chevron-right ml-3"></i>
+                    </a>
+                    <div class="small text-muted mt-4 mb-0 pb-0"><i class="fas fa-user-alt mr-2"></i> Fuente: <cite
+                        title="Source Title">Isover Argentina</cite></div>
+                  </div>
+                </div>
+                <!-- 2 -->
+                <div class="card text-bg-light p-0 info-box__shadow">
+                  <img src="imagenes/novedades/productos/construccion.jpg" class="card-img-top"
+                    alt="producto para la construcción">
+                  <div class="card-body">
+                    <div
+                      class="badge rounded-0 rounded-pill rounded-end border border-primary text-primary mb-3 shadow-sm me-0">
+                      17 Ene 2024</div>
+                    <div class="badge rounded-0 rounded-pill rounded-start thin text-bg-warning mb-3 shadow-sm ms-n1">
+                      Construcción</div>
+                    <h2 class="card-title h5 text-primary bold">Aislantes</h2>
+                    <p class="card-text"> El desafío para los arquitectos, consultores acústicos y empresas constructoras
+                      de viviendas consiste en crear edificaciones más silenciosas. Placasur comercializa sistemas
+                      eficientes para el control acústico y la absorción de sonidos
+                    </p>
+                    <a href="novedades/novedad-1.php" class="btn btn-sm btn-outline-primary stretched-link"
+                      title="Producto egger">
+                      Más info <i class="fas fa-chevron-right ml-3"></i>
+                    </a>
+                  </div>
+                </div>
+                <!-- 3 -->
+                <div class="card text-bg-light p-0 info-box__shadow">
+                  <img src="imagenes/novedades/productos/egger.jpg" class="card-img-top" alt="producto egger">
+                  <div class="card-body">
+                    <div class="badge rounded-pill border border-primary text-primary mb-3 shadow-sm">27 Ene 2024</div>
+                    <h2 class="card-title h5 text-primary bold">Tapacantos Egger</h2>
+                    <p class="card-text">Detalle del producto Egger.
+                      <br>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate vero consectetur vel possimus.
+                    </p>
+                    <a href="novedades/novedad-1.php" class="btn btn-sm btn-outline-primary stretched-link"
+                      title="Producto egger">
+                      Ver tapacantos <i class="fas fa-chevron-right ml-3"></i>
+                    </a>
+                  </div>
+                </div>
+                <!-- 4 -->
+                <div class="card text-bg-light p-0 info-box__shadow">
+                  <div class="card-body">
+                    <div class="badge rounded-pill border border-primary text-primary mb-3 shadow-sm">27 Ene 2024</div>
+                    <h2 class="card-title h5 text-primary bold">Pisos flotantes</h2>
+                    <p class="card-text">Para interiores:
+                      <br>
+                      Gustos personales, armonía con el resto de la decoración, tránsito, y agentes como la humedad o la
+                      incidencia del sol se encuentran enfrentados.
+                    </p>
+                    <a href="novedades/novedad-1.php" class="btn btn-sm btn-outline-primary stretched-link"
+                      title="Detalle de piezas"> Descargar
+                      instructivo <i class="fas fa-download ml-3"></i></a>
+                  </div>
+                </div>
+                <!-- 5 -->
+                <div class="card text-bg-light p-0 info-box__shadow">
+                  <div class="card-body">
+                    <div
+                      class="badge rounded-0 rounded-pill rounded-end border border-primary text-primary mb-3 shadow-sm me-0">
+                      20 Dic 2023</div>
+                    <div class="badge rounded-0 rounded-pill rounded-start thin text-bg-success mb-3 shadow-sm ms-n1">
+                      Placas</div>
+                    <h5 class="card-title h5 text-primary bold">Lo ayudamos a construir con una sola placa</h5>
+                    <p class="card-text">Esto facilitará el correcto armado del mueble. Es recomendable además leer los
+                      pasos de ejecución antes de iniciar el trabajo.</p>
+                    <a href="novedades/novedad-1.php" class="btn btn-sm btn-outline-primary stretched-link"
+                      title="Detalle de piezas"> Descargar detalle
+                      de las piezas <i class="fas fa-download ml-3"></i></a>
+                  </div>
+                </div>
+                <!-- 6 -->
+                <div class="card text-bg-light p-0 info-box__shadow">
+                  <img src="imagenes/novedades/productos/egger.jpg" class="card-img-top" alt="producto egger">
+                  <div class="card-body">
+                    <div class="badge rounded-pill border border-primary text-primary mb-3 shadow-sm">27 Ene 2024</div>
+                    <h2 class="card-title h5 text-primary bold">Tapacantos Egger</h2>
+                    <p class="card-text">Detalle del producto Egger.
+                      <br>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate vero consectetur vel possimus.
+                    </p>
+                    <a href="novedades/novedad-1.php" class="btn btn-sm btn-outline-primary stretched-link"
+                      title="Producto egger">
+                      Ver tapacantos <i class="fas fa-chevron-right ml-3"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- FIN todas -->
+          </div> <!-- FIN Productos -->
+
+
+          <!-- PROMOCIONES -->
+          <div class="tab-pane fade" id="promociones-tab-pane" role="tabpanel" aria-labelledby="promociones-tab"
+            tabindex="0">
+            <!--destacado / último  -->
+            <div class="row py-3 px-2 shadow rounded-2">
+              <div class="col-md-5">
+                <img src="imagenes/productos/construccion.jpg" class="d-block img-fluid rounded-2"
+                  alt="Fachada Placasur">
+              </div>
+              <div class="col">
+                <span class="badge rounded-pill border border-primary text-primary mt-4 mt-md-0 mb-3 shadow-sm">03 Ene
+                  2024</span>
+                <!-- <br><small>15/01/2024</small> -->
+                <h3 class="bold text-black-50">Todo para la construcción</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, seddiam nonummy nibh euismod tincidunt ut
+                  laoreet dolore.</p>
+                <a href="#" class="btn btn-sm btn-outline-primary" role="button"> Ver nota <i
+                    class="fas fa-chevron-right ml-3"></i> </a>
+              </div>
+            </div>
+            <!-- todas -->
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <h3>Promociones</h3>
+              </div>
+            </div>
+          </div><!-- FIN Promociones -->
+
+          <!-- HERRAJES -->
+          <div class="tab-pane fade" id="herrajes-tab-pane" role="tabpanel" aria-labelledby="herrajes-tab"
+            tabindex="0">
+
+            <!--destacado / último  -->
+            <div class="row py-3 px-2 shadow rounded-2">
+              <div class="col-md-5">
+                <img src="imagenes/productos/herrajes.jpg" class="d-block img-fluid rounded-2" alt="Fachada Placasur">
+              </div>
+              <div class="col">
+                <span class="badge rounded-pill border border-primary text-primary mt-4 mt-md-0 mb-3 shadow-sm">03 Ene
+                  2024</span>
+                <!-- <br><small>15/01/2024</small> -->
+                <h3 class="bold text-black-50">Destacado herrajes</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, seddiam nonummy nibh euismod tincidunt ut
+                  laoreet dolore.</p>
+                <a href="#" class="btn btn-sm btn-outline-primary" role="button"> Ver nota <i
+                    class="fas fa-chevron-right ml-3"></i> </a>
+              </div>
+            </div>
+            <!-- todas -->
+            <div class="row mt-4">
+              <div class="col-md-12">
+                <h3>Herrajes</h3>
+              </div>
+            </div>
+          </div><!-- FIN Herrajes -->
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
 @endsection
