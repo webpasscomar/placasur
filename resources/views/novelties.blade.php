@@ -4,6 +4,7 @@
 
 @section('content')
 
+<div>
 
     <!-- jumbotrob / título productos -->
     <div class="container-fluid p-0 mb-3">
@@ -23,31 +24,31 @@
             </div>
         </div>
         <!-- card novedades -->
-        <div class="container-md mt-5">
-            <div class="row">
-                @if (count($novelties) == 0)
-                    <div class="col-md-12 text-center mt-5">
-                        <h3>Novedades no disponibles</h3>
-                    </div>
-                @endif
-                @foreach ($novelties as $novelty)
-                    <div class="col-sm-12 col-md-3 mb-3">
-                        <div class="slide-up">
-                            <div class="boxhover shadow">
-                                <img src="{{ $novelty->image ? asset('storage/servicios/' . $novelty->image) : asset('img/no_disponible.png') }}"
-                                    class="card-img-top" height="180" alt="{{ $novelty->title }}">
-                                <div class="overlay bg-gradient">
-                                    {!! $novelty->description !!}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-0 border-top border-5 border-primary py-2">
-                            <p class="h5 fw-semibold">{{ $novelty->title }}</p>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
+{{--        <div class="container-md mt-5">--}}
+{{--            <div class="row">--}}
+{{--                @if (count($novelties) == 0)--}}
+{{--                    <div class="col-md-12 text-center mt-5">--}}
+{{--                        <h3>Novedades no disponibles</h3>--}}
+{{--                    </div>--}}
+{{--                @endif--}}
+{{--                @foreach ($novelties as $novelty)--}}
+{{--                    <div class="col-sm-12 col-md-3 mb-3">--}}
+{{--                        <div class="slide-up">--}}
+{{--                            <div class="boxhover shadow">--}}
+{{--                                <img src="{{ $novelty->image ? asset('storage/servicios/' . $novelty->image) : asset('img/no_disponible.png') }}"--}}
+{{--                                    class="card-img-top" height="180" alt="{{ $novelty->title }}">--}}
+{{--                                <div class="overlay bg-gradient">--}}
+{{--                                    {!! $novelty->description !!}--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="border-0 border-top border-5 border-primary py-2">--}}
+{{--                            <p class="h5 fw-semibold">{{ $novelty->title }}</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <!-- fin card novedades -->
     </div>
 
@@ -86,7 +87,7 @@
             <!-- destacada / última -->
             <div class="row py-3 px-2 shadow rounded-2">
               <div class="col-md-5">
-                <img src="imagenes/productos/tapacantos.jpg" class="d-block img-fluid rounded-2" alt="Fachada Placasur">
+                <img src="{{ asset('/storage/productos/tapacantos.jpg') }}" class="d-block img-fluid rounded-2" alt="Fachada Placasur">
               </div>
               <div class="col">
                 <span class="badge rounded-pill border border-primary text-primary mt-4 mt-md-0 mb-3 shadow-sm">15 Ene
@@ -95,8 +96,8 @@
                 <h3 class="bold text-black-50">Bisagra Negra</h3>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, seddiam nonummy nibh euismod tincidunt ut
                   laoreet dolore.</p>
-                <a href="#" class="btn btn-sm btn-outline-primary" role="button"> Ver nota <i
-                    class="fas fa-chevron-right ml-3"></i> </a>
+                <button class="btn btn-sm btn-outline-primary" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal"> Ver nota <i
+                    class="fas fa-chevron-right ml-3"></i> </button>
               </div>
             </div>
 
@@ -209,7 +210,6 @@
             </div> <!-- FIN todas -->
           </div> <!-- FIN Productos -->
 
-
           <!-- PROMOCIONES -->
           <div class="tab-pane fade" id="promociones-tab-pane" role="tabpanel" aria-labelledby="promociones-tab"
             tabindex="0">
@@ -270,6 +270,59 @@
     </div>
   </div>
 
-
+    <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color:rgba(51,51,51,0.1);">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Bisagra Negra</h1>
+                        <span class="badge rounded-pill border border-primary text-primary ms-5 shadow-sm">15 Ene
+                  2024</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="{{ asset('/storage/productos/tapacantos.jpg') }}" class="w-100" alt="imagen">
+                            </div>
+                            <div class="col-md-8">
+                                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut dolore ea
+                                    inventore itaque libero nesciunt quae qui quis quos sint, totam velit voluptate.
+                                    Autem commodi dignissimos earum minus quisquam!
+                                </div>
+                                <div>Ab ad, aliquam autem beatae corporis dignissimos ea eaque eius error ex, fuga fugit
+                                    minus nam nobis non nostrum, nulla omnis perferendis perspiciatis provident quas
+                                    quod recusandae rem similique voluptatem!
+                                </div>
+                                <div>Atque consectetur consequatur in laudantium molestiae molestias mollitia nihil quas
+                                    quasi qui quia, quo rem saepe soluta suscipit velit veritatis. A aliquam dolor eum
+                                    mollitia quae quibusdam reprehenderit repudiandae unde?
+                                </div>
+                                <div>Alias aliquam amet animi architecto beatae consectetur cum cumque dignissimos
+                                    doloremque dolores eos exercitationem facere facilis incidunt labore minus nisi odit
+                                    perferendis quaerat quod, reiciendis sequi, unde velit voluptates voluptatibus!
+                                </div>
+                                <div>A ab alias aliquid animi aut, consectetur cumque debitis delectus, dolorem dolores
+                                    doloribus eligendi esse ex, facere id laborum nesciunt numquam pariatur provident
+                                    quis quod repellendus repudiandae similique tempora unde.
+                                </div>
+                                <div>Aliquid animi blanditiis eos ex in modi perferendis recusandae voluptas. Adipisci
+                                    blanditiis cumque earum est id ipsa nisi quia! Enim facere illo libero magnam
+                                    molestias placeat quidem reiciendis tempora temporibus?
+                                </div>
+                                <div>Beatae dolorem earum fugiat inventore ipsam natus quidem! Assumenda dolor fuga
+                                    necessitatibus odit omnis repellendus! Ad aperiam at cum, dolore enim eveniet
+                                    exercitationem hic illum laboriosam minus officiis quia voluptatum?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
 
 @endsection
