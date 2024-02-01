@@ -19,32 +19,32 @@
                 </nav>
             </div>
         </div>
-    </div>
-    <!-- card servicios -->
-    <div class="container-md mt-5">
-        <div class="row">
-            @if (count($services) == 0)
-                <div class="col-md-12 text-center mt-5">
-                    <h3>Servicios no disponibles</h3>
-                </div>
-            @endif
-            @foreach ($services as $service)
-                <div class="col-sm-12 col-md-3 mb-3">
-                    <div class="slide-up">
-                        <div class="boxhover shadow">
-                            <img src="{{ asset('storage/servicios/' . $service->image) }}" class="card-img-top"
-                                alt="{{ $service->title }}">
-                            <div class="overlay bg-gradient">
-                                {{ $service->description }}
+        <!-- card servicios -->
+        <div class="container-md mt-5">
+            <div class="row">
+                @if (count($services) == 0)
+                    <div class="col-md-12 text-center mt-5">
+                        <h3>Servicios no disponibles</h3>
+                    </div>
+                @endif
+                @foreach ($services as $service)
+                    <div class="col-sm-12 col-md-3 mb-3">
+                        <div class="slide-up">
+                            <div class="boxhover shadow">
+                                <img src="{{ $service->image ? asset('storage/servicios/' . $service->image) : asset('img/no_disponible.png') }}"
+                                    class="card-img-top" height="180" alt="{{ $service->title }}">
+                                <div class="overlay bg-gradient">
+                                    {{ $service->description }}
+                                </div>
                             </div>
                         </div>
+                        <div class="border-0 border-top border-5 border-primary py-2">
+                            <p class="h5 fw-semibold">{{ $service->title }}</p>
+                        </div>
                     </div>
-                    <div class="border-0 border-top border-5 border-primary py-2">
-                        <p class="h5 fw-semibold">{{ $service->title }}</p>
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
+        <!-- fin card servicios -->
     </div>
-    <!-- fin card servicios -->
 @endsection

@@ -9,7 +9,9 @@ class NoveltiesController extends Controller
 {
     public function index()
     {
-        $novelties = Novelty::where('status', 1)->get();
+        $novelties = Novelty::where('status', 1)
+            ->orderBy('order', 'asc')
+            ->get();
         return view('novelties', compact('novelties'));
     }
 }

@@ -10,6 +10,7 @@ use App\Http\Controllers\NoveltiesController;
 use App\Http\Controllers\PresupuestosController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ServicesController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,10 @@ use App\Http\Controllers\ServicesController;
 |
 */
 
-Auth::routes();
+// Protege el acceso al registro desde la barra de navegación del navegador
+Auth::routes(
+    ['register' => false]
+);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/empresa', [EmpresaController::class, 'index'])->name('empresa');

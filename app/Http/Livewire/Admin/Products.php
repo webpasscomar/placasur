@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Categoria;
 use App\Models\Product;
 use GuzzleHttp\Handler\Proxy;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
@@ -16,7 +17,7 @@ class Products extends Component
     public $showModalImage = false;
 
     public $categorias;
-
+    public $rutaCompleta;
     public $modal = 'none';
     public $search;
     // public $sort = 'id';
@@ -45,18 +46,66 @@ class Products extends Component
         ) {
             return [
                 'title' => 'required|max:50',
+                'category_id' => 'required|not_in:0',
                 // 'imagen' => 'required|mimes:jpg,png|max:1024',
             ];
         } else {
             return [
                 'title' => 'required|max:50',
+                'category_id' => 'required|not_in:0',
             ];
         }
     }
 
+    protected function messages()
+    {
+        return [
+            'title.required' => 'El título es obligatoio',
+            'category_id.not_in' => 'Seleccione una categoria',
+        ];
+    }
+
+    // Obtener el path de las categorias
+    function obtenerRutaCompleta($id, $rutaParcial = [])
+    {
+        $categoria = DB::table('categorias')->find($id);
+
+        if (!$categoria) {
+            return [];
+        }
+
+        array_unshift($rutaParcial, $categoria->categoria);
+
+        if ($categoria->categoriaPadre_id) {
+            return $this->obtenerRutaCompleta($categoria->categoriaPadre_id, $rutaParcial);
+        }
+
+        return $rutaParcial;
+    }
+
     public function render()
     {
-        $this->categorias = Categoria::get();
+
+        // Obtener la ultima categoría del arbol de categorías
+
+        $this->categorias = DB::table('categorias as c1')
+            ->leftJoin('categorias as c2', 'c1.id', '=', 'c2.categoriaPadre_id')
+            ->select('c1.*')
+            ->whereNull('c2.id') // Categorías que no tienen categoría padre
+            ->orWhere('c1.categoriaPadre_id', '=', null) // Categorías sin categoría padre
+            ->orWhereNotExists(function ($query) {
+                $query->select(DB::raw(1))
+                    ->from('categorias as c3')
+                    ->where('c3.categoriaPadre_id', '=', DB::raw('c1.id'));
+            })
+            ->get();
+
+        // Iterar las categorias y agregar division entre las mismas con el símbolo >
+        foreach ($this->categorias as $categoria) {
+            $this->rutaCompleta = $this->obtenerRutaCompleta($categoria->id);
+            $categoria->rutaCompleta = implode(' > ', $this->rutaCompleta);
+        }
+
         $this->products = Product::get();
         return view('livewire.admin.products', ['rows' => $this->products])->layout('layouts.adminlte');
     }
@@ -64,6 +113,7 @@ class Products extends Component
 
     public function openModal()
     {
+        $this->resetErrorBag();
         $this->emit('table');
         $this->modal = 'block';
     }

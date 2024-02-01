@@ -11,7 +11,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- .ico -->
   <link rel="shortcut icon" href="{{ asset('favicons/favicon.ico') }}" type="image/x-icon">
-  <title>{{ config('app.name', 'Consejo') }}</title>
+  <title>{{ config('app.name', 'PlacaSUR') }} - @yield('title')</title>
 
   <!-- CSS - bs - custom -->
   {{-- <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">

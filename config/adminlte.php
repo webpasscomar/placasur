@@ -320,7 +320,6 @@ return [
             'text' => 'Servicios',
             'url' => 'admin/servicios',
             'icon' => 'fas fa-wrench',
-
         ],
         [
             'text' => 'Categorías',
@@ -575,5 +574,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

@@ -185,7 +185,8 @@ class Categorias extends Component
             ]
         );
 
-        $this->emit('alertSave');
+        // $this->emit('alertSave');
+        $this->emit('mensajePositivo', ['mensaje' => 'Operación exitosa']);
         $this->cerrarModal();
         $this->limpiarCampos();
     }
