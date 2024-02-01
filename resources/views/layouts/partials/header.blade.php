@@ -35,9 +35,7 @@
               <a class="dropdown-item" href="#">Herrajes</a>
             </div>
           </li>
-          <li class="nav-item {{ request()->routeIS('presupuestos') ? 'active' : '' }}">
-            <a href="{{ route('presupuestos') }}" title="Nuestras actividades" class="nav-link">Presupuestos</a>
-          </li>
+
           <li class="nav-item {{ request()->routeIS('novelties') ? 'active' : '' }}">
             <a href="{{ route('novelties') }}" title="Nuestras actividades" class="nav-link">Novedades</a>
           </li>
@@ -60,26 +58,6 @@
       </div>
       </li>
 
-      <li class="nav-item {{ request()->routeIS('novelties') ? 'active' : '' }}">
-        <a href="{{ route('novelties') }}" title="Nuestras actividades" class="nav-link">Novedades</a>
-      </li>
-
-      <!-- contacto -->
-      <li class="nav-item {{ request()->routeIS('contacto') ? 'active' : '' }}">
-        <a href="{{ route('contacto') }}" title="Contactanos" class="nav-link">Contacto</a>
-      </li>
-
-      <!-- buscador -->
-      <li class="nav-item search">
-        <form>
-          <div class="animated-search m-md-0 mb-sm-4">
-            <input type="search" id="animated-input">
-            <a href="#">
-              <i class="fas fa-search" id="searchBtn"></i>
-            </a>
-          </div>
-        </form>
-      </li>
       </ul>
     </div>
     </div>
