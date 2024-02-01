@@ -1,4 +1,75 @@
 {
+  "public/css/custom.css": {
+    "file": "assets/custom-0e15841e.css",
+    "isEntry": true,
+    "src": "public/css/custom.css"
+  },
+  "public/fontawesome/css/all.css": {
+    "file": "assets/all-9294ddc9.css",
+    "isEntry": true,
+    "src": "public/fontawesome/css/all.css"
+  },
+  "public/fontawesome/css/brands.css": {
+    "file": "assets/brands-882e928d.css",
+    "isEntry": true,
+    "src": "public/fontawesome/css/brands.css"
+  },
+  "public/fontawesome/css/fontawesome.css": {
+    "file": "assets/fontawesome-10404dce.css",
+    "isEntry": true,
+    "src": "public/fontawesome/css/fontawesome.css"
+  },
+  "public/fontawesome/css/solid.css": {
+    "file": "assets/solid-f91cc7c0.css",
+    "isEntry": true,
+    "src": "public/fontawesome/css/solid.css"
+  },
+  "public/fontawesome/webfonts/fa-brands-400.ttf": {
+    "file": "assets/fa-brands-400-2ef6fdde.ttf",
+    "src": "public/fontawesome/webfonts/fa-brands-400.ttf"
+  },
+  "public/fontawesome/webfonts/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-f4617423.woff2",
+    "src": "public/fontawesome/webfonts/fa-brands-400.woff2"
+  },
+  "public/fontawesome/webfonts/fa-regular-400.ttf": {
+    "file": "assets/fa-regular-400-12dea17b.ttf",
+    "src": "public/fontawesome/webfonts/fa-regular-400.ttf"
+  },
+  "public/fontawesome/webfonts/fa-regular-400.woff2": {
+    "file": "assets/fa-regular-400-7ba24c41.woff2",
+    "src": "public/fontawesome/webfonts/fa-regular-400.woff2"
+  },
+  "public/fontawesome/webfonts/fa-solid-900.ttf": {
+    "file": "assets/fa-solid-900-67a880b4.ttf",
+    "src": "public/fontawesome/webfonts/fa-solid-900.ttf"
+  },
+  "public/fontawesome/webfonts/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-e2c5cf54.woff2",
+    "src": "public/fontawesome/webfonts/fa-solid-900.woff2"
+  },
+  "public/fontawesome/webfonts/fa-v4compatibility.ttf": {
+    "file": "assets/fa-v4compatibility-8d9500e8.ttf",
+    "src": "public/fontawesome/webfonts/fa-v4compatibility.ttf"
+  },
+  "public/fontawesome/webfonts/fa-v4compatibility.woff2": {
+    "file": "assets/fa-v4compatibility-7c377405.woff2",
+    "src": "public/fontawesome/webfonts/fa-v4compatibility.woff2"
+  },
+  "public/img/enca.jpg": {
+    "file": "assets/enca-872db7b4.jpg",
+    "src": "public/img/enca.jpg"
+  },
+  "public/js/bootstrap.bundle.min.js": {
+    "file": "assets/bootstrap.bundle.min-7ff93d50.js",
+    "isEntry": true,
+    "src": "public/js/bootstrap.bundle.min.js"
+  },
+  "public/js/jquery.min.js": {
+    "file": "assets/jquery.min-09a00454.js",
+    "isEntry": true,
+    "src": "public/js/jquery.min.js"
+  },
   "resources/js/app.js": {
     "file": "assets/app-d0eb4253.js",
     "isEntry": true,
