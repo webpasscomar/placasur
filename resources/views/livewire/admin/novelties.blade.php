@@ -30,7 +30,7 @@
                                 <th scope="row" class="align-middle" scope="row">{{ $novelty->id }}</th>
                                 <td class="align-middle" style="cursor: pointer"
                                     wire:click="openModalImage({{ $novelty->id }})"><img
-                                        src="{{ asset('storage/novedades/' . $novelty->image) }}"
+                                        src="{{ $novelty->image ? asset('storage/novedades/' . $novelty->image) : asset('img/no_disponible.png') }}"
                                         alt="{{ $novelty->title }}" width="40" height="40" />
                                 </td>
                                 <td class="align-middle">{{ $novelty->title }}</td>
@@ -38,7 +38,7 @@
                                 <td class="align-middle">
                                     <div class="d-flex flex-md-row gap-1 justify-content-evenly">
                                         <div class="m-1 mt-3">
-                                            <livewire:toggle-button :model="$novelty" field="order"
+                                            <livewire:toggle-button :model="$novelty" field="status"
                                                 key="{{ $novelty->id }}" />
                                         </div>
                                         <button wire:click="edit({{ $novelty->id }})"
@@ -52,7 +52,8 @@
                             </tr>
                             @if ($showModalImage)
                                 {{-- Mostrar modal de imagén amliada --}}
-                                <x-modal-image image="{{ asset('storage/novedades/' . $currentImage) }}"
+                                <x-modal-image
+                                    image="{{ $currentImage ? asset('storage/novedades/' . $currentImage) : asset('img/no_disponible.png') }}"
                                     title="{{ $currentTitle }}" imageId="{{ $key }}" />
                             @endif
                         @endforeach

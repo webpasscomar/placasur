@@ -31,20 +31,26 @@
 
                         <div class="row">
                             <div class="form-group">
-                                <label for="category_id">Categoría: *</label>
-                                <select class="form-control" wire:model="category_id">
+                                <label for="category_id">Categoría:<span
+                                        class="ms-1 text-danger fs-6 fw-semibold">*</span></label>
+                                <select class="form-select" wire:model="category_id">
 
                                     <option value="0">Seleccione la categoría</option>
                                     @foreach ($categorias as $item)
-                                        <option value="{{ $item->id }}">{{ $item->categoria }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->rutaCompleta }}
+                                        </option>
                                     @endforeach
                                 </select>
+                                @error('category_id')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="form-group col">
-                                <label for="title">Nombre:</label>
+                                <label for="title">Nombre:<span
+                                        class="ms-1 text-danger fs-6 fw-semibold">*</span></label>
                                 <input type="text" class="form-control" id="title" wire:model="title">
 
                                 @error('title')
@@ -80,7 +86,10 @@
 
                     </div>
                 </form>
-
+                <div class="me-3 text-end">
+                    <p class="fw-semibold" style="font-size: 12px;"><span class="text-danger fs-6 fw-semibold">*</span>
+                        Campos Obligatorios</p>
+                </div>
             </div>
 
             <div class="modal-footer">
