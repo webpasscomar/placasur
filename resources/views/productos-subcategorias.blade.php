@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', $categoria->categoria)
-
+@section('title', $categoriaPadre->categoria)
+{{-- {{ dd($categoria['categoria']) }} --}}
 @section('content')
     <!-- jumbotrob / título productos -->
     <div class="container-fluid p-0 mb-3">
@@ -28,19 +28,19 @@
     <div class="container-md mt-5">
         <div class="row">
 
-            @foreach ($categorias as $categoria)
+            @foreach ($categoriasHijas as $categoriaHija)
                 <div class="col-sm-12 col-md-3 mb-5">
                     <div class="card shadow info-box__shadow h-100 pb-1">
                         <a href="{{ route('productos.detalle') }}" class="text-decoration-none stretched-link"
                             title="Ver todos los Productos de placas">
-                            <img src="{{ file_exists(asset('storage/categorias/' . $categoria->imagen)) ? asset('storage/categorias/' . $categoria->imagen) : asset('img/no_disponible.png') }}"
-                                class="card-img-top d-none d-sm-none d-md-block" alt="{{ $categoria->categoria }}">
+                            <img src="{{ file_exists(asset('storage/categorias/' . $categoriaHija->imagen)) ? asset('storage/categorias/' . $categoria->imagen) : asset('img/no_disponible.png') }}"
+                                class="card-img-top d-none d-sm-none d-md-block" alt="{{ $categoriaHija->categoria }}">
                             <div class="card-header border-0 border-top border-5 border-primary">
-                                <p class="card-title h5 mb-0 fw-semibold link-secondary">{{ $categoria->categoria }}</p>
+                                <p class="card-title h5 mb-0 fw-semibold link-secondary">{{ $categoriaHija->categoria }}</p>
                             </div>
                             <div class="card-body p-0">
                                 <ul class="list-group list-group-flush rounded-0 border-0">
-                                    @foreach ($subcategoriasPorCategoria[$categoria->id] as $subcategoria)
+                                    @foreach ($subcategoriasPorCategoria[$categoriaHija->id] as $subcategoria)
                                         <li class="list-group-item border-0" aria-current="true"> <i
                                                 class="fa-solid fa-diamond pe-1 fa-2xs text-primary"></i>
                                             {{ $subcategoria }}</li>

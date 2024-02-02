@@ -35,17 +35,18 @@ class ProductosController extends Controller
     public function subcategorias($slugCategoria)
     {
         $subcategoriasPorCategoria = [];
-        $categoria = Categoria::where('slug', $slugCategoria)->firstOrFail();
+        $categoriaPadre = Categoria::where('slug', $slugCategoria)->firstOrFail();
         // dd($categoria);
         // dd($categoria->id);
-        $categorias = Categoria::where('categoriaPadre_id', $categoria->id)->get();
+        $categoriasHijas = Categoria::where('categoriaPadre_id', $categoriaPadre->id)->get();
 
-        foreach ($categorias as $categoria) {
-            $subcategorias = Categoria::where('categoriaPadre_id', $categoria->id)->pluck('categoria');
-            $subcategoriasPorCategoria[$categoria->id] = $subcategorias;
+
+        foreach ($categoriasHijas as $categoriaHija) {
+            $subcategorias = Categoria::where('categoriaPadre_id', $categoriaHija->id)->pluck('categoria');
+            $subcategoriasPorCategoria[$categoriaHija->id] = $subcategorias;
         }
         // dd($categorias);
-        return view('productos-subcategorias', compact('categorias', 'categoria', 'subcategoriasPorCategoria'));
+        return view('productos-subcategorias', compact('categoriasHijas', 'categoriaPadre', 'subcategoriasPorCategoria'));
     }
 
     public function productos()
