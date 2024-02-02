@@ -38,3 +38,6 @@ Route::get('/productos', [ProductosController::class, 'index'])->name('productos
 Route::get('/presupuestos', [PresupuestosController::class, 'index'])->name('presupuestos');
 Route::get('/descargas', [DescargasController::class, 'index'])->name('descargas');
 Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto');
+
+// Ruta prueba para detalle
+Route::view('/producto/detalle', 'productos-detalle')->name('productos.detalle');

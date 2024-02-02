@@ -23,17 +23,29 @@ class ProductosController extends Controller
     public function index()
     {
         $categorias = Categoria::where('categoriaPadre_id', 0)->get();
-        return view('productos-index', compact('categorias'));
+        $subcategoriasPorCategoria = [];
+        foreach ($categorias as $categoria) {
+            $subcategorias = Categoria::where('categoriaPadre_id', $categoria->id)->pluck('categoria');
+            $subcategoriasPorCategoria[$categoria->id] = $subcategorias;
+        }
+
+        return view('productos-index', compact('categorias', 'subcategoriasPorCategoria'));
     }
 
     public function subcategorias($slugCategoria)
     {
+        $subcategoriasPorCategoria = [];
         $categoria = Categoria::where('slug', $slugCategoria)->firstOrFail();
         // dd($categoria);
         // dd($categoria->id);
         $categorias = Categoria::where('categoriaPadre_id', $categoria->id)->get();
+
+        foreach ($categorias as $categoria) {
+            $subcategorias = Categoria::where('categoriaPadre_id', $categoria->id)->pluck('categoria');
+            $subcategoriasPorCategoria[$categoria->id] = $subcategorias;
+        }
         // dd($categorias);
-        return view('productos-subcategorias', compact('categorias'));
+        return view('productos-subcategorias', compact('categorias', 'categoria', 'subcategoriasPorCategoria'));
     }
 
     public function productos()

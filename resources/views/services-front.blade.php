@@ -1,5 +1,5 @@
-@section('title', 'Servicios')
 @extends('layouts.app')
+@section('title', 'Servicios')
 
 @section('content')
     <!-- jumbotrob / título servicios -->

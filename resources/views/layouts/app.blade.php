@@ -14,7 +14,7 @@
     <title>{{ config('app.name', 'PlacaSUR') }} - @yield('title')</title>
 
     <!-- CSS - bs - custom -->
-    <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/estilos.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <!-- fontawesome iconos -->
     {{-- <link href="fontawesome-free/css/all.css" rel="stylesheet">
