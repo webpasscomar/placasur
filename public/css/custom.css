@@ -523,7 +523,7 @@ a:hover {
 
 /* jumbotron páginas internas */
 .jumbotron.imagencover {
-  background: url('/imagenes/enca.jpg') no-repeat;
+  background: url('/public/img/enca.jpg') no-repeat;
   padding: 2rem 1rem;
   /* margin-bottom: 2rem; */
   background-color: #e9ecef;

@@ -13,21 +13,8 @@
     <link rel="shortcut icon" href="{{ asset('favicons/favicon.ico') }}" type="image/x-icon">
     <title>{{ config('app.name', 'PlacaSUR') }} - @yield('title')</title>
 
-    <!-- CSS - bs - custom -->
-    {{-- <link href="{{ asset('css/estilos.css') }}" rel="stylesheet"> --}}
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-    <!-- fontawesome iconos -->
-    {{-- <link href="fontawesome-free/css/all.css" rel="stylesheet">
-    <link href="fontawesome-free/css/fontawesome.css" rel="stylesheet">
-    <link href="fontawesome-free/css/brands.css" rel="stylesheet">
-    <link href="fontawesome-free/css/solid.css" rel="stylesheet"> --}}
-    <link href="{{ asset('vendor/fontawesome-free/css/all.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/fontawesome-free/css/fontawesome.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/fontawesome-free/css/brands.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/fontawesome-free/css/solid.css') }}" rel="stylesheet">
-
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'public/fontawesome/css/all.css', 'public/fontawesome/css/fontawesome.css', 'public/fontawesome/css/brands.css', 'public/fontawesome/css/solid.css', 'public/css/custom.css', 'resources/js/app.js', 'public/js/jquery.min.js', 'public/js/bootstrap.bundle.min.js'])
 </head>
 
 <body>
