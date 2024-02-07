@@ -23,23 +23,53 @@ class ProductosController extends Controller
     public function index()
     {
         $categorias = Categoria::where('categoriaPadre_id', 0)->get();
-        return view('productos-index', compact('categorias'));
+        $subcategoriasPorCategoria = [];
+
+        foreach ($categorias as $categoria) {
+            $subcategorias = Categoria::where('categoriaPadre_id', $categoria->id)->pluck('categoria');
+            $subcategoriasPorCategoria[$categoria->id] = $subcategorias;
+        }
+
+        return view('productos-index', compact('categorias', 'subcategoriasPorCategoria'));
     }
 
-    public function subcategorias($slugCategoria)
+    // Muestras las categorias o productos según sea el caso
+    public function mostrar($slugCategoria)
     {
-        $categoria = Categoria::where('slug', $slugCategoria)->firstOrFail();
-        // dd($categoria);
-        // dd($categoria->id);
-        $categorias = Categoria::where('categoriaPadre_id', $categoria->id)->get();
-        // dd($categorias);
-        return view('productos-subcategorias', compact('categorias'));
-    }
 
-    public function productos()
-    {
-        $categorias = Categoria::get();
-        $productos = Product::get();
-        return view('productos-productos', compact('categorias', 'productos'));
+        $subcategoriasPorCategoria = [];
+        $categoriaPadre = '';
+        $categoriasNivelSuperior = '';
+
+        $categoriaActual = Categoria::where('slug', $slugCategoria)->firstOrFail();
+        // dd($categoriaActual['categoriaPadre_id']);
+        // Traigo las categorias para el SIDEBAR
+
+        if ($categoriaActual->categoriaPadre_id !== 0) {
+            $categoriaPadre = Categoria::where('id', $categoriaActual->categoriaPadre_id)->firstOrFail();
+            // dd($categoriaPadre);
+            $categoriasNivelSuperior = Categoria::where('categoriaPadre_id', $categoriaPadre->id)->get();
+        }
+
+        // Traigo las categorias hijas de la actual para ver si muestro categorias o productos
+        $categoriasHijas = Categoria::where('categoriaPadre_id', $categoriaActual->id)->get();
+
+        // Si la categoria tiene hijos muestro categorias
+        if (count($categoriasHijas) > 0) {
+            // dd('Muestro categorias');
+            foreach ($categoriasHijas as $categoriaHija) {
+                $subcategorias = Categoria::where('categoriaPadre_id', $categoriaHija->id)->pluck('categoria');
+                $subcategoriasPorCategoria[$categoriaHija->id] = $subcategorias;
+            }
+
+            return view('productos-subcategorias', compact('categoriaPadre', 'categoriaActual', 'categoriasHijas', 'subcategoriasPorCategoria', 'categoriasNivelSuperior'));
+        } else {
+            // dd('Muestro productos');
+            // Muestro productos porque no tiene hijas
+            // $productos = $categoriaActual->productos();
+            $productos = Product::where('category_id', $categoriaActual->id)->get();
+            // dd($productos);
+            return view('productos-productos', compact('categoriaPadre', 'categoriaActual', 'productos', 'categoriasNivelSuperior'));
+        }
     }
 }

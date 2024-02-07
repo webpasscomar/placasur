@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Productos')
 
 @section('content')
   <!-- jumbotrob / título productos -->
@@ -12,14 +13,13 @@
       <div class="container mt-md-n5 pt-1">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent px-0 py-2">
-            <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-decoration-none">Inicio</a></li>
             <li class="breadcrumb-item active text-black" aria-current="page">Productos</li>
           </ol>
         </nav>
       </div>
     </div>
   </div>
-
 
   <!-- card productos -->
   <div class="container-md mt-5">
@@ -37,20 +37,13 @@
               </div>
               <div class="card-body p-0">
                 <ul class="list-group list-group-flush rounded-0 border-0">
-                  <li class="list-group-item border-0" aria-current="true"> <i
-                      class="fa-solid fa-diamond pe-1 fa-2xs text-primary"></i> Faplac</li>
-                  <li class="list-group-item border-0" aria-current="true"> <i
-                      class="fa-solid fa-diamond pe-1 fa-2xs text-primary"></i> Egger</li>
-                  <li class="list-group-item border-0" aria-current="true"> <i
-                      class="fa-solid fa-diamond pe-1 fa-2xs text-primary"></i> Rehau</li>
-                  <li class="list-group-item border-0" aria-current="true"> <i
-                      class="fa-solid fa-diamond pe-1 fa-2xs text-primary"></i> Sadepam</li>
-                  <li class="list-group-item border-0" aria-current="true"> <i
-                      class="fa-solid fa-diamond pe-1 fa-2xs text-primary"></i> Rauvisio</li>
-                  <li class="list-group-item border-0" aria-current="true"> <i
-                      class="fa-solid fa-diamond pe-1 fa-2xs text-primary"></i> Guillermina</li>
-                  <li class="list-group-item border-0" aria-current="true"> <i
-                      class="fa-solid fa-diamond pe-1 fa-2xs text-primary"></i> Obs</li>
+                  @foreach ($subcategoriasPorCategoria[$categoria->id] as $subcategorias)
+                    <li class="list-group-item border-0" aria-current="true">
+                      <i class="fa-solid fa-diamond pe-1 fa-2xs text-primary"></i>
+                      {{ $subcategorias }}
+                    </li>
+                  @endforeach
+
                 </ul>
               </div>
             </a>

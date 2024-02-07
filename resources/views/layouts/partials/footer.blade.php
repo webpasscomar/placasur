@@ -21,15 +21,13 @@
               <li><a href="{{ route('empresa') }}" class="text-decoration-none link-light"
                   title="Saber más sobre la Empresa"> Empresa
                 </a></li>
-              <li><a href="{{ route('services-front') }}" class="text-decoration-none link-light"
+              <li><a href="{{ route('servicios') }}" class="text-decoration-none link-light"
                   title="Todos los servicios"> Servicios
                 </a></li>
               <li><a href="{{ route('productos') }}" class="text-decoration-none link-light"
                   title="Todos nuestros productos">
                   Productos </a></li>
-              <li><a href="/" class="text-decoration-none link-light" title="Solicitá tu presupuesto">
-                  Presupuestos </a></li>
-              <li><a href="{{ route('novelties') }}" class="text-decoration-none link-light"
+              <li><a href="{{ route('novedades') }}" class="text-decoration-none link-light"
                   title="Todas la últimas novedades">
                   Novedades </a></li>
               <li><a href="{{ route('contacto') }}" class="text-decoration-none link-light" title="Nuestros contactos">

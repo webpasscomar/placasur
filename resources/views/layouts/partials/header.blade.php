@@ -17,10 +17,13 @@
             <a href="{{ route('empresa') }}" title="Página principal" class="nav-link">Empresa <span
                 class="visually-hidden">(Home)</span></a>
           </li>
-          <li class="nav-item {{ request()->routeIS('services-front') ? 'active' : '' }}">
-            <a href="{{ route('services-front') }}" title="Nuestros servicios" class="nav-link">Servicios</a>
+          <li class="nav-item {{ request()->routeIS('servicios') ? 'active' : '' }}">
+            <a href="{{ route('servicios') }}" title="Nuestros servicios" class="nav-link">Servicios</a>
           </li>
-          <li class="nav-item dropdown {{ request()->routeIS('productos') ? 'active' : '' }}">
+          <li class="nav-item {{ request()->routeIS('productos') ? 'active' : '' }}">
+            <a href="{{ route('productos') }}" title="Nuestros productos" class="nav-link">Productos</a>
+          </li>
+          {{-- <li class="nav-item dropdown {{ request()->routeIS('productos') ? 'active' : '' }}">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               Productos
@@ -34,10 +37,10 @@
               <a class="dropdown-item" href="#">Tapacantos</a>
               <a class="dropdown-item" href="#">Herrajes</a>
             </div>
-          </li>
+          </li> --}}
 
-          <li class="nav-item {{ request()->routeIS('novelties') ? 'active' : '' }}">
-            <a href="{{ route('novelties') }}" title="Nuestras actividades" class="nav-link">Novedades</a>
+          <li class="nav-item {{ request()->routeIS('novedades') ? 'active' : '' }}">
+            <a href="{{ route('novedades') }}" title="Nuestras actividades" class="nav-link">Novedades</a>
           </li>
           <!-- contacto -->
           <li class="nav-item {{ request()->routeIS('contacto') ? 'active' : '' }}">

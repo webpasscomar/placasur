@@ -4,7 +4,6 @@
 
 @section('content')
 
-
     <!-- jumbotrob / título productos -->
     <div class="container-fluid p-0 mb-3">
         <div class="jumbotron jumbotron-fluid imagencover px-4 mb-0 d-flex align-items-center text-center mt-md-n2">
