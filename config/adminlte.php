@@ -292,12 +292,12 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'Buscar',
+            'type' => 'navbar-search',
+            'text' => 'Buscar',
             'topnav_right' => true,
         ],
         [
-            'type'         => 'fullscreen-widget',
+            'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
 
@@ -574,5 +574,5 @@ return [
     |
     */
 
-    'livewire' => true,
+    'livewire' => false,
 ];

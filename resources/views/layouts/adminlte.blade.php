@@ -19,9 +19,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @livewireStyles
 
-
 @stop
-
 
 @section('js')
     @stack('modals')
@@ -37,8 +35,9 @@
     {{-- <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> --}}
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#myTable').DataTable({
+                "stateSave": true, // Habilita guardar el estado
                 "language": {
                     "lengthMenu": "Mostrar _MENU_ elementos por página",
                     "zeroRecords": "No se encontraron resultados",
@@ -51,14 +50,23 @@
                         "last": "Último",
                         "next": "Siguiente",
                         "previous": "Anterior"
-                    }
+                    },
                 }
             });
         });
 
         Livewire.on('table', () => {
+
+            // Guardar el estado actual de DataTables
+            let tableState = $('#myTable').DataTable().state();
+            let tableStateCopy;
+
+            // Destruir la instancia de DataTables
             $('#myTable').DataTable().destroy();
+
+            // Recrear DataTables
             $('#myTable').DataTable({
+                "stateSave": true, // Habilitar guardar el estado
                 "language": {
                     "lengthMenu": "Mostrar _MENU_ elementos por página",
                     "zeroRecords": "No se encontraron resultados",
@@ -74,6 +82,12 @@
                     }
                 }
             });
+            // Restaurar el estado guardado
+            if (tableState.time != tableStateCopy.time) { // comparar cada cambio en el estado de datable con el timestamp
+                $('#myTable').DataTable().state.clear(); // Limpiar el estado actual antes de restaurar
+                $('#myTable').DataTable().state.restore(tableState);
+            }
+            tableStateCopy = tableState; // Copiar el estado en otra variable para poder comparar con el estado anterior el timestamp
         })
 
         Livewire.on('alertDelete', id => {
@@ -102,10 +116,8 @@
             });
         });
 
-
-
         //emit mensaje negativo
-        Livewire.on('mensajeNegativo', function(mensaje) {
+        Livewire.on('mensajeNegativo', function (mensaje) {
             Swal.fire({
                 title: 'Atencion',
                 text: mensaje['mensaje'],
@@ -116,7 +128,7 @@
 
 
         //emit mensaje positivo
-        Livewire.on('mensajePositivo', function(mensaje) {
+        Livewire.on('mensajePositivo', function (mensaje) {
             Swal.fire({
                 title: 'Excelente!',
                 text: mensaje['mensaje'],
