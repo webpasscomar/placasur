@@ -17,13 +17,11 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb bg-transparent px-0 py-2">
                             <li class="breadcrumb-item">
-                                <a
-                                    href="{{ route('home') }}" class="text-decoration-none">Inicio
+                                <a href="{{ route('home') }}" class="text-decoration-none">Inicio
                                 </a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a
-                                    href="{{ route('productos') }}" class="text-decoration-none">Productos
+                                <a href="{{ route('productos') }}" class="text-decoration-none">Productos
                                 </a>
                             </li>
                             <li class="breadcrumb-item active text-black" aria-current="page">
@@ -47,9 +45,8 @@
                     <ul class="mt-3 ps-4">
                         @foreach ($categoriasNivelSuperior as $categoria)
                             <li class="fs-5 list-unstyled"><i class="fa-solid fa-diamond pe-1 fa-2xs text-primary"></i>
-                                <a
-                                    href="{{route('productos.mostrar', $categoria->slug)}}"
-                                    class="text-decoration-none {{request()->segment(2) === $categoria->slug ? 'text-primary link-disabled' : 'text-black'}}">{{ $categoria->categoria }}
+                                <a href="{{ route('productos.mostrar', $categoria->slug) }}"
+                                    class="text-decoration-none {{ request()->segment(2) === $categoria->slug ? 'text-primary link-disabled' : 'text-black' }}">{{ $categoria->categoria }}
                                 </a>
                             </li>
                         @endforeach
@@ -67,8 +64,7 @@
                                     <div class="card shadow p-2 h-100">
                                         {{-- <img src="{{ asset('img/prod0078.jpg') }}" style="max-width:100%"> --}}
                                         <img src="{{ asset('storage/productos/' . $producto->image) }}"
-                                             class="card-img-top d-none d-sm-none d-md-block"
-                                             alt="{{ $producto->title }}">
+                                            class="card-img-top d-none d-sm-none d-md-block" alt="{{ $producto->title }}">
                                         <h3 class="mt-3 text-center fs-5">{{ $producto->title }}</h3>
 
                                     </div>
