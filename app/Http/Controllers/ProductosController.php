@@ -22,7 +22,9 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        $categorias = Categoria::where('categoriaPadre_id', 0)->get();
+        $categorias = Categoria::where('categoriaPadre_id', 0)
+            ->Where('estado', 1)
+            ->get();
         $subcategoriasPorCategoria = [];
 
         foreach ($categorias as $categoria) {
@@ -36,26 +38,30 @@ class ProductosController extends Controller
     // Muestras las categorias o productos según sea el caso
     public function mostrar($slugCategoria)
     {
-
+//        dd($slugCategoria);
         $subcategoriasPorCategoria = [];
         $categoriaPadre = '';
         $categoriasNivelSuperior = '';
+        $categoriasHijas = '';
 
         $categoriaActual = Categoria::where('slug', $slugCategoria)->firstOrFail();
         // dd($categoriaActual['categoriaPadre_id']);
         // Traigo las categorias para el SIDEBAR
-
         if ($categoriaActual->categoriaPadre_id !== 0) {
+
             $categoriaPadre = Categoria::where('id', $categoriaActual->categoriaPadre_id)->firstOrFail();
             // dd($categoriaPadre);
             $categoriasNivelSuperior = Categoria::where('categoriaPadre_id', $categoriaPadre->id)->get();
         }
 
         // Traigo las categorias hijas de la actual para ver si muestro categorias o productos
-        $categoriasHijas = Categoria::where('categoriaPadre_id', $categoriaActual->id)->get();
+        $categoriasHijas = Categoria::where('categoriaPadre_id', $categoriaActual->id)
+            ->where('estado', 1)
+            ->get();
 
         // Si la categoria tiene hijos muestro categorias
         if (count($categoriasHijas) > 0) {
+
             // dd('Muestro categorias');
             foreach ($categoriasHijas as $categoriaHija) {
                 $subcategorias = Categoria::where('categoriaPadre_id', $categoriaHija->id)->pluck('categoria');
@@ -67,9 +73,12 @@ class ProductosController extends Controller
             // dd('Muestro productos');
             // Muestro productos porque no tiene hijas
             // $productos = $categoriaActual->productos();
-            $productos = Product::where('category_id', $categoriaActual->id)->get();
+            $productos = Product::where('category_id', $categoriaActual->id)
+                ->where('status', 1)
+                ->get();
             // dd($productos);
             return view('productos-productos', compact('categoriaPadre', 'categoriaActual', 'productos', 'categoriasNivelSuperior'));
         }
     }
 }
+

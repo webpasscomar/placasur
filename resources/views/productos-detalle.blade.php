@@ -35,11 +35,11 @@
 
         <!-- CONTAINER -->
         <div class="container mb-5">
-
+            {{-- SIDEBAR --}}
             <!-- ROW -->
             <div class="row">
 
-                <div class="col-md-2 mt-2 px-3">
+                <div class="col-md-2 mt-2 w-auto">
                     <h2 class="text-secondary">FAPLAC</h2>
                     <ul class="mt-2">
                         <li class="fs-5 text-primary">Nature</li>
@@ -52,41 +52,41 @@
                     </ul>
                 </div>
 
-                <div class="col-md-10 mt-5">
-                    <div class="row gap-3 ms-5">
-                        <div class="col-md-3 mx-1 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
+                <div class="col-md-10 mt-5 m-auto">
+                    <div class="row ms-5">
+                        <div class="col-md-3 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
                                 style="max-width:100%">
                             <h3 class="mt-3 text-center">Terrarum</h3>
                         </div>
-                        <div class="col-md-3 mx-1 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
+                        <div class="col-md-3 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
                                 style="max-width:100%">
                             <h3 class="mt-3 text-center">Teka Artico</h3>
                         </div>
-                        <div class="col-md-3 mx-1 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
+                        <div class="col-md-3 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
                                 style="max-width:100%">
                             <h3 class="mt-3 text-center">Roble Dakar</h3>
                         </div>
-                        <div class="col-md-3 mx-1 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
+                        <div class="col-md-3 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
                                 style="max-width:100%">
                             <h3 class="mt-3 text-center">Nogal Terracota</h3>
                         </div>
-                        <div class="col-md-3 mx-1 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
+                        <div class="col-md-3 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
                                 style="max-width:100%">
                             <h3 class="mt-3 text-center">Nocce Milano</h3>
                         </div>
-                        <div class="col-md-3 mx-1 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
+                        <div class="col-md-3 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
                                 style="max-width:100%">
                             <h3 class="mt-3 text-center">Mont Blanc</h3>
                         </div>
-                        <div class="col-md-3 mx-1 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
+                        <div class="col-md-3 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
                                 style="max-width:100%">
                             <h3 class="mt-3 text-center">Linosa</h3>
                         </div>
-                        <div class="col-md-3 mx-1 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
+                        <div class="col-md-3 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
                                 style="max-width:100%">
                             <h3 class="mt-3 text-center">Gaudí</h3>
                         </div>
-                        <div class="col-md-3 mx-1 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
+                        <div class="col-md-3 mb-4 p-3 shadow"><img src="{{ asset('img/prod0078.jpg') }}"
                                 style="max-width:100%">
                             <h3 class="mt-3 text-center">Cedro</h3>
                         </div>
