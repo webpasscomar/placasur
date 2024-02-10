@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             CategoriasTableSeeder::class,
             ServiciosTableSeeder::class,
             ProductsTableSeeder::class,
-            GaleriasTableSeeder::class
+            GaleriasTableSeeder::class,
+            MarcasTableSeeder::class,
         ]);
     }
 }

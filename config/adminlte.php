@@ -341,6 +341,11 @@ return [
             'url' => 'admin/galerias',
             'icon' => 'fa fa-film',
         ],
+        [
+            'text'=> 'Marcas',
+            'url'=>'admin/marcas',
+            'icon'=> 'fa fa-map'
+        ],
         // [
         //     'text' => 'Contactos',
         //     'url' => 'admin/contactos',

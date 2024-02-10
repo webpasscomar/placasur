@@ -2,27 +2,24 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Models\Galeria;
 
+use App\Models\Marca;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
 
-class Galerias extends Component
+class Marcas extends Component
 {
-    public $galeria, $imagen, $estado, $id_galeria, $currentImage, $currentTitle;
+    public $marca, $imagen, $estado, $id_marca, $currentImage, $currentTitle;
     public $imagen_name;
 
     public $modal = 'none';
-    public $search;
-    public $sort = 'id';
-    public $order = 'desc';
     public $accion;
     public $cambioImg = false;
     public $showModalImage = false;
 
-    protected $galerias;
+    protected $marcas;
 
     protected $listeners = ['delete', 'updateTable'];
 
@@ -41,20 +38,39 @@ class Galerias extends Component
             $this->accion === 'crear'
         ) {
             return [
-                'galeria' => 'required|max:20',
-                'imagen' => 'required|mimes:jpg,png|max:1024',
+                'marca' => 'required|max:100',
+                'imagen' => 'required|mimes:jpg,png,jpeg|max:1024',
             ];
         } else {
             return [
-                'galeria' => 'required|max:20',
+                'marca' => 'required|max:100',
+            ];
+        }
+    }
+
+    protected function messages()
+    {
+        if ($this->accion == 'create') {
+            return [
+                'marca.required' => 'El nombre es requerido',
+                'marca.max' => 'Solo puede ingresar hasta 100 caracteres',
+                'imagen.required' => 'La imágen es requerida',
+                'imagen.mimes' => 'Formatos permitidos: JPEG, PNG, JPG '
+            ];
+        } else {
+            return [
+                'marca.required' => 'El nombre es requerido',
+                'marca.max' => 'Solo puede ingresar hasta 100 caracteres',
+                'imagen.required' => 'La imágen es requerida',
+                'imagen.mimes' => 'Formatos permitidos: JPEG, PNG, JPG',
             ];
         }
     }
 
     public function render()
     {
-        $this->galerias = Galeria::all();
-        return view('livewire.admin.galerias', ['filas' => $this->galerias])->layout('layouts.adminlte');
+        $this->marcas = Marca::all();
+        return view('livewire.admin.marcas', ['marcas' => $this->marcas])->layout('layouts.adminlte');
     }
 
     public function create()
@@ -77,35 +93,33 @@ class Galerias extends Component
         $this->cambioImg = false;
     }
 
+    // Limpiar los campos del modal
     public function limpiarCampos()
     {
-        $this->galeria = '';
+        $this->marca = '';
         $this->imagen = '';
         $this->estado = 0;
-        $this->id_galeria = 0;
+        $this->id_marca = 0;
         $this->resetErrorBag();
     }
 
+    // Editar Marcas
     public function edit($id)
     {
         $this->accion = 'editar';
 
-        $galeria = Galeria::findOrFail($id);
-        $this->id_galeria = $id;
-        $this->galeria = $galeria->galeria;
-        $this->imagen = $galeria->imagen;
+        $marca = Marca::findOrFail($id);
+        $this->id_marca = $id;
+        $this->marca = $marca->marca;
+        $this->imagen = $marca->imagen;
         $this->abrirModal();
     }
 
-    public function borrar($id)
-    {
-        Galeria::find($id)->delete();
-        session()->flash('message', 'Registro eliminado correctamente');
-    }
-
+// Eliminar marcas
     public function delete($id)
     {
-        Galeria::find($id)->delete();
+        Marca::find($id)->delete();
+        session()->flash('message', 'Registro eliminado correctamente');
         $this->emit('table');
     }
 
@@ -114,46 +128,27 @@ class Galerias extends Component
         $this->validate();
 
         if ($this->cambioImg) {
-            ////
-            //// borrar imagen anterior storage
-            ////
             $imagen_name = $this->imagen->getClientOriginalName();
-            $upload_imagen = $this->imagen->storeAs('galerias', $imagen_name);
-            //dd($upload_imagen);
+            $upload_imagen = $this->imagen->storeAs('marcas', $imagen_name);
 
             $this->cambioImg = false;
         } else {
             $imagen_name = $this->imagen;
         }
 
-        Galeria::updateOrCreate(
-            ['id' => $this->id_galeria],
+        Marca::updateOrCreate(
+            ['id' => $this->id_marca],
             [
-                'galeria' => $this->galeria,
+                'marca' => strtolower($this->marca),
                 'imagen' => $imagen_name,
                 'estado' => 1
             ]
         );
 
-        $this->emit('alertSave');
+        $this->emit('mensajePositivo', ['mensaje' => 'Operación exitosa']);
 
         $this->cerrarModal();
         $this->limpiarCampos();
-    }
-
-    public function order($sort)
-    {
-        if ($this->sort == $sort) {
-
-            if ($this->order == 'desc') {
-                $this->order = 'asc';
-            } else {
-                $this->order = 'desc';
-            }
-        } else {
-            $this->sort = $sort;
-            $this->order = 'asc';
-        }
     }
 
     public function cambioImagen()
@@ -164,8 +159,8 @@ class Galerias extends Component
     public function openModalImage($id)
     {
         $this->emit('table');
-        $this->currentImage = Galeria::find($id)->imagen;
-        $this->currentTitle = Galeria::find($id)->galeria;
+        $this->currentImage = Marca::find($id)->imagen;
+        $this->currentTitle = Marca::find($id)->marca;
         $this->showModalImage = true;
     }
 

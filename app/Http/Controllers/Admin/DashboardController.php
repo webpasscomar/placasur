@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
+use App\Models\Marca;
 use App\Models\Novelty;
 use App\Models\Product;
 use App\Models\Service;
@@ -29,7 +30,7 @@ class DashboardController extends Controller
         $productos = Product::all();
         $servicios = Service::all();
         $novedades = Novelty::all();
-        $marcas = [];
+        $marcas = Marca::all();
 
         return view('admin.dashboard', [
             'categorias' => $categorias,
