@@ -41,14 +41,23 @@ class Galerias extends Component
             $this->accion === 'crear'
         ) {
             return [
-                'galeria' => 'required|max:20',
-                'imagen' => 'required|mimes:jpg,png|max:1024',
+                'galeria' => 'required',
+                'imagen' => 'required|mimes:jpg,jpeg,png|max:1024',
             ];
         } else {
             return [
-                'galeria' => 'required|max:20',
+                'galeria' => 'required',
+                'imagen' => $this->cambioImg ? 'mimes:jpg,jpeg,png|max:1024' : '',
             ];
         }
+    }
+
+    protected function messages()
+    {
+        return [
+            'galeria.required' => 'El nombre de la galeria es requerido',
+            'imagen.required' => 'La imagen es requerida',
+        ];
     }
 
     public function render()
@@ -71,6 +80,7 @@ class Galerias extends Component
     public function cerrarModal()
     {
         $this->emit('table');
+        $this->limpiarCampos();
         $this->modal = 'none';
         $this->cambioImg = false;
     }
@@ -131,7 +141,7 @@ class Galerias extends Component
             ]
         );
 
-        $this->emit('alertSave');
+        $this->emit('mensajePositivo', ['mensaje' => 'Operación exitosa']);
 
         $this->cerrarModal();
         $this->limpiarCampos();
