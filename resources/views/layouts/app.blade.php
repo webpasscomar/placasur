@@ -19,13 +19,13 @@
 
 <body>
 
-    @include('layouts.partials.header')
+@include('layouts.partials.header')
 
-    <div class="min-vh-100">
-        @yield('content')
-    </div>
+<div class="min-vh-100 mb-5">
+    @yield('content')
+</div>
 
-    @include('layouts.partials.footer')
+@include('layouts.partials.footer')
 
 </body>
 
