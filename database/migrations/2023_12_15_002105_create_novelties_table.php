@@ -1,32 +1,32 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+    use Illuminate\Database\Migrations\Migration;
+    use Illuminate\Database\Schema\Blueprint;
+    use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('novelties', function (Blueprint $table) {
-            $table->id();
-            $table->string('image')->nullable();
-            $table->string('title');
-            $table->text('description')->nullable();
-            $table->integer('order')->default(0);
-            $table->integer('status')->default(1);
-            $table->timestamps();
-        });
-    }
+    return new class extends Migration {
+        /**
+         * Run the migrations.
+         */
+        public function up(): void
+        {
+            Schema::create('novelties', function (Blueprint $table) {
+                $table->id();
+                $table->string('image')->nullable();
+                $table->string('title');
+                $table->text('description')->nullable();
+                $table->foreignId('category_id')->constrained('novelty_categories');
+                $table->integer('order')->default(0);
+                $table->integer('status')->default(1);
+                $table->timestamps();
+            });
+        }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('novelties');
-    }
-};
+        /**
+         * Reverse the migrations.
+         */
+        public function down(): void
+        {
+            Schema::dropIfExists('novelties');
+        }
+    };

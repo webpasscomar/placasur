@@ -1,6 +1,5 @@
-<div class="modal fade show" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel"
-     aria-hidden="true"
-     style="display: {{ $modal }}; background-color:rgba(51,51,51,0.9);">
+<div class="modal fade show" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel" aria-hidden="true"
+    style="display: {{ $modal }}; background-color:rgba(51,51,51,0.9);">
 
     <div class="modal-dialog modal-md modal-dialog-centered" role="document">
 
@@ -26,15 +25,19 @@
                             @else
                                 @if ($accion === 'editar')
                                     <img class="img-fluid img-thumbnail"
-                                         src="{{ asset('storage/galerias/' . $imagen) }}" alt="">
+                                        src="{{ asset('storage/galerias/' . $imagen) }}" alt="">
                                 @endif
                             @endif
                         </div>
 
                         <div class="row">
                             <div class="form-group">
-                                <label for="galeria">Título:</label>
+                                <label for="galeria">Título:</label><span
+                                    class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                 <input type="text" class="form-control" id="galeria" wire:model="galeria">
+                                @error('galeria')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
 
@@ -46,10 +49,10 @@
                                 <span class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                 <span id="file-name"></span>
                                 <input type="file" id="imagen" wire:model="imagen" wire:change="cambioImagen"
-                                       class="form-control">
+                                    class="form-control">
 
                                 @error('imagen')
-                                <span class="text-danger">{{ $message }}</span>
+                                    <span class="text-danger">{{ $message }}</span>
                                 @enderror
 
                             </div>
@@ -63,8 +66,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" wire:click="cerrarModal" class="btn btn-secondary"
-                        data-dismiss="modal">Cerrar
+                <button type="button" wire:click="cerrarModal" class="btn btn-secondary" data-dismiss="modal">Cerrar
                 </button>
                 <button wire:click="store" class="btn btn-primary">Guardar</button>
             </div>

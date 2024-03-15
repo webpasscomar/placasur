@@ -1,20 +1,26 @@
 <?php
 
-namespace App\Models;
+    namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Factories\HasFactory;
+    use Illuminate\Database\Eloquent\Model;
 
-class Novelty extends Model
-{
-    use HasFactory;
+    class Novelty extends Model
+    {
+        use HasFactory;
 
-    protected $fillable = [
-        'id',
-        'image',
-        'title',
-        'description',
-        'order',
-        'status'
-    ];
-}
+        protected $table = 'novelties';
+        protected $fillable = [
+            'image',
+            'title',
+            'description',
+            'order',
+            'category_id',
+            'status'
+        ];
+
+        public function category()
+        {
+            return $this->belongsTo(NoveltyCategory::class);
+        }
+    }
