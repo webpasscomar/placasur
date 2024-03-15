@@ -7,14 +7,14 @@
   <!-- jumbotrob / título productos -->
   <div class="container-fluid p-0">
     <div class="bg-light bg-gradient d-none d-lg-block d-sm-none">
-        <div class="container pt-1">
-            <nav class="mt-2" aria-label="breadcrumb">
-                <ol class="breadcrumb bg-transparent px-0 py-2">
-                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none link-primary">Inicio</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Empresa</li>
-                </ol>
-            </nav>
-        </div>
+      <div class="container pt-1">
+        <nav class="mt-2" aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent px-0 py-2">
+            <li class="breadcrumb-item"><a href="/" class="text-decoration-none link-primary">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Empresa</li>
+          </ol>
+        </nav>
+      </div>
     </div>
   </div>
 

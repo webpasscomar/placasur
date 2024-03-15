@@ -7,11 +7,6 @@
         <!-- jumbotrob / título productos -->
 
         <div class="container-fluid p-0 mb-3">
-            <div class="jumbotron jumbotron-fluid imagencover px-4 mb-0 d-flex align-items-center text-center mt-md-n2">
-                <div class="container">
-                    <p class="text-black-50 display-5">Productos</p>
-                </div>
-            </div>
             <div class="bg-opacity-10 bg-black d-none d-lg-block d-sm-none">
                 <div class="container mt-md-n5 pt-1">
                     <nav aria-label="breadcrumb">
