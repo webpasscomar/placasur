@@ -1,2 +1,7 @@
 /* @import '../../public/css/style.css'; */
 
+/* Importar Bootstrap CSS */
+@import "./estilos.css";
+
+/* Importar Bootstrap CSS */
+@import "./custom.css";

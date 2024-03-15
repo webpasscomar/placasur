@@ -13,27 +13,7 @@
   <link rel="shortcut icon" href="{{ asset('favicons/favicon.ico') }}" type="image/x-icon">
   <title>{{ config('app.name', 'PlacaSUR') }} - @yield('title')</title>
 
-  <!-- Scripts -->
-  {{-- @vite(['resources/sass/app.scss', 'public/fontawesome/css/all.css', 'public/fontawesome/css/fontawesome.css', 'public/fontawesome/css/brands.css', 'public/fontawesome/css/solid.css', 'public/css/custom.css', 'resources/js/app.js', 'public/js/jquery.min.js', 'public/js/bootstrap.bundle.min.js']) --}}
-
-  <!-- CSS - bs - custom -->
-  <link href="https://placasur.webpass.com.ar/css/estilos.css" rel="stylesheet">
-  <link href="https://placasur.webpass.com.ar/css/custom.css" rel="stylesheet">
-  <!-- fontawesome iconos -->
-  <link href="https://placasur.webpass.com.ar/fontawesome/css/all.css" rel="stylesheet">
-  <link href="https://placasur.webpass.com.ar/fontawesome/css/fontawesome.css" rel="stylesheet">
-  <link href="https://placasur.webpass.com.ar/fontawesome/css/brands.css" rel="stylesheet">
-  <link href="https://placasur.webpass.com.ar/fontawesome/css/solid.css" rel="stylesheet">
-  <!-- Scripts -->
-  {{-- <link rel="preload" as="style" href="https://placasur.webpass.com.ar/build/assets/app-298ba296.css" />
-  <link rel="modulepreload" href="https://placasur.webpass.com.ar/build/assets/app-d0eb4253.js" />
-  <link rel="stylesheet" href="https://placasur.webpass.com.ar/build/assets/app-298ba296.css" />
-  <script type="module" src="https://placasur.webpass.com.ar/build/assets/app-d0eb4253.js"></script> --}}
-
-  {{-- @vite(['resources/sass/app.scss', 'public/fontawesome/css/all.css', 'public/fontawesome/css/fontawesome.css', 'public/fontawesome/css/brands.css', 'public/fontawesome/css/solid.css', 'public/css/custom.css', 'resources/js/app.js', 'public/js/jquery.min.js', 'public/js/bootstrap.bundle.min.js']) --}}
-
-</head>
-
+  @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
 </head>
 
