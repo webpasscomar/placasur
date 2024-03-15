@@ -1,3 +1,6 @@
+
+<!-- imagen enca top -->
+<img src="imagenes/enca.jpg" alt="Placa Sur" class="d-none d-lg-block d-sm-none">
 <!-- NAV / menú -->
 <header class="sticky-md-top border-top border-5 border-primary">
 
@@ -7,7 +10,7 @@
   </div>
 
   <nav class="container-fluid navbar navbar-expand-lg bg-white py-0 menutop shadow">
-    <div class="container-md">
+    <div class="container-md">              
       <a class="navbar-brand col-6 col-md-3 col-lg-3" href="{{ route('home') }}" title="Inicio Placa Sur">
         <!-- logo -->
         <img src="{{ asset('img/placasur.png') }}" alt=" Placa Sur" class="img-fluid float-left">
@@ -65,10 +68,9 @@
           </li>
         </ul>
       </div>
-      </li>
-
+      <!-- </li>
       </ul>
-    </div>
+    </div> -->
     </div>
   </nav>
 </header>

@@ -5,28 +5,23 @@
 @section('content')
 
   <!-- jumbotrob / título productos -->
-  <div class="container-fluid p-0 mb-3">
-    {{-- <div class="jumbotron jumbotron-fluid imagencover px-4 mb-0 d-flex align-items-center text-center mt-md-n2">
-            <div class="container">
-                <p class="text-black-50 display-5">Empresa</p>
-            </div>
-        </div> --}}
-    <div class="bg-opacity-10 bg-black d-none d-lg-block d-sm-none">
-      <div class="container pt-1">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent px-0 py-2">
-            <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Inicio</a></li>
-            <li class="breadcrumb-item active text-black" aria-current="page">Empresa</li>
-          </ol>
-        </nav>
-      </div>
+  <div class="container-fluid p-0">
+    <div class="bg-light bg-gradient d-none d-lg-block d-sm-none">
+        <div class="container pt-1">
+            <nav class="mt-2" aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent px-0 py-2">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none link-primary">Inicio</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Empresa</li>
+                </ol>
+            </nav>
+        </div>
     </div>
   </div>
 
 
 
   <div class="container-md mt-5 mb-3">
-    <div class="row">
+    <div class="row d-flex justify-content-between">
       <!-- texto empresa -->
       <div class="col-md-6">
         <h3 class="h2 bold text-black-50">Nuestra empresa</h3>
@@ -34,12 +29,10 @@
           Producción.</p>
         <p>Cuenta además con un personal Tercerizado Responsable del Mantenimiento del Sistema de Gestión Certificado y
           personal tercerizado responsable del mantenimiento Preventivo del Taller.</p>
-        <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi natus quas voluptates ducimus quia, eos,
-          ab nostrum, itaque et ipsum corrupti atque unde ipsam modi. Error enim porro magnam adipisci? </p>
       </div>
 
       <!-- fotos -->
-      <div class="col pl-3 d-none d-md-block">
+      <div class="col-md-5 p-0 m-0 d-none d-md-block">
         <img src="{{ asset('img/empresa/empresa.png') }}" class="w-100" alt="">
       </div>
     </div>
