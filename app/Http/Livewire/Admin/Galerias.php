@@ -41,27 +41,38 @@ class Galerias extends Component
             $this->accion === 'crear'
         ) {
             return [
-                'galeria' => 'required|max:20',
-                'imagen' => 'required|mimes:jpg,png|max:1024',
+                'galeria' => 'required',
+                'imagen' => 'required|mimes:jpg,jpeg,png|max:1024',
             ];
         } else {
             return [
-                'galeria' => 'required|max:20',
+                'galeria' => 'required',
+                'imagen' => $this->cambioImg ? 'mimes:jpg,jpeg,png|max:1024' : '',
             ];
         }
     }
 
+    protected function messages()
+    {
+        return [
+            'galeria.required' => 'El nombre de la galeria es requerido',
+            'imagen.required' => 'La imagen es requerida',
+        ];
+    }
+
     public function render()
     {
-        $this->galerias = Galeria::where('estado', 1)->get();
+        $this->galerias = Galeria::all();
         return view('livewire.admin.galerias', ['filas' => $this->galerias])->layout('layouts.adminlte');
     }
+
     public function create()
     {
         $this->accion = 'crear';
         $this->limpiarCampos();
         $this->abrirModal();
     }
+
     public function abrirModal()
     {
         $this->emit('table');
@@ -71,6 +82,7 @@ class Galerias extends Component
     public function cerrarModal()
     {
         $this->emit('table');
+        $this->limpiarCampos();
         $this->modal = 'none';
         $this->cambioImg = false;
     }
@@ -83,6 +95,7 @@ class Galerias extends Component
         $this->id_galeria = 0;
         $this->resetErrorBag();
     }
+
     public function edit($id)
     {
         $this->accion = 'editar';
@@ -93,6 +106,7 @@ class Galerias extends Component
         $this->imagen = $galeria->imagen;
         $this->abrirModal();
     }
+
     public function borrar($id)
     {
         Galeria::find($id)->delete();
@@ -131,11 +145,12 @@ class Galerias extends Component
             ]
         );
 
-        $this->emit('alertSave');
+        $this->emit('mensajePositivo', ['mensaje' => 'Operación exitosa']);
 
         $this->cerrarModal();
         $this->limpiarCampos();
     }
+
     public function order($sort)
     {
         if ($this->sort == $sort) {
@@ -150,6 +165,7 @@ class Galerias extends Component
             $this->order = 'asc';
         }
     }
+
     public function cambioImagen()
     {
         $this->cambioImg = true;

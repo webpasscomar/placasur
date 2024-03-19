@@ -292,12 +292,12 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'Buscar',
+            'type' => 'navbar-search',
+            'text' => 'Buscar',
             'topnav_right' => true,
         ],
         [
-            'type'         => 'fullscreen-widget',
+            'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
 
@@ -340,6 +340,11 @@ return [
             'text' => 'Galería',
             'url' => 'admin/galerias',
             'icon' => 'fa fa-film',
+        ],
+        [
+            'text'=> 'Marcas',
+            'url'=>'admin/marcas',
+            'icon'=> 'fa fa-map'
         ],
         // [
         //     'text' => 'Contactos',
@@ -574,5 +579,5 @@ return [
     |
     */
 
-    'livewire' => true,
+    'livewire' => false,
 ];

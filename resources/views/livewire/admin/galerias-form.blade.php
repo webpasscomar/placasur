@@ -32,8 +32,12 @@
 
                         <div class="row">
                             <div class="form-group">
-                                <label for="galeria">Título:</label>
+                                <label for="galeria">Título:</label><span
+                                    class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                 <input type="text" class="form-control" id="galeria" wire:model="galeria">
+                                @error('galeria')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
 
@@ -62,14 +66,12 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" wire:click="cerrarModal" class="btn btn-secondary"
-                    data-dismiss="modal">Cerrar</button>
+                <button type="button" wire:click="cerrarModal" class="btn btn-secondary" data-dismiss="modal">Cerrar
+                </button>
                 <button wire:click="store" class="btn btn-primary">Guardar</button>
             </div>
 
         </div>
 
     </div>
-
-
 </div>

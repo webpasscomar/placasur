@@ -8,8 +8,8 @@
             <ul class="list-unstyled light text-light">
               <li> Av. H. Yrigoyen 15750 (1852) <br>
                 Burzaco, Buenos Aires, Argentina</li>
-              <li class="pt-3 pb-2 fw-bold h5 text-white"> (5411) 4002-4400 | <br>
-                4238-4000</li>
+              <li class="pt-3 pb-2 fw-bold h5 text-white"> +54 11 4002-4400<br>
+                +54 11 4238-4000</li>
             </ul>
             <p class="h6 fw-bold text-white">Horarios</p>
             <span class="text-light light"> lun a vier 9 a 12 y de 14 a 17:30</span>

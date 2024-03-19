@@ -1,5 +1,8 @@
+<!-- imagen enca top -->
+<img src="{{ asset('img/enca.jpg') }}" alt="Placa Sur" class="d-none d-lg-block d-sm-none">
 <!-- NAV / menú -->
 <header class="sticky-md-top border-top border-5 border-primary">
+
   <nav class="container-fluid navbar navbar-expand-lg bg-white py-0 menutop shadow">
     <div class="container-md">
       <a class="navbar-brand col-6 col-md-3 col-lg-3" href="{{ route('home') }}" title="Inicio Placa Sur">
@@ -24,20 +27,20 @@
             <a href="{{ route('productos') }}" title="Nuestros productos" class="nav-link">Productos</a>
           </li>
           {{-- <li class="nav-item dropdown {{ request()->routeIS('productos') ? 'active' : '' }}">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Productos
-            </a>
-            <div class="dropdown-menu bg-light mt-1 shadow-sm" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{ route('productos') }}">Placas</a>
-              <a class="dropdown-item" href="#">Adhesivos y Barnices</a>
-              <a class="dropdown-item" href="#">Molduras</a>
-              <a class="dropdown-item" href="#">Enchapados</a>
-              <a class="dropdown-item" href="#">Construcción</a>
-              <a class="dropdown-item" href="#">Tapacantos</a>
-              <a class="dropdown-item" href="#">Herrajes</a>
-            </div>
-          </li> --}}
+                      <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Productos
+                      </a>
+                      <div class="dropdown-menu bg-light mt-1 shadow-sm" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('productos') }}">Placas</a>
+                        <a class="dropdown-item" href="#">Adhesivos y Barnices</a>
+                        <a class="dropdown-item" href="#">Molduras</a>
+                        <a class="dropdown-item" href="#">Enchapados</a>
+                        <a class="dropdown-item" href="#">Construcción</a>
+                        <a class="dropdown-item" href="#">Tapacantos</a>
+                        <a class="dropdown-item" href="#">Herrajes</a>
+                      </div>
+                    </li> --}}
 
           <li class="nav-item {{ request()->routeIS('novedades') ? 'active' : '' }}">
             <a href="{{ route('novedades') }}" title="Nuestras actividades" class="nav-link">Novedades</a>
@@ -59,10 +62,9 @@
           </li>
         </ul>
       </div>
-      </li>
-
+      <!-- </li>
       </ul>
-    </div>
+    </div> -->
     </div>
   </nav>
 </header>
