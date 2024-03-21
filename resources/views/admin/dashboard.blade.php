@@ -95,7 +95,7 @@
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="{{ route('admin.novelties') }}" class="small-box-footer">Más info <i
+                        <a href="{{ route('admin.marcas') }}" class="small-box-footer">Más info <i
                                 class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
