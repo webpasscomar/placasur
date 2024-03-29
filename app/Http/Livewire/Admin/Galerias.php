@@ -75,12 +75,14 @@ class Galerias extends Component
 
     public function abrirModal()
     {
+        $this->emit('hideScrollbar');
         $this->emit('table');
         $this->modal = 'block';
     }
 
     public function cerrarModal()
     {
+        $this->emit('showScrollbar');
         $this->emit('table');
         $this->limpiarCampos();
         $this->modal = 'none';

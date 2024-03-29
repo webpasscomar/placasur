@@ -82,12 +82,14 @@ class Marcas extends Component
 
     public function abrirModal()
     {
+        $this->emit('hideScrollbar');
         $this->emit('table');
         $this->modal = 'block';
     }
 
     public function cerrarModal()
     {
+        $this->emit('showScrollbar');
         $this->emit('table');
         $this->modal = 'none';
         $this->cambioImg = false;
@@ -115,7 +117,7 @@ class Marcas extends Component
         $this->abrirModal();
     }
 
-// Eliminar marcas
+    // Eliminar marcas
     public function delete($id)
     {
         Marca::find($id)->delete();

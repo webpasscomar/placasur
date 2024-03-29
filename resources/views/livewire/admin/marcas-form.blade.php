@@ -1,6 +1,5 @@
-<div class="modal fade show" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel"
-     aria-hidden="true"
-     style="display: {{ $modal }}; background-color:rgba(51,51,51,0.9);">
+<div class="modal fade show" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel" aria-hidden="true"
+    style="display: {{ $modal }}; background-color:rgba(51,51,51,0.9);">
 
     <div class="modal-dialog modal-md modal-dialog-centered" role="document">
 
@@ -16,17 +15,27 @@
             <div class="modal-body">
                 <form>
                     <div class="bg-white">
+                        {{-- Mostar spinner mientras carga la imagen --}}
+
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-primary" role="status" wire:loading wire:target='imagen'>
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+
+                        {{-- ******************************* --}}
                         <div class="form-group">
                             @if ($cambioImg)
                                 @if (gettype($imagen) === 'object')
                                     @if ($imagen->extension() == 'png' || $imagen->extension() == 'jpg' || $imagen->extension() == 'jpeg')
-                                        <img class="img-fluid img-thumbnail" src="{{ $imagen->temporaryUrl() }}">
+                                        <img class="img-fluid img-thumbnail" src="{{ $imagen->temporaryUrl() }}"
+                                            wire:loading.remove>
                                     @endif
                                 @endif
                             @else
                                 @if ($accion === 'editar')
-                                    <img class="img-fluid img-thumbnail"
-                                        src="{{ asset('storage/marcas/' . $imagen) }}" alt="">
+                                    <img class="img-fluid img-thumbnail" src="{{ asset('storage/marcas/' . $imagen) }}"
+                                        alt="">
                                 @endif
                             @endif
                         </div>
@@ -50,8 +59,8 @@
                                 </label>
                                 <span class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                 <span id="file-name"></span>
-                                <input  type="file" id="imagen" wire:model="imagen" wire:change="cambioImagen"
-                                        class="form-control">
+                                <input type="file" id="imagen" wire:model="imagen" wire:change="cambioImagen"
+                                    class="form-control">
 
                                 @error('imagen')
                                     <span class="text-danger">{{ $message }}</span>
@@ -68,8 +77,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" wire:click="cerrarModal" class="btn btn-secondary"
-                        data-dismiss="modal">Cerrar
+                <button type="button" wire:click="cerrarModal" class="btn btn-secondary" data-dismiss="modal">Cerrar
                 </button>
                 <button wire:click="store" class="btn btn-primary">Guardar</button>
             </div>

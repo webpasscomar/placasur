@@ -1,7 +1,22 @@
 /* @import '../../public/css/style.css'; */
 
 /* Importar Bootstrap CSS */
-@import "./estilos.css";
+/* @import "./estilos.css"; */
 
 /* Importar Bootstrap CSS */
-@import "./custom.css";
+/* @import "./custom.css"; */
+
+html{
+    scrollbar-width: thin;
+    scrollbar-color: rgb(57, 122, 173) rgb(182, 180, 180);
+}
+
+#roleModal{
+
+    scrollbar-width: thin;
+    scrollbar-color: rgb(57, 122, 173) rgb(182, 180, 180);
+}
+
+.hide-scrollbar{
+    scrollbar-width: none;
+}

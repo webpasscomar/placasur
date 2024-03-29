@@ -47,18 +47,17 @@ class Categorias extends Component
 
     protected function rules()
     {
-        if (($this->cambioImg === true && $this->accion === 'editar') ||
-            $this->accion === 'crear'
-        ) {
+        if ($this->accion === 'crear') {
             return [
                 'categoria' => 'required|max:20',
-                'imagen' => 'required|mimes:jpg,png|max:1024',
-                'slug' => 'required|unique:categorias'
+                'imagen' => 'required|mimes:jpg,png,jpeg|max:1024',
+                'slug' => 'required|unique:categorias,slug'
             ];
         } else {
             return [
                 'categoria' => 'required|max:20',
                 'slug' => ['required', Rule::unique('categorias', 'slug')->ignore($this->id_categoria)],
+                'imagen' => $this->cambioImg ? 'required|mimes:jpg,png,jpeg|max:1024' : ''
             ];
         }
     }
@@ -68,6 +67,8 @@ class Categorias extends Component
         return [
             'categoria.required' => 'El nombre es requerido',
             'imagen.required' => 'La imágen es requerida',
+            'imagen.mimes' => 'La imágen debe ser jpg, jpeg ó png',
+            'imagen.max' => 'La imágen debe ser menor a 1MB',
             'slug.required' => 'El slug es requerido',
             'slug.unique' => 'El slug ya existe',
         ];
@@ -98,6 +99,7 @@ class Categorias extends Component
 
     public function abrirModal()
     {
+        $this->emit('hideScrollbar');
         $this->emit('table');
         $this->modal = 'block';
         $this->emit('mensaje', 'Ejecutando Método 1');
@@ -105,6 +107,7 @@ class Categorias extends Component
 
     public function cerrarModal()
     {
+        $this->emit('showScrollbar');
         $this->emit('table');
         $this->modal = 'none';
         $this->cambioImg = false;

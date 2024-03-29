@@ -14,15 +14,25 @@
             <div class="modal-body">
                 <form>
                     <div class="bg-white">
+                        {{-- Mostar spinner mientras carga la imagen --}}
+
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-primary" role="status" wire:loading wire:target='image'>
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+
+                        {{-- ******************************* --}}
                         <div class="form-group">
                             @if ($cambioImg)
                                 @if (gettype($image) === 'object')
                                     @if ($image->extension() == 'png' || $image->extension() == 'jpg' || $image->extension() == 'jpeg')
-                                        <img class="img-fluid img-thumbnail" src="{{ $image->temporaryUrl() }}">
+                                        <img class="img-fluid img-thumbnail" src="{{ $image->temporaryUrl() }}"
+                                            wire:loading.remove>
                                     @endif
                                 @endif
                             @else
-                                @if ($accion === 'editar')
+                                @if ($accion === 'edit')
                                     <img class="img-fluid img-thumbnail"
                                         src="{{ asset('storage/productos/' . $image) }}" alt="">
                                 @endif

@@ -1,5 +1,5 @@
 // Fonts
-// @import url('https://fonts.bunny.net/css?family=Nunito');
+@import url('https://fonts.bunny.net/css?family=Nunito');
 
 // Variables
 @import 'variables';
@@ -16,7 +16,9 @@
 @import "../css/custom.css";
 
 /* Importar Font Awesome CSS */
-@import "../css/fontawesome/css/all.css";
-@import "../css/fontawesome/css/fontawesome.css";
-@import "../css/fontawesome/css/brands.css";
-@import "../css/fontawesome/css/solid.css";
+@import "../../public/fontawesome/css/all.css";
+@import "../../public/fontawesome/css/fontawesome.css";
+@import "../../public/fontawesome/css/brands.css";
+@import "../../public/fontawesome/css/solid.css";
+
+@import '../css/app.css';

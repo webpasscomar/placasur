@@ -35,7 +35,7 @@
     {{-- <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> --}}
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#myTable').DataTable({
                 "stateSave": true, // Habilita guardar el estado
                 "language": {
@@ -83,11 +83,13 @@
                 }
             });
             // Restaurar el estado guardado
-            if (tableState.time != tableStateCopy.time) { // comparar cada cambio en el estado de datable con el timestamp
+            if (tableState.time != tableStateCopy
+                .time) { // comparar cada cambio en el estado de datable con el timestamp
                 $('#myTable').DataTable().state.clear(); // Limpiar el estado actual antes de restaurar
                 $('#myTable').DataTable().state.restore(tableState);
             }
-            tableStateCopy = tableState; // Copiar el estado en otra variable para poder comparar con el estado anterior el timestamp
+            tableStateCopy =
+                tableState; // Copiar el estado en otra variable para poder comparar con el estado anterior el timestamp
         })
 
         Livewire.on('alertDelete', id => {
@@ -117,7 +119,7 @@
         });
 
         //emit mensaje negativo
-        Livewire.on('mensajeNegativo', function (mensaje) {
+        Livewire.on('mensajeNegativo', function(mensaje) {
             Swal.fire({
                 title: 'Atencion',
                 text: mensaje['mensaje'],
@@ -128,7 +130,7 @@
 
 
         //emit mensaje positivo
-        Livewire.on('mensajePositivo', function (mensaje) {
+        Livewire.on('mensajePositivo', function(mensaje) {
             Swal.fire({
                 title: 'Excelente!',
                 text: mensaje['mensaje'],
@@ -136,6 +138,19 @@
                 showCloseButton: true,
                 showconfirmButton: true
             })
+        });
+
+        // Ocultar scrollbar cuando se abre el modal
+        Livewire.on('hideScrollbar', function() {
+
+            console.log('prueba prueba prueba');
+            $('html').addClass('hide-scrollbar');
+        });
+        // Mostrar scrollbar cuando se cierra el modal
+        Livewire.on('showScrollbar', function() {
+
+            console.log('prueba prueba prueba');
+            $('html').removeClass('hide-scrollbar');
         });
 
         // Funcion que refresca los datatables c/ vez que se vuelve a renderizar un componente

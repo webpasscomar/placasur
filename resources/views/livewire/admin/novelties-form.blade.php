@@ -6,9 +6,8 @@
 </style>
 
 
-<div class="modal fade show" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel"
-     aria-hidden="true"
-     style="display: {{ $showModal }}; background-color:rgba(51,51,51,0.9);">
+<div class="modal fade show" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel" aria-hidden="true"
+    style="display: {{ $showModal }}; background-color:rgba(51,51,51,0.9);">
 
     <div class="modal-dialog modal-md modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -21,18 +20,27 @@
                 </button>
             </div>
             <div class="modal-body">
+                {{-- Mostar spinner mientras carga la imagen --}}
 
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border text-primary" role="status" wire:loading wire:target='image'>
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+
+                {{-- ******************************* --}}
                 <div class="form-group">
                     @if ($changeImg)
                         @if (gettype($image) === 'object')
                             @if ($image->extension() == 'png' || $image->extension() == 'jpg' || $image->extension() == 'jpeg')
-                                <img class="img-fluid img-thumbnail" src="{{ $image->temporaryUrl() }}">
+                                <img class="img-fluid img-thumbnail" src="{{ $image->temporaryUrl() }}"
+                                    wire:loading.remove>
                             @endif
                         @endif
                     @else
                         @if ($action === 'edit')
                             <img class="img-fluid img-thumbnail" src="{{ asset('storage/novedades/' . $image) }}"
-                                 alt="">
+                                alt="">
                         @endif
                     @endif
                 </div>
@@ -42,7 +50,7 @@
                     <label for="name">Título</label><span class="ms-1 text-danger fs-6 fw-semibold">*</span>
                     <input type="text" class="form-control" wire:model="title">
                     @error('title')
-                    <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="form-group" wire:ignore>
@@ -50,7 +58,7 @@
                     <textarea class="ckeditor" wire:model="description" id="edit"></textarea>
                 </div>
                 @error('description')
-                <span class="text-danger d-block mb-2">{{ $message }}</span>
+                    <span class="text-danger d-block mb-2">{{ $message }}</span>
                 @enderror
                 <div class="form-group">
                     <label for="category_id">Categoria</label><span class="ms-1 text-danger fs-6 fw-semibold">*</span>
@@ -61,7 +69,7 @@
                         @endforeach
                     </select>
                     @error('category_id')
-                    <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
 
@@ -69,9 +77,9 @@
                     <div class="form-group col-md-2">
                         <label for="order">Orden</label>
                         <input type="number" class="form-control" min="0" wire:model="order"
-                               value="{{ old('order') }}"/>
+                            value="{{ old('order') }}" />
                         @error('order')
-                        <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="form-group col-md-10">
@@ -79,9 +87,9 @@
                             class="ms-1 text-danger fs-6 fw-semibold">*</span>
                         <span id="file-name"></span>
                         <input type="file" id="image" class="form-control" wire:model="image"
-                               wire:change="cambioImagen"/>
+                            wire:change="cambioImagen" />
                         @error('image')
-                        <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
                 </div>
