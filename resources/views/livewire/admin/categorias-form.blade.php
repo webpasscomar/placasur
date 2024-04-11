@@ -34,7 +34,8 @@
                             @endif
                         @else
                             @if ($accion === 'editar')
-                                <img class="img-fluid img-thumbnail" src="{{ asset('storage/categorias/' . $imagen) }}"
+                                <img class="img-fluid img-thumbnail"
+                                    src="{{ file_exists(public_path('storage/categorias/' . $imagen)) ? asset('storage/categorias/' . $imagen) : asset('img/no_disponible.png') }}"
                                     alt="{{ $imagen }}">
                             @endif
                         @endif

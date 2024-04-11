@@ -58,7 +58,7 @@
                                 <div class="col-md-3 mb-5">
                                     <div class="card shadow p-2 h-100">
                                         {{-- <img src="{{ asset('img/prod0078.jpg') }}" style="max-width:100%"> --}}
-                                        <img src="{{ asset('storage/productos/' . $producto->image) }}"
+                                        <img src="{{ file_exists(asset('storage/productos/' . $producto->image)) ? asset('storage/productos/' . $producto->image) : asset('img/no_disponible.png') }}"
                                             class="card-img-top d-none d-sm-none d-md-block" alt="{{ $producto->title }}">
                                         <h3 class="mt-3 text-center fs-5">{{ $producto->title }}</h3>
 

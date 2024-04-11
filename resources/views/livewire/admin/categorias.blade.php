@@ -34,7 +34,7 @@
                                 <th scope="row" class="align-middle">{{ $fila->id }}</th>
                                 <td class="align-middle" style="cursor: pointer"
                                     wire:click="openModalImage({{ $fila->id }})"><img
-                                        src="{{ asset('storage/categorias/' . $fila->imagen) }}"
+                                        src="{{ file_exists(public_path('storage/categorias/' . $fila->imagen)) ? asset('storage/categorias/' . $fila->imagen) : asset('img/no_disponible.png') }}"
                                         alt="{{ $fila->categoria }}" width="40" height="40" />
                                 </td>
                                 <td class="align-middle">{{ $fila->categoria }}</td>
@@ -57,7 +57,8 @@
                             </tr>
                             @if ($showModalImage)
                                 {{-- Mostrar modal de imagén amliada --}}
-                                <x-modal-image image="{{ asset('storage/categorias/' . $currentImage) }}"
+                                <x-modal-image
+                                    image="{{ file_exists(public_path('storage/categorias/' . $currentImage)) ? asset('storage/categorias/' . $currentImage) : asset('img/no_disponible.png') }}"
                                     title="{{ $currentTitle }}" imageId="{{ $key }}" />
                             @endif
                         @endforeach
