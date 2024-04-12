@@ -28,8 +28,7 @@
                         @if ($cambioImg)
                             @if (gettype($imagen) === 'object')
                                 @if ($imagen->extension() == 'png' || $imagen->extension() == 'jpg' || $imagen->extension() == 'jpeg')
-                                    <img class="img-fluid img-thumbnail" src="{{ $imagen->temporaryUrl() }}"
-                                        wire:loading.remove>
+                                    <img class="img-fluid img-thumbnail" src="{{ $imagen->temporaryUrl() }}">
                                 @endif
                             @endif
                         @else

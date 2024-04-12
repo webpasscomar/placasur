@@ -25,13 +25,13 @@
                     @if ($changeImg)
                         @if (gettype($image) === 'object')
                             @if ($image->extension() == 'png' || $image->extension() == 'jpg' || $image->extension() == 'jpeg')
-                                <img class="img-fluid img-thumbnail" src="{{ $image->temporaryUrl() }}"
-                                    wire:loading.remove>
+                                <img class="img-fluid img-thumbnail" src="{{ $image->temporaryUrl() }}">
                             @endif
                         @endif
                     @else
                         @if ($action === 'edit')
-                            <img class="img-fluid img-thumbnail" src="{{ asset('storage/servicios/' . $image) }}"
+                            <img class="img-fluid img-thumbnail"
+                                src="{{ file_exists(public_path('storage/servicios/' . $image)) ? asset('storage/servicios/' . $image) : asset('img/no_disponible.png') }}"
                                 alt="">
                         @endif
                     @endif

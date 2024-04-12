@@ -27,14 +27,14 @@
                             @if ($cambioImg)
                                 @if (gettype($image) === 'object')
                                     @if ($image->extension() == 'png' || $image->extension() == 'jpg' || $image->extension() == 'jpeg')
-                                        <img class="img-fluid img-thumbnail" src="{{ $image->temporaryUrl() }}"
-                                            wire:loading.remove>
+                                        <img class="img-fluid img-thumbnail" src="{{ $image->temporaryUrl() }}">
                                     @endif
                                 @endif
                             @else
                                 @if ($accion === 'edit')
                                     <img class="img-fluid img-thumbnail"
-                                        src="{{ asset('storage/productos/' . $image) }}" alt="">
+                                        src="{{ file_exists(public_path('storage/productos/' . $image)) ? asset('storage/productos/' . $image) : asset('img/no_disponible.png') }}"
+                                        alt="">
                                 @endif
                             @endif
                         </div>

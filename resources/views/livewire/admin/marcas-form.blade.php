@@ -22,19 +22,18 @@
                                 <span class="visually-hidden">Loading...</span>
                             </div>
                         </div>
-
                         {{-- ******************************* --}}
                         <div class="form-group">
                             @if ($cambioImg)
                                 @if (gettype($imagen) === 'object')
                                     @if ($imagen->extension() == 'png' || $imagen->extension() == 'jpg' || $imagen->extension() == 'jpeg')
-                                        <img class="img-fluid img-thumbnail" src="{{ $imagen->temporaryUrl() }}"
-                                            wire:loading.remove>
+                                        <img class="img-fluid img-thumbnail" src="{{ $imagen->temporaryUrl() }}">
                                     @endif
                                 @endif
                             @else
                                 @if ($accion === 'editar')
-                                    <img class="img-fluid img-thumbnail" src="{{ asset('storage/marcas/' . $imagen) }}"
+                                    <img class="img-fluid img-thumbnail"
+                                        src="{{ file_exists(public_path('storage/marcas/' . $imagen)) ? asset('storage/marcas/' . $imagen) : asset('img/no_disponible.png') }}"
                                         alt="">
                                 @endif
                             @endif

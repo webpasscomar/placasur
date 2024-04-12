@@ -1,14 +1,14 @@
 @extends('layouts.app')
-@section('title', 'A definir')
+@section('title', $categoriaActual->categoria)
 {{--  $categoriaPadre->categoria --}}
 {{-- {{ dd($categoria['categoria']) }} --}}
 @section('content')
     <div>
         <!-- jumbotrob / título productos -->
-        <div class="container-fluid p-0 mb-3">
-            <div class="bg-opacity-10 bg-black d-none d-lg-block d-sm-none">
-                <div class="container mt-md-n5 pt-1">
-                    <nav aria-label="breadcrumb">
+        <div class="container-fluid p-0">
+            <div class="bg-light bg-gradient d-none d-lg-block d-sm-none">
+                <div class="container pt-1">
+                    <nav class="mt-2" aria-label="breadcrumb">
                         <ol class="breadcrumb bg-transparent px-0 py-2">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-decoration-none">Inicio</a>
                             </li>
@@ -23,7 +23,6 @@
                 </div>
             </div>
         </div>
-
 
         <!-- card productos -->
         <div class="container-md mt-5">

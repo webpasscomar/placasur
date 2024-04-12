@@ -30,7 +30,7 @@
                                 <th scope="row" class="align-middle">{{ $row->id }}</th>
                                 <td class="align-middle" style="cursor: pointer"
                                     wire:click="openModalImage({{ $row->id }})"><img
-                                        src="{{ $row->image ? asset('storage/productos/' . $row->image) : asset('img/no_disponible.png') }}"
+                                        src="{{ file_exists(public_path('storage/productos/' . $row->image)) ? asset('storage/productos/' . $row->image) : asset('img/no_disponible.png') }}"
                                         alt="{{ $row->title }}" width="40" height="40"></td>
 
                                 <td class="align-middle">{{ $row->title }}</td>
@@ -54,7 +54,7 @@
                             @if ($showModalImage)
                                 {{-- Mostrar modal de imagén amliada --}}
                                 <x-modal-image
-                                    image="{{ $currentImage ? asset('storage/productos/' . $currentImage) : asset('img/no_disponible.png') }}"
+                                    image="{{ file_exists(public_path('storage/productos/' . $currentImage)) ? asset('storage/productos/' . $currentImage) : asset('img/no_disponible.png') }}"
                                     title="{{ $currentTitle }}" imageId="{{ $key }}" />
                             @endif
                         @endforeach
