@@ -14,6 +14,11 @@
                         <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
                             <img src="{{ asset('storage/galerias/' . $slide->imagen) }}" class="d-block w-100"
                                 alt="{{ $slide->galeria }}">
+                            <div class="carousel-caption d-none d-md-block ms-3 pb-0">
+                                <div class="col-md-6 text-start float-end py-2 pe-3 ps-3 bg-primary bg-opacity-75 shadow">
+                                    <p class="h2 mt-0"><strong>{{ $slide->galeria }}</strong></p>
+                                </div>
+                            </div>
                         </div>
                     @endif
                 @endforeach
