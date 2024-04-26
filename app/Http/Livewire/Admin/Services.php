@@ -127,12 +127,14 @@ class Services extends Component
 
     public function openModal()
     {
+        $this->emit('hideScrollbar');
         $this->emit('table');
         $this->showModal = 'block';
     }
 
     public function closeModal()
     {
+        $this->emit('showScrollbar');
         $this->emit('table');
         $this->showModal = 'none';
         $this->changeImg = false;

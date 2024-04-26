@@ -113,6 +113,7 @@ class Products extends Component
 
     public function openModal()
     {
+        $this->emit('hideScrollbar');
         $this->resetErrorBag();
         $this->emit('table');
         $this->modal = 'block';
@@ -120,6 +121,7 @@ class Products extends Component
 
     public function closeModal()
     {
+        $this->emit('showScrollbar');
         $this->emit('table');
         $this->modal = 'none';
         $this->cambioImg = false;
