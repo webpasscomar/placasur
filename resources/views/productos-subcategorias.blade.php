@@ -34,7 +34,7 @@
                             <a href="{{ route('productos.mostrar', $categoriaHija->slug) }}"
                                 class="text-decoration-none stretched-link" title="Ver todos los Productos de placas">
                                 <img src="{{ file_exists(public_path('storage/categorias/' . $categoriaHija->imagen)) ? asset('storage/categorias/' . $categoriaHija->imagen) : asset('img/no_disponible.png') }}"
-                                    class="card-img-top d-none d-sm-none d-md-block" alt="{{ $categoriaHija->categoria }}">
+                                    class="card-img-top d-block" alt="{{ $categoriaHija->categoria }}">
                                 <div class="card-header border-0 border-top border-5 border-primary">
                                     <p class="card-title h5 mb-0 fw-semibold link-secondary">{{ $categoriaHija->categoria }}
                                     </p>
