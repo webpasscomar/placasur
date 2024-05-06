@@ -34,6 +34,7 @@ Route::get('/productos', [ProductosController::class, 'index'])->name('productos
 Route::get('/novedades', [NoveltiesController::class, 'index'])->name('novedades');
 
 Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto');
+Route::get('/contacto/enviar', [ContactoController::class, 'submit'])->name('contacto.enviar');
 
 // Ruta prueba para detalle
 Route::view('/producto/detalle', 'productos-detalle')->name('productos.detalle');
