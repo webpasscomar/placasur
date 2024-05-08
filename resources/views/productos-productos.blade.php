@@ -44,17 +44,17 @@
                 </div>
 
                 <div class="col-md-9 mt-5">
-                    <div class="row justify-content-start">
+                    <div class="row justify-content-md-start justify-content-center">
 
                         {{-- Si tengo productos los muestro --}}
 
                         @if ($productos->isNotEmpty())
                             @foreach ($productos as $producto)
-                                <div class="col-md-3 mb-5" style="width: 17rem">
+                                <div class="col-12 col-md-3 mb-5" style="width: 17rem">
                                     <div class="card shadow p-2 h-100">
                                         {{-- <img src="{{ asset('img/prod0078.jpg') }}" style="max-width:100%"> --}}
-                                        <img src="{{ file_exists(public_path('storage/productos/' . $producto->image)) ? asset('storage/productos/' . $producto->image) : asset('img/no_disponible.png') }}"
-                                            class="card-img-top d-none d-sm-none d-md-block" alt="{{ $producto->title }}">
+                                        <img src="{{ file_exists(public_path('storage/productos/' . $producto->image)) && $producto->image ? asset('storage/productos/' . $producto->image) : asset('img/no_disponible.png') }}"
+                                            class="card-img-top d-block" alt="{{ $producto->title }}">
                                         <h3 class="mt-3 text-center fs-6">{{ $producto->title }}</h3>
 
                                     </div>

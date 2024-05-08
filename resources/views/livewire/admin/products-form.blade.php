@@ -1,5 +1,6 @@
-<div class="modal fade show" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel" aria-hidden="true"
-    style="display: {{ $modal }}; background-color:rgba(51,51,51,0.9);">
+<div class="modal fade show" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel"
+     aria-hidden="true"
+     style="display: {{ $modal }}; background-color:rgba(51,51,51,0.9);">
 
     <div class="modal-dialog modal-md modal-dialog-centered" role="document">
 
@@ -33,8 +34,8 @@
                             @else
                                 @if ($accion === 'edit')
                                     <img class="img-fluid img-thumbnail"
-                                        src="{{ file_exists(public_path('storage/productos/' . $image)) ? asset('storage/productos/' . $image) : asset('img/no_disponible.png') }}"
-                                        alt="">
+                                         src="{{ (file_exists(public_path('storage/productos/' . $image)) && $image )? asset('storage/productos/' . $image) : asset('img/no_disponible.png') }}"
+                                         alt="">
                                 @endif
                             @endif
                         </div>
@@ -52,7 +53,7 @@
                                     @endforeach
                                 </select>
                                 @error('category_id')
-                                    <span class="text-danger">{{ $message }}</span>
+                                <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -64,7 +65,7 @@
                                 <input type="text" class="form-control" id="title" wire:model="title">
 
                                 @error('title')
-                                    <span class="text-danger">{{ $message }}</span>
+                                <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
 
@@ -72,7 +73,8 @@
 
                         <div class="form-group">
                             <label for="description">Descripción:</label>
-                            <textarea rows="2" class="form-control" id="description" wire:model="description"></textarea>
+                            <textarea rows="2" class="form-control" id="description"
+                                      wire:model="description"></textarea>
                         </div>
 
                         <div class="row">
@@ -87,9 +89,9 @@
                         <div class="form-group">
                             <label for="image">Foto:</label>
                             <input type="file" id="image" wire:model="image" wire:change="changeImage"
-                                class="form-control">
+                                   class="form-control">
                             @error('image')
-                                <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
 
@@ -104,7 +106,8 @@
 
             <div class="modal-footer">
                 <button type="button" wire:click="closeModal" class="btn btn-secondary"
-                    data-dismiss="modal">Cerrar</button>
+                        data-dismiss="modal">Cerrar
+                </button>
                 <button wire:click="store" class="btn btn-primary">Guardar</button>
             </div>
 

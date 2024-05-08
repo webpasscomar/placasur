@@ -27,7 +27,7 @@
                         <a href="./productos/<?php echo $categoria->slug; ?>" class="text-decoration-none stretched-link"
                             title="Ver todos los Productos de placas">
                             <img src="{{ file_exists(public_path('storage/categorias/' . $categoria->imagen)) ? asset('storage/categorias/' . $categoria->imagen) : asset('img/no_disponible.png') }}"
-                                class="card-img-top d-none d-sm-none d-md-block" alt="{{ $categoria->categoria }}">
+                                class="card-img-top d-block" alt="{{ $categoria->categoria }}">
                             <div class="card-header border-0 border-top border-5 border-primary">
                                 <p class="card-title h5 mb-0 fw-semibold link-secondary">{{ $categoria->categoria }}</p>
                             </div>

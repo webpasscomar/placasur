@@ -9,15 +9,14 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 @foreach ($slides as $key => $slide)
+                    {{-- mostrar solo las imagenes que esten disponibles --}}
                     @if (file_exists(public_path('storage/galerias/' . $slide->imagen)))
                         <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                            {{-- mostrar solo las imagenes que esten disponibles --}}
                             <img src="{{ asset('storage/galerias/' . $slide->imagen) }}" class="d-block w-100"
                                 alt="{{ $slide->galeria }}">
                             <div class="carousel-caption d-none d-md-block ms-3 pb-0">
                                 <div class="col-md-6 text-start float-end py-2 pe-3 ps-3 bg-primary bg-opacity-75 shadow">
-                                    <p class="lead mb-0">Lo que necesites para tus proyectos</p>
-                                    <p class="h2 mt-0"><strong>Lo encontrás acá</strong></p>
+                                    <p class="h2 mt-0"><strong>{{ $slide->galeria }}</strong></p>
                                 </div>
                             </div>
                         </div>
