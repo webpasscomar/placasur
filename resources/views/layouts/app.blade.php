@@ -21,7 +21,7 @@
 
     @include('layouts.partials.header')
 
-    <div class="min-vh-100">
+    <div class="min-vh-100 mb-5">
         @yield('content')
     </div>
 

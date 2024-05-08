@@ -191,6 +191,10 @@ body {
     text-decoration: none;
 }
 
+.text-carousel{
+    font-size: 26px;
+}
+
 
 /* ---------------------------------------------------
     MEDIAQUERIES para NAV - MENU
@@ -799,4 +803,11 @@ a:hover {
 .link-disabled {
     pointer-events: none;
     cursor: not-allowed;
+}
+
+@media(max-width: 576px) {
+/* Texto del carousel */
+    .text-carousel{
+        font-size: 16px;
+    }
 }
