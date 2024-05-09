@@ -54,7 +54,8 @@
                             <a href="{{ route('contacto') }}" title="Contactanos" class="nav-link">Contacto</a>
                         </li>
                         <!-- buscador -->
-                        <li class="nav-item search">
+                        {{-- TODO: Se deja comentado hasta que se tenga una definición de la búsqueda --}}
+                        {{-- <li class="nav-item search">
                             <form>
                                 <div class="animated-search m-md-0 mb-sm-4">
                                     <input type="search" id="animated-input">
@@ -63,7 +64,7 @@
                                     </a>
                                 </div>
                             </form>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
                 <!-- </li>
