@@ -1,6 +1,5 @@
 <div class="modal fade show" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel"
-     aria-hidden="true"
-     style="display: {{ $modal }}; background-color:rgba(51,51,51,0.9);">
+    aria-hidden="true" style="display: {{ $modal }}; background-color:rgba(51,51,51,0.9);">
 
     <div class="modal-dialog modal-md modal-dialog-centered" role="document">
 
@@ -26,17 +25,18 @@
                         {{-- ******************************* --}}
                         <div class="form-group">
                             @if ($cambioImg)
-                                @if (gettype($image) === 'object')
-                                    @if ($image->extension() == 'png' || $image->extension() == 'jpg' || $image->extension() == 'jpeg')
-                                        <img class="img-fluid img-thumbnail" src="{{ $image->temporaryUrl() }}">
-                                    @endif
-                                @endif
+                            @if (gettype($image) === 'object')
+                            @if ($image->extension() == 'png' || $image->extension() == 'jpg' || $image->extension() ==
+                            'jpeg')
+                            <img class="img-fluid img-thumbnail" src="{{ $image->temporaryUrl() }}">
+                            @endif
+                            @endif
                             @else
-                                @if ($accion === 'edit')
-                                    <img class="img-fluid img-thumbnail"
-                                         src="{{ (file_exists(public_path('storage/productos/' . $image)) && $image )? asset('storage/productos/' . $image) : asset('img/no_disponible.png') }}"
-                                         alt="">
-                                @endif
+                            @if ($accion === 'edit')
+                            <img class="img-fluid img-thumbnail"
+                                src="{{ (file_exists(public_path('storage/productos/' . $image)) && $image )? asset('storage/productos/' . $image) : asset('img/no_disponible.png') }}"
+                                alt="">
+                            @endif
                             @endif
                         </div>
 
@@ -48,8 +48,8 @@
 
                                     <option value="0">Seleccione la categoría</option>
                                     @foreach ($categorias as $item)
-                                        <option value="{{ $item->id }}">{{ $item->rutaCompleta }}
-                                        </option>
+                                    <option value="{{ $item->id }}">{{ $item->rutaCompleta }}
+                                    </option>
                                     @endforeach
                                 </select>
                                 @error('category_id')
@@ -74,7 +74,7 @@
                         <div class="form-group">
                             <label for="description">Descripción:</label>
                             <textarea rows="2" class="form-control" id="description"
-                                      wire:model="description"></textarea>
+                                wire:model="description"></textarea>
                         </div>
 
                         <div class="row">
@@ -89,7 +89,12 @@
                         <div class="form-group">
                             <label for="image">Foto:</label>
                             <input type="file" id="image" wire:model="image" wire:change="changeImage"
-                                   class="form-control">
+                                class="form-control">
+                            <p class="fw-normal text-secondary text-right text_recommended-img me-1">se recomienda
+                                imágen jpg
+                                ó png
+                                de (800px x 800px)
+                            </p>
                             @error('image')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -105,8 +110,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" wire:click="closeModal" class="btn btn-secondary"
-                        data-dismiss="modal">Cerrar
+                <button type="button" wire:click="closeModal" class="btn btn-secondary" data-dismiss="modal">Cerrar
                 </button>
                 <button wire:click="store" class="btn btn-primary">Guardar</button>
             </div>

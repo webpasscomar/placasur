@@ -190,9 +190,14 @@ body {
     color: black;
     text-decoration: none;
 }
-
+/* Tamaño de letra del texto del carousel */
 .text-carousel{
     font-size: 26px;
+}
+
+/* texto imágen recomendada en formulario de carga de imágenes - backend */
+.text_recommended-img{
+    font-size: 12px;
 }
 
 

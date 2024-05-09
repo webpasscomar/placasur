@@ -1,5 +1,5 @@
-<div class="modal fade show" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel" aria-hidden="true"
-    style="display: {{ $modal }}; background-color:rgba(51,51,51,0.9);">
+<div class="modal fade show" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalLabel"
+    aria-hidden="true" style="display: {{ $modal }}; background-color:rgba(51,51,51,0.9);">
 
     <div class="modal-dialog modal-md modal-dialog-centered" role="document">
 
@@ -26,17 +26,18 @@
                         {{-- ******************************* --}}
                         <div class="form-group">
                             @if ($cambioImg)
-                                @if (gettype($imagen) === 'object')
-                                    @if ($imagen->extension() == 'png' || $imagen->extension() == 'jpg' || $imagen->extension() == 'jpeg')
-                                        <img class="img-fluid img-thumbnail" src="{{ $imagen->temporaryUrl() }}">
-                                    @endif
-                                @endif
+                            @if (gettype($imagen) === 'object')
+                            @if ($imagen->extension() == 'png' || $imagen->extension() == 'jpg' || $imagen->extension()
+                            == 'jpeg')
+                            <img class="img-fluid img-thumbnail" src="{{ $imagen->temporaryUrl() }}">
+                            @endif
+                            @endif
                             @else
-                                @if ($accion === 'editar')
-                                    <img class="img-fluid img-thumbnail"
-                                        src="{{ file_exists(public_path('storage/galerias/' . $imagen)) ? asset('storage/galerias/' . $imagen) : asset('img/no_disponible.png') }}"
-                                        alt="">
-                                @endif
+                            @if ($accion === 'editar')
+                            <img class="img-fluid img-thumbnail"
+                                src="{{ file_exists(public_path('storage/galerias/' . $imagen)) ? asset('storage/galerias/' . $imagen) : asset('img/no_disponible.png') }}"
+                                alt="">
+                            @endif
                             @endif
                         </div>
 
@@ -46,7 +47,7 @@
                                     class="ms-1 text-danger fs-6 fw-semibold">*</span>
                                 <input type="text" class="form-control" id="galeria" wire:model="galeria">
                                 @error('galeria')
-                                    <span class="text-danger">{{ $message }}</span>
+                                <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                         </div>
@@ -60,9 +61,13 @@
                                 <span id="file-name"></span>
                                 <input type="file" id="imagen" wire:model="imagen" wire:change="cambioImagen"
                                     class="form-control">
-
+                                <p class="fw-normal text-secondary text-right text_recommended-img me-1">se recomienda
+                                    imágen jpg ó
+                                    png
+                                    de (1920px x 712px)
+                                </p>
                                 @error('imagen')
-                                    <span class="text-danger">{{ $message }}</span>
+                                <span class="text-danger">{{ $message }}</span>
                                 @enderror
 
                             </div>
