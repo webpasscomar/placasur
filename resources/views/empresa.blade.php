@@ -25,10 +25,18 @@
       <!-- texto empresa -->
       <div class="col-md-6">
         <h3 class="h2 bold text-black-50">Nuestra empresa</h3>
-        <p>La empresa cuenta con un Plantel de 10 Personas en el área de Calidad, Administración, Recepción, Despacho y
-          Producción.</p>
-        <p>Cuenta además con un personal Tercerizado Responsable del Mantenimiento del Sistema de Gestión Certificado y
-          personal tercerizado responsable del mantenimiento Preventivo del Taller.</p>
+        <p>Fundada en 1996 acompañada con 50 años de experiencia en el rubro y tras muchos años de
+          trabajo y esfuerzo, nuestra empresa fue creciendo paso a paso y de manera constante.</p>
+        <p>Ediliciamente contamos con un amplio salón de exposición, depósitos sectorizados para
+          herrajes, placas y cortes. Sumamos recientemente un área cubierta de carga y descarga,
+          nuevos sistemas de almacenamiento, equipos y maquinaria con el fin de mejorar nuestro
+          servicio de entrega.</p>
+        <p>Trabajamos en la formación de nuestro personal de ventas y nuestros asesores, para que
+            nuestros clientes carpinteros, arquitectos, constructores, público en general cuenten con el
+            mejor asesoramiento sobre productos, tendencias, tecnologías y todo aquello que colabore a
+            la construcción de sus proyectos.</p>
+        <p> Nuestra empresa esta posicionada como un referente del rubro. La atención, el servicio, el
+            compromiso y por supuesto la calidad es NUESTRO sello.</p>
       </div>
 
       <!-- fotos -->
@@ -43,8 +51,11 @@
       <div class="col-md-4">
         <img src="{{ asset('img/empresa/mision.png') }}" class="mb-3 shadow rounded-circle" alt="Nuestra misión">
         <h4 class="h5 text-primary bold">Misión</h4>
-        <small>Proveer al mercado nacional herrajes de la más alta calidad y mayor valor agregado posible para poder
-          obtener la máxima satisfacción de nuestros clientes.</small>
+        <p><small>Proveer al mercado productos y servicios diferenciados que ayuden a alcanzar sus
+              aspiraciones.</small></p>
+        <p><small>Potenciar cada detalle para llevar el diseño de sus proyectos a su mejor nivel.</small></p>
+        <small>Trabajamos para mejorar la tecnología, las herramientas y equipo de ventas para brindar la
+            mejor experiencia a nuestros clientes.</small>
       </div>
 
       <hr class="border border-primary my-4 w-75 mx-auto d-lg-none d-sm-block">
@@ -53,8 +64,10 @@
       <div class="col-md-4 border-start border-end border-primary">
         <img src="{{ asset('img/empresa/vision.png') }}" class="mb-3 shadow rounded-circle" alt="Nuestra visión">
         <h4 class="h5 text-primary bold">Visión</h4>
-        <small>Constituirnos en la empresa Líder del mercado del Herrajes Argentinos, estando siempre a la vanguardia de
-          la moda en nuestros constantes desarrollos.</small>
+        <p><small>Constituirnos como una empresa destacada por la calidad, el servicio y la responsabilidad.</small></p>
+        <p><small>En nuestra búsqueda privilegiar el compromiso hacia el entendimiento y la cooperación con los
+          gremios asociados.</small></p>
+        <small>Ser ese socio estratégico que acompaña el crecimiento de nuestros clientes.</small>      
       </div>
 
       <hr class="border border-primary my-4 w-75 mx-auto d-lg-none d-sm-block">
@@ -63,9 +76,12 @@
       <div class="col-md-4">
         <img src="{{ asset('img/empresa/calidad.png') }}" class="mb-3 shadow rounded-circle"
           alt="Calidad de nuestros productos">
-        <h4 class="h5 text-primary bold">Calidad</h4>
-        <small>Realizamos trabajos de urgencia de ser necesario fines de semana o nocturnos para su mejor eficiencia en la
-          producción.</small>
+        <h4 class="h5 text-primary bold">Valores</h4>
+        <p><small>Queremos destacar nuestra responsabilidad social y comercial.</small></p> 
+        <p><small>La innovación y creatividad en
+          nuestros productos. </small></p>
+        <small>La calidad y honestidad en lo comercial, siempre con el compromiso ético
+          que nos caracterizó a lo largo de nuestra historia.</small>
       </div>
     </div>
   </div>
