@@ -24,7 +24,7 @@
         <!-- placas -->
         <div class="col-sm-12 col-md-3 mb-5">
           <div class="card shadow info-box__shadow h-100 pb-1">
-            @if ($categoria->slug == 'herrajes')
+            @if ($categoria->slug == 'eurohard')
               <a href="https://eurohard.com.ar" target="blank" class="text-decoration-none stretched-link"
                 title="Ver todos los Productos de placas">
               @else
