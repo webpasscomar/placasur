@@ -16,4 +16,4 @@ yarn-error.log
 /.idea
 /.vscode
 /database_local
-.env
+.env.env
