@@ -1,0 +1,160 @@
+{
+  "public/fontawesome/webfonts/fa-brands-400.ttf": {
+    "file": "assets/fa-brands-400-2ef6fdde.ttf",
+    "src": "public/fontawesome/webfonts/fa-brands-400.ttf"
+  },
+  "public/fontawesome/webfonts/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-f4617423.woff2",
+    "src": "public/fontawesome/webfonts/fa-brands-400.woff2"
+  },
+  "public/fontawesome/webfonts/fa-regular-400.ttf": {
+    "file": "assets/fa-regular-400-12dea17b.ttf",
+    "src": "public/fontawesome/webfonts/fa-regular-400.ttf"
+  },
+  "public/fontawesome/webfonts/fa-regular-400.woff2": {
+    "file": "assets/fa-regular-400-7ba24c41.woff2",
+    "src": "public/fontawesome/webfonts/fa-regular-400.woff2"
+  },
+  "public/fontawesome/webfonts/fa-solid-900.ttf": {
+    "file": "assets/fa-solid-900-67a880b4.ttf",
+    "src": "public/fontawesome/webfonts/fa-solid-900.ttf"
+  },
+  "public/fontawesome/webfonts/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-e2c5cf54.woff2",
+    "src": "public/fontawesome/webfonts/fa-solid-900.woff2"
+  },
+  "public/fontawesome/webfonts/fa-v4compatibility.ttf": {
+    "file": "assets/fa-v4compatibility-8d9500e8.ttf",
+    "src": "public/fontawesome/webfonts/fa-v4compatibility.ttf"
+  },
+  "public/fontawesome/webfonts/fa-v4compatibility.woff2": {
+    "file": "assets/fa-v4compatibility-7c377405.woff2",
+    "src": "public/fontawesome/webfonts/fa-v4compatibility.woff2"
+  },
+  "public/fonts/roboto-black-webfont.eot": {
+    "file": "assets/roboto-black-webfont-cc99fda7.eot",
+    "src": "public/fonts/roboto-black-webfont.eot"
+  },
+  "public/fonts/roboto-black-webfont.svg": {
+    "file": "assets/roboto-black-webfont-9ab473e1.svg",
+    "src": "public/fonts/roboto-black-webfont.svg"
+  },
+  "public/fonts/roboto-black-webfont.ttf": {
+    "file": "assets/roboto-black-webfont-4deffe2e.ttf",
+    "src": "public/fonts/roboto-black-webfont.ttf"
+  },
+  "public/fonts/roboto-black-webfont.woff": {
+    "file": "assets/roboto-black-webfont-7ca7a3a8.woff",
+    "src": "public/fonts/roboto-black-webfont.woff"
+  },
+  "public/fonts/roboto-black-webfont.woff2": {
+    "file": "assets/roboto-black-webfont-30e606c5.woff2",
+    "src": "public/fonts/roboto-black-webfont.woff2"
+  },
+  "public/fonts/roboto-bold-webfont.eot": {
+    "file": "assets/roboto-bold-webfont-0186fbc6.eot",
+    "src": "public/fonts/roboto-bold-webfont.eot"
+  },
+  "public/fonts/roboto-bold-webfont.svg": {
+    "file": "assets/roboto-bold-webfont-5f79b45f.svg",
+    "src": "public/fonts/roboto-bold-webfont.svg"
+  },
+  "public/fonts/roboto-bold-webfont.ttf": {
+    "file": "assets/roboto-bold-webfont-bb8906ec.ttf",
+    "src": "public/fonts/roboto-bold-webfont.ttf"
+  },
+  "public/fonts/roboto-bold-webfont.woff": {
+    "file": "assets/roboto-bold-webfont-aeae2d7c.woff",
+    "src": "public/fonts/roboto-bold-webfont.woff"
+  },
+  "public/fonts/roboto-bold-webfont.woff2": {
+    "file": "assets/roboto-bold-webfont-77501c5d.woff2",
+    "src": "public/fonts/roboto-bold-webfont.woff2"
+  },
+  "public/fonts/roboto-light-webfont.eot": {
+    "file": "assets/roboto-light-webfont-017280e3.eot",
+    "src": "public/fonts/roboto-light-webfont.eot"
+  },
+  "public/fonts/roboto-light-webfont.svg": {
+    "file": "assets/roboto-light-webfont-f5d449c0.svg",
+    "src": "public/fonts/roboto-light-webfont.svg"
+  },
+  "public/fonts/roboto-light-webfont.ttf": {
+    "file": "assets/roboto-light-webfont-de041030.ttf",
+    "src": "public/fonts/roboto-light-webfont.ttf"
+  },
+  "public/fonts/roboto-light-webfont.woff2": {
+    "file": "assets/roboto-light-webfont-2eb10793.woff2",
+    "src": "public/fonts/roboto-light-webfont.woff2"
+  },
+  "public/fonts/roboto-medium-webfont.eot": {
+    "file": "assets/roboto-medium-webfont-b7caef26.eot",
+    "src": "public/fonts/roboto-medium-webfont.eot"
+  },
+  "public/fonts/roboto-medium-webfont.svg": {
+    "file": "assets/roboto-medium-webfont-119df59b.svg",
+    "src": "public/fonts/roboto-medium-webfont.svg"
+  },
+  "public/fonts/roboto-medium-webfont.ttf": {
+    "file": "assets/roboto-medium-webfont-e2a44fde.ttf",
+    "src": "public/fonts/roboto-medium-webfont.ttf"
+  },
+  "public/fonts/roboto-medium-webfont.woff": {
+    "file": "assets/roboto-medium-webfont-93de6877.woff",
+    "src": "public/fonts/roboto-medium-webfont.woff"
+  },
+  "public/fonts/roboto-medium-webfont.woff2": {
+    "file": "assets/roboto-medium-webfont-21a37223.woff2",
+    "src": "public/fonts/roboto-medium-webfont.woff2"
+  },
+  "public/fonts/roboto-regular-webfont.eot": {
+    "file": "assets/roboto-regular-webfont-a1f017fe.eot",
+    "src": "public/fonts/roboto-regular-webfont.eot"
+  },
+  "public/fonts/roboto-regular-webfont.svg": {
+    "file": "assets/roboto-regular-webfont-d1285730.svg",
+    "src": "public/fonts/roboto-regular-webfont.svg"
+  },
+  "public/fonts/roboto-regular-webfont.ttf": {
+    "file": "assets/roboto-regular-webfont-01ccc7f0.ttf",
+    "src": "public/fonts/roboto-regular-webfont.ttf"
+  },
+  "public/fonts/roboto-regular-webfont.woff": {
+    "file": "assets/roboto-regular-webfont-417221da.woff",
+    "src": "public/fonts/roboto-regular-webfont.woff"
+  },
+  "public/fonts/roboto-thin-webfont.eot": {
+    "file": "assets/roboto-thin-webfont-56dabebd.eot",
+    "src": "public/fonts/roboto-thin-webfont.eot"
+  },
+  "public/fonts/roboto-thin-webfont.svg": {
+    "file": "assets/roboto-thin-webfont-ce68c664.svg",
+    "src": "public/fonts/roboto-thin-webfont.svg"
+  },
+  "public/fonts/roboto-thin-webfont.ttf": {
+    "file": "assets/roboto-thin-webfont-6dfc8498.ttf",
+    "src": "public/fonts/roboto-thin-webfont.ttf"
+  },
+  "public/fonts/roboto-thin-webfont.woff": {
+    "file": "assets/roboto-thin-webfont-37b35202.woff",
+    "src": "public/fonts/roboto-thin-webfont.woff"
+  },
+  "public/fonts/roboto-thin-webfont.woff2": {
+    "file": "assets/roboto-thin-webfont-0f59165b.woff2",
+    "src": "public/fonts/roboto-thin-webfont.woff2"
+  },
+  "public/img/enca.jpg": {
+    "file": "assets/enca-1e9cc59d.jpg",
+    "src": "public/img/enca.jpg"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-d0eb4253.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app-7b4aa952.css",
+    "isEntry": true,
+    "src": "resources/sass/app.scss"
+  }
+}
