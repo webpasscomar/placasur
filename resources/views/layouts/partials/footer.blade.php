@@ -9,7 +9,7 @@
               <li> Av. H. Yrigoyen 15750 (1852) <br>
                 Burzaco, Buenos Aires, Argentina</li>
               <li class="pt-3 pb-2 fw-bold h5 text-white"> +54 11 4002-4400<br>
-                +54 11 4238-4000</li>
+                +54 11 2206-4000</li>
             </ul>
             <p class="h6 fw-bold text-white">Horarios</p>
             <span class="text-light light"> lun a vier 9 a 12 y de 14 a 17:30</span>
@@ -45,11 +45,13 @@
             <p class="h6 fw-bold text-white">Nuestras redes</p>
             <ul class="list-group list-group-horizontal">
               <li class="list-group-item bg-transparent ps-0 border-0 light text-light">
-                <a href="/" class="text-decoration-none link-light" title="Mirá nuestro canal de youtube"> <i
+                <a href="https://www.youtube.com/channel/UCI2gWFwLRoyDDzkdpd-qAXA" target="_blank"
+                  class="text-decoration-none link-light" title="Mirá nuestro canal de youtube"> <i
                     class="fa-brands fa-youtube"></i> </a>
               </li>
               <li class="list-group-item bg-transparent ps-0 border-0 light text-light">
-                <a href="/" class="text-decoration-none link-light" title="Nuestro Instagram"> <i
+                <a href="https://www.instagram.com/placasur_distribuidora/" target="_blank"
+                  class="text-decoration-none link-light" title="Nuestro Instagram"> <i
                     class="fa-brands fa-instagram"></i> </a>
               </li>
             </ul>

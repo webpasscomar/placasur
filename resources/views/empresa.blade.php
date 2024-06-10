@@ -33,7 +33,10 @@
 
       <!-- fotos -->
       <div class="col-md-5 p-0 m-0 d-none d-md-block">
-        <img src="{{ asset('img/empresa/empresa.png') }}" class="w-100" alt="">
+        {{-- <img src="{{ asset('img/empresa/empresa.png') }}" class="w-100" alt=""> --}}
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/DGIy4iyT-Uk" frameborder="0" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
     <!-- fin card servicios -->
