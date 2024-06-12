@@ -16,7 +16,7 @@
           </div>
           <!-- categorias -->
           <div class="col-md-3 mb-3">
-            <p class="h6 fw-bold text-white">Categorías de productos</p>
+            <p class="h6 fw-bold text-white">Menú</p>
             <ul class="list-unstyled text-white-50 light">
               <li><a href="{{ route('empresa') }}" class="text-decoration-none link-light"
                   title="Saber más sobre la Empresa"> Empresa
