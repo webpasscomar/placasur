@@ -12,7 +12,7 @@
                 +54 11 2206-4000</li>
             </ul>
             <p class="h6 fw-bold text-white">Horarios</p>
-            <span class="text-light light"> lun a vier 9 a 12 y de 14 a 17:30</span>
+            <span class="text-light light"> lun a vier 8 a 12 hs. y de 13:30 a 17:30 hs.</span>
           </div>
           <!-- categorias -->
           <div class="col-md-3 mb-3">
