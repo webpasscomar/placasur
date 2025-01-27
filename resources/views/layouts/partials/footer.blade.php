@@ -5,6 +5,7 @@
           <!-- contacto -->
           <div class="col-md-3 mb-3">
             <p class="h6 fw-bold text-white">Contacto</p>
+            <p class="h6 fw-bold text-white">DISTRIBUIDORA PLACASUR S.A.</p>
             <ul class="list-unstyled light text-light">
               <li> Av. H. Yrigoyen 15750 (1852) <br>
                 Burzaco, Buenos Aires, Argentina</li>
@@ -60,7 +61,24 @@
       </div>
     </div>
     <!-- FIN footer -->
+    <div class="copyrights" style="background-color: #222">
+      <div class="container">
+        <div class="row pt-4">
 
+          <div class="col-md-6">
+            <p class="text-white">Copyrights © 2025 - Todos los derechos reservados.</p>
+          </div>
+
+          <div class="col-md-6">
+            <p class="text-white text-end"><a href="https://webpass.com.ar" class="link_webpass " target="_blank">Diseño
+                y
+                Desarrollo</a> by WebPass</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
 
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <!-- <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script> -->
