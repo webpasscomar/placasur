@@ -816,3 +816,81 @@ a:hover {
         font-size: 16px;
     }
 }
+/* =========================================
+   REDES SOCIALES FLOTANTES
+   ========================================= */
+
+.content-float-icon-WA {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.content-float-icon-WA > div {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px 0 0 8px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        width 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.content-float-icon-WA > div:hover {
+    width: 54px;
+}
+
+.content-float-icon-WA a {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff !important;
+    text-decoration: none;
+
+    font-size: 22px;
+}
+
+/* WhatsApp */
+.content-float-icon-WA .icon-WA {
+    background-color: #25D366;
+}
+
+/* Instagram */
+.content-float-icon-WA .icon-IG {
+    background: linear-gradient(
+        45deg,
+        #feda75 0%,
+        #fa7e1e 25%,
+        #d62976 50%,
+        #962fbf 75%,
+        #4f5bd5 100%
+    );
+}
+
+/* YouTube */
+.content-float-icon-WA .icon-YT {
+    background-color: #FF0000;
+}
+
+/* Efecto hover */
+.content-float-icon-WA > div:hover {
+    opacity: 0.9;
+}

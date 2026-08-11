@@ -61,16 +61,16 @@ class ContactoController extends Controller
         $to = '';
         switch ($validatedData['asunto']) {
             case 1:
-                $to = 'info@placasur.com.ar'; // Correo para consulta general
+                $to = 'rjbellingeri@placasur.com.ar'; // Correo para consulta general
                 break;
             case 2:
                 $to = 'rjbellingeri@placasur.com.ar'; // Correo para soporte técnico
                 break;
             case 3:
-                $to = 'anahigomez.eh@gmail.com'; // Correo para reporte de problema
+                $to = 'rjbellingeri@placasur.com.ar'; // Correo para reporte de problema
                 break;
             default:
-                $to = 'anahigomez.eh@gmail.com'; // Correo de respaldo
+                $to = 'rjbellingeri@placasur.com.ar'; // Correo de respaldo
                 break;
         }
 

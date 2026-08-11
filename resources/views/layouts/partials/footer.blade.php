@@ -6,14 +6,41 @@
           <div class="col-md-3 mb-3">
             <p class="h6 fw-bold text-white">Contacto</p>
             <p class="h6 fw-bold text-white">DISTRIBUIDORA PLACASUR S.A.</p>
+
             <ul class="list-unstyled light text-light">
-              <li> Av. H. Yrigoyen 15750 (1852) <br>
-                Burzaco, Buenos Aires, Argentina</li>
-              <li class="pt-3 pb-2 fw-bold h5 text-white"> +54 11 4002-4400<br>
-                +54 11 2206-4000</li>
+              <li>
+                Av. H. Yrigoyen 15750 (1852) <br>
+                Burzaco, Buenos Aires, Argentina
+              </li>
+
+              <li class="pt-3 pb-2 fw-bold h5 text-white">
+                +54 11 4002-4400<br>
+                +54 11 2206-4000
+              </li>
+
+              <!-- Ubicación -->
+              <li class="pt-2 pb-2">
+                <a href="https://maps.app.goo.gl/asKqDz9iPNDQv6Px6"
+                  target="_blank"
+                  class="text-decoration-none link-light"
+                  title="Ver ubicación en Google Maps">
+
+                  <i class="fa-solid fa-map-location-dot me-2"></i>
+                  <span class="h6 fw-bold text-white">Ver ubicación</span>
+
+                </a>
+              </li>
             </ul>
-            <p class="h6 fw-bold text-white">Horarios</p>
-            <span class="text-light light"> lun a vier 8 a 12 hs. y de 13:30 a 17:30 hs.</span>
+
+            <!-- Horarios -->
+            <p class="h6 fw-bold text-white mb-1">
+              <i class="fa-regular fa-clock me-2"></i>
+              Horarios
+            </p>
+
+            <span class="text-light light">
+              lun a vier 8 a 12 hs. y de 13:30 a 17:30 hs.
+            </span>
           </div>
           <!-- categorias -->
           <div class="col-md-3 mb-3">
@@ -70,15 +97,32 @@
           </div>
 
           <div class="col-md-6">
-            <p class="text-white text-end"><a href="https://webpass.com.ar" class="link_webpass " target="_blank">Diseño
+            <p class="text-white text-end"><a href="https://webpass.com.ar"  class="text-decoration-none link-light" target="_blank">Diseño
                 y
                 Desarrollo</a> by WebPass</p>
           </div>
-
         </div>
-
       </div>
     </div>
+
+    <div class="content-float-icon-WA">
+      <div class="icon-WA">
+        <a href="https://wa.me/5491135584000" class="icon-wa-link" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+      <div class="icon-IG">
+        <a href="https://www.instagram.com/placasur_distribuidora" class="icon-wa-link" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <div class="icon-YT">
+        <a href="https://www.youtube.com/channel/UCI2gWFwLRoyDDzkdpd-qAXA" class="icon-wa-link" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+
 
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <!-- <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script> -->
