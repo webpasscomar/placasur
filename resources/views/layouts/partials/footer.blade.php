@@ -113,7 +113,7 @@
       </div>
       <div class="icon-IG">
         <a href="https://www.instagram.com/placasur_distribuidora" class="icon-wa-link" target="_blank">
-          <i class="fab fa-instagram"></i>
+          <i class="fa-brands fa-instagram"></i>
         </a>
       </div>
       <div class="icon-YT">

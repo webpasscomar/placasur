@@ -819,78 +819,81 @@ a:hover {
 /* =========================================
    REDES SOCIALES FLOTANTES
    ========================================= */
-
 .content-float-icon-WA {
-    position: fixed;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 9999;
-
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999999999;
 }
 
-.content-float-icon-WA > div {
-    width: 48px;
-    height: 48px;
-
+.icon-wa-link {
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    border-radius: 8px 0 0 8px;
-
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-
-    transition:
-        transform 0.2s ease,
-        width 0.2s ease,
-        opacity 0.2s ease;
-}
-
-.content-float-icon-WA > div:hover {
-    width: 54px;
-}
-
-.content-float-icon-WA a {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #fff !important;
-    text-decoration: none;
-
+    text-align: center;
     font-size: 22px;
+    padding: 0;
+    color: #fff;
+    text-decoration: none;
 }
 
-/* WhatsApp */
-.content-float-icon-WA .icon-WA {
-    background-color: #25D366;
+.icon-wa-link i {
+    color: #fff !important;
+}
+.icon-WA {
+  background: url(../../public/img/back-icon-footer.svg) no-repeat center center;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+  background-size: 100%;
+  margin: 8px 0;
 }
 
-/* Instagram */
-.content-float-icon-WA .icon-IG {
-    background: linear-gradient(
-        45deg,
-        #feda75 0%,
-        #fa7e1e 25%,
-        #d62976 50%,
-        #962fbf 75%,
-        #4f5bd5 100%
-    );
+.icon-WA:hover {
+  background: url(../../public/img/back-icon-footer-WA-hover.svg) no-repeat center center;
+  background-size: 100%;
 }
 
-/* YouTube */
-.content-float-icon-WA .icon-YT {
-    background-color: #FF0000;
+.icon-YT {
+  background: url(../../public/img/back-icon-footer.svg) no-repeat center center;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+  background-size: 100%;
+  margin: 8px 0;
 }
 
-/* Efecto hover */
-.content-float-icon-WA > div:hover {
-    opacity: 0.9;
+.icon-YT:hover {
+  background: url(../../public/img/back-icon-footer-YT-hover.svg);
+  background-size: 100%;
+}
+
+.icon-IG {
+  background: url(../../public/img/back-icon-footer.svg);
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+  background-size: 100%;
+  margin: 8px 0;
+}
+
+.icon-IG:hover {
+  background: url(../../public/img/back-icon-footer-IG-hover.svg) no-repeat center center;
+  background-size: 100%;
+}
+@font-face {
+    font-family: "Font Awesome 5 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("/fontawesome/webfonts/fa-brands-400.woff2") format("woff2"),
+         url("/fontawesome/webfonts/fa-brands-400.ttf") format("truetype");
+}
+
+.fab,
+.fa-brands {
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
 }

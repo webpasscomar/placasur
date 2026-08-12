@@ -143,17 +143,33 @@
     "file": "assets/roboto-thin-webfont-0f59165b.woff2",
     "src": "public/fonts/roboto-thin-webfont.woff2"
   },
+  "public/img/back-icon-footer-IG-hover.svg": {
+    "file": "assets/back-icon-footer-IG-hover-c1274a51.svg",
+    "src": "public/img/back-icon-footer-IG-hover.svg"
+  },
+  "public/img/back-icon-footer-WA-hover.svg": {
+    "file": "assets/back-icon-footer-WA-hover-a029febc.svg",
+    "src": "public/img/back-icon-footer-WA-hover.svg"
+  },
+  "public/img/back-icon-footer-YT-hover.svg": {
+    "file": "assets/back-icon-footer-YT-hover-5c57e42d.svg",
+    "src": "public/img/back-icon-footer-YT-hover.svg"
+  },
+  "public/img/back-icon-footer.svg": {
+    "file": "assets/back-icon-footer-b7a3c171.svg",
+    "src": "public/img/back-icon-footer.svg"
+  },
   "public/img/enca.jpg": {
     "file": "assets/enca-1e9cc59d.jpg",
     "src": "public/img/enca.jpg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-d0eb4253.js",
+    "file": "assets/app-3ffa5f8d.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
   "resources/sass/app.scss": {
-    "file": "assets/app-7b4aa952.css",
+    "file": "assets/app-35336c16.css",
     "isEntry": true,
     "src": "resources/sass/app.scss"
   }
