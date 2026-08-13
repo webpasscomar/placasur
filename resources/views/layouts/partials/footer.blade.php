@@ -83,12 +83,25 @@
                     class="fa-brands fa-instagram"></i> </a>
               </li>
             </ul>
+            <div class="txt-information">
+            <p>
+              <small class="text-white">
+                Sitio desarrollado por Webpass
+                <a href="https://webpass.com.ar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white ms-1">
+                  <i class="fa-solid fa-globe" style="font-size: 14px;"></i>
+                </a>
+              </small>
+            </p>
           </div>
         </div>
       </div>
     </div>
+    </div>
     <!-- FIN footer -->
-    <div class="copyrights" style="background-color: #222">
+    <!-- <div class="copyrights" style="background-color: #222">
       <div class="container">
         <div class="row pt-4">
 
@@ -103,7 +116,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="content-float-icon-WA">
       <div class="icon-WA">
