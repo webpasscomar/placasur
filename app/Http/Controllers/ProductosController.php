@@ -24,11 +24,16 @@ class ProductosController extends Controller
     {
         $categorias = Categoria::where('categoriaPadre_id', 0)
             ->Where('estado', 1)
+            ->orderBy('orden', 'asc')
             ->get();
         $subcategoriasPorCategoria = [];
 
         foreach ($categorias as $categoria) {
-            $subcategorias = Categoria::where('categoriaPadre_id', $categoria->id)->pluck('categoria');
+            $subcategorias = Categoria::where('categoriaPadre_id', $categoria->id)
+                ->where('estado', 1)
+                ->orderBy('orden', 'asc')
+                ->pluck('categoria');
+
             $subcategoriasPorCategoria[$categoria->id] = $subcategorias;
         }
 
