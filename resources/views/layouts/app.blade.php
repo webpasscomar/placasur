@@ -15,9 +15,13 @@
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
+    @include('partials.gtm-head')
+
 </head>
 
 <body>
+
+    @include('partials.gtm-body')
 
     @include('layouts.partials.header')
 

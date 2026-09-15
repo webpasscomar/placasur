@@ -3,12 +3,13 @@ FROM php:8.2-apache
 
 # Instalar dependencias
 RUN apt-get update && apt-get install -y \
-  curl\
+  curl \
+  gnupg \
   libzip-dev \
   zip \
   unzip \
   && docker-php-ext-configure zip \
-  && docker-php-ext-install zip pdo_mysql
+  && docker-php-ext-install zip pdo_mysql bcmath
 
 # Configurar Apache
 COPY ./apache.conf /etc/apache2/sites-available/000-default.conf
@@ -43,9 +44,13 @@ RUN chown -R www-data:www-data \
   /var/www/html/storage \
   /var/www/html/bootstrap/cache
 
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
-  && apt-get install -y nodejs\
-  npm
+RUN mkdir -p /etc/apt/keyrings \
+  && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
+  && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" > /etc/apt/sources.list.d/nodesource.list \
+  && apt-get update \
+  && apt-get install -y --no-install-recommends nodejs \
+  && rm -rf /var/lib/apt/lists/* \
+  && npm install --include=dev --no-fund --no-audit
 
 # Puerto expuesto
 EXPOSE 80 443 5173

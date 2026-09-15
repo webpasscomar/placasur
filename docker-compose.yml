@@ -1,26 +1,33 @@
-version: '3.8'
 services:
 
   app:
     build: ./
-    ports:
-      - 80:80
-      # - 443:443
-      # - 5173:5173
-    working_dir: /
+    working_dir: /var/www/html
     image: placasur_app
     volumes:
       - ./:/var/www/html
+      - /var/www/html/vendor
+      - /var/www/html/node_modules
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: placasur
+      DB_USERNAME: placasur
+      DB_PASSWORD: placasur
+      VIRTUAL_HOST: placasur.localhost
+      VIRTUAL_PORT: 80
     depends_on:
       - db
     networks:
       - app-network
+      - shared-web
     # command: bash -c "php /var/www/html/artisan migrate:fresh --seed && php-fpm"
 
   db:
     image: mariadb:10.8
     ports:
-      - 3306:3306
+      - 3308:3306
     environment:
       MYSQL_DATABASE: placasur
       MYSQL_ROOT_PASSWORD: placasur
@@ -37,12 +44,14 @@ services:
       PMA_HOST: db
       PMA_USER: placasur
       PMA_PASSWORD: placasur
-    ports:
-      - 8080:80
+      VIRTUAL_HOST: pma.placasur.localhost
     networks:
       - app-network
+      - shared-web
     depends_on:
       - db
 
 networks:
   app-network:
+  shared-web:
+    external: true
