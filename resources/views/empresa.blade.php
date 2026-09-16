@@ -43,7 +43,8 @@
       <div class="col-md-5 p-2 m-0 d-md-block">
         {{-- <img src="{{ asset('img/empresa/empresa.png') }}" class="w-100" alt=""> --}}
         <div class="ratio ratio-16x9">
-          <iframe src="https://www.youtube.com/embed/DGIy4iyT-Uk" frameborder="0" allowfullscreen></iframe>
+          <!--VIDEO ANTERIOR PRIVADO <iframe src="https://www.youtube.com/embed/DGIy4iyT-Uk" frameborder="0" allowfullscreen></iframe> -->
+            <iframe src="https://www.youtube.com/embed/7c0ZCpaOA0M" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
