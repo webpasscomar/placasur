@@ -25,6 +25,7 @@ class ProductosController extends Controller
         $categorias = Categoria::where('categoriaPadre_id', 0)
             ->Where('estado', 1)
             ->orderBy('orden', 'asc')
+            ->orderBy('categoria', 'asc')
             ->get();
         $subcategoriasPorCategoria = [];
 
@@ -32,6 +33,7 @@ class ProductosController extends Controller
             $subcategorias = Categoria::where('categoriaPadre_id', $categoria->id)
                 ->where('estado', 1)
                 ->orderBy('orden', 'asc')
+                ->orderBy('categoria', 'asc')
                 ->pluck('categoria');
 
             $subcategoriasPorCategoria[$categoria->id] = $subcategorias;
@@ -56,12 +58,17 @@ class ProductosController extends Controller
 
             $categoriaPadre = Categoria::where('id', $categoriaActual->categoriaPadre_id)->firstOrFail();
             // dd($categoriaPadre);
-            $categoriasNivelSuperior = Categoria::where('categoriaPadre_id', $categoriaPadre->id)->get();
+            $categoriasNivelSuperior = Categoria::where('categoriaPadre_id', $categoriaPadre->id)
+                ->orderBy('orden', 'asc')
+                ->orderBy('categoria', 'asc')
+                ->get();
         }
 
         // Traigo las categorias hijas de la actual para ver si muestro categorias o productos
         $categoriasHijas = Categoria::where('categoriaPadre_id', $categoriaActual->id)
             ->where('estado', 1)
+            ->orderBy('orden', 'asc')
+            ->orderBy('categoria', 'asc')
             ->get();
 
         // Si la categoria tiene hijos muestro categorias
@@ -69,7 +76,10 @@ class ProductosController extends Controller
 
             // dd('Muestro categorias');
             foreach ($categoriasHijas as $categoriaHija) {
-                $subcategorias = Categoria::where('categoriaPadre_id', $categoriaHija->id)->pluck('categoria');
+                $subcategorias = Categoria::where('categoriaPadre_id', $categoriaHija->id)
+                    ->orderBy('orden', 'asc')
+                    ->orderBy('categoria', 'asc')
+                    ->pluck('categoria');
                 $subcategoriasPorCategoria[$categoriaHija->id] = $subcategorias;
             }
 
@@ -80,6 +90,8 @@ class ProductosController extends Controller
             // $productos = $categoriaActual->productos();
             $productos = Product::where('category_id', $categoriaActual->id)
                 ->where('status', 1)
+                ->orderBy('order', 'asc')
+                ->orderBy('title', 'asc')
                 ->get();
             // dd($productos);
             return view('productos-productos', compact('categoriaPadre', 'categoriaActual', 'productos', 'categoriasNivelSuperior'));
