@@ -23,6 +23,7 @@
                             <th scope="col">COD</th>
                             <th scope="col">Imagen</th>
                             <th scope="col">Categoria</th>
+                            <th scope="col">Categoría padre</th>
                             <th scope="col">Slug</th>
                             <th scope="col">Orden</th>
                             <th scope="col" class="text-center" style="width: 15%">Acciones</th>
@@ -38,6 +39,7 @@
                                         alt="{{ $fila->categoria }}" width="40" height="40" />
                                 </td>
                                 <td class="align-middle">{{ $fila->categoria }}</td>
+                                <td class="align-middle">{{ $fila->categoriaPadre->categoria ?? '' }}</td>
                                 <td class="align-middle">{{ $fila->slug }}</td>
                                 <td class="align-middle">{{ $fila->orden }}</td>
                                 <td class="align-middle">

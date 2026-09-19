@@ -25,4 +25,11 @@ class Categoria extends Model
     {
         return $this->hasMany(Product::class, 'category_id');
     }
+
+    // Las categorias raiz guardan 0 en lugar de null, con lo cual la relacion
+    // devuelve null para ellas.
+    public function categoriaPadre()
+    {
+        return $this->belongsTo(Categoria::class, 'categoriaPadre_id');
+    }
 }

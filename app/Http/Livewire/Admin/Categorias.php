@@ -78,7 +78,7 @@ class Categorias extends Component
     {
         $this->categoriasAnt = Categoria::where('estado', 1)->get();
         // $this->categorias = Categoria::where('id', '>', 1)
-        $this->categorias = Categoria::where(
+        $this->categorias = Categoria::with('categoriaPadre')->where(
             function ($q) {
                 $q->where('descripcion', 'like', '%' . $this->search . '%')
                     ->orWhere('categoria', 'like', '%' . $this->search . '%');
